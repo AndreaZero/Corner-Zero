@@ -9,12 +9,16 @@ import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import '../styles/components/EditorStyles.css';
 import moment from 'moment';
+import { useMediaQuery } from '@mui/material';
+
 import { useAuth } from '../context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 function PostView() {
   const [post, setPost] = useState(null);
+  const mobileWidth = 600;
+  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   const { id } = useParams();
   const navigate = useNavigate();
   const [liked, setLiked] = useState(false);
@@ -88,11 +92,15 @@ function PostView() {
                               <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
 
                  - Inside the corner - 
-                 <img style={{ width: "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
+                 <img style={{ width: "40px", 
+                 objectFit: 'contain' }} src={cornerright} alt='icon'></img>
 
 
             </Typography>
-    <Card style={{width: '850px',             borderBottom: '1px solid gray',              background: 'rgb(0,0,0)',
+    <Card style={{      width: isMobile ? '320px' : '850px',
+    
+    
+    borderBottom: '1px solid gray',              background: 'rgb(0,0,0)',
     background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)',}}>
 
       

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid } from '@mui/material';
-import SidebarLeft from './fixed/SidebarLeft';
-import SidebarRight from './fixed/SidebarRight';
 import axios from 'axios';
 import PostPreview from './PostPreview';
+import { useMediaQuery } from '@mui/material';
 
 function PostHome() {
   const [posts, setPosts] = useState([]);
+  const mobileWidth = 600;
+  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
   useEffect(() => {
     async function fetchPosts() {
@@ -31,10 +32,13 @@ function PostHome() {
       display: 'flex',
       flexDirection: "column",
       gap: '2rem',
+      width: isMobile ? '100%' : undefined,  // Adatta la larghezza su dispositivi mobili
+      padding: isMobile ? '0' : undefined  // Rimuovi il padding su dispositivi mobili
     }} item xs={4}>
       {posts.map(post => <PostPreview key={post._id} post={post} />)}
     </Grid>
-  );
+);
+
 }
 
 export default PostHome;
