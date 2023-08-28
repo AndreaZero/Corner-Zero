@@ -54,7 +54,18 @@ function Homepage() {
         fontSize: isMobile ? '14px' : undefined // Adatta la larghezza su dispositivi mobili
 
       }}>
+{
+  isMobile ? (
+    <>
+          <h1>Explore, learn, imagine, think, dream, live!</h1>
+    </>
+  ) : (
+    <>
+          <h1>Explore, learn, imagine, think, dream, live!</h1>
 
+    </>
+  )
+}
 
 
         <h5>Dive into the Corners 
@@ -63,10 +74,6 @@ function Homepage() {
       </div>
 
       <div style={{ display: 'flex', width: isMobile ? "300px" : undefined, justifyContent: isMobile ? "center" : 'space-between', borderBottom: "1px solid #5CB574 " }}>
-        <h6>
-          <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>
-          - Date: {currentTime.toLocaleDateString()}
-        </h6>
         <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>  &lt; Corners: {postCount} &gt;
           <img style={{ width: "15px", objectFit: 'contain' }} src={cornerright}></img>
