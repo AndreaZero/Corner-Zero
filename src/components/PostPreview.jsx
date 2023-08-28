@@ -20,8 +20,6 @@ function PostPreview({ post }) {
 
   return (
     <Card style={{marginTop: "1rem",       width: isMobile ? '100%' : '850px',
-
-    
     background: 'rgb(0,0,0)',
 background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
     
@@ -44,7 +42,9 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
             style={{
               position: 'relative',
               overflow: 'hidden',
-              maxHeight: '100px', // Imposta l'altezza massima per l'anteprima del contenuto
+              maxHeight: '100px',
+              maxHeight: isMobile ? '40px' : '100px',  // Adatta la larghezza su dispositivi mobili
+              // Imposta l'altezza massima per l'anteprima del contenuto
             }}>
           {truncatedText}
           <div style={{

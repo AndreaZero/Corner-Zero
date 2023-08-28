@@ -46,13 +46,12 @@ function Homepage() {
       display: 'flex',
       flexDirection: "column",
       justifyContent: "space-between",
-      minHeight: 'auto',
       width: isMobile ?  '350px' : undefined,  // Adatta la larghezza su dispositivi mobili
     }}>
       <div style={{
         display: 'flex',
         flexDirection: "column",
-        lineHeight: "0",
+        lineHeight: "3px",
         fontSize: isMobile ? '14px' : undefined // Adatta la larghezza su dispositivi mobili
 
       }}>
