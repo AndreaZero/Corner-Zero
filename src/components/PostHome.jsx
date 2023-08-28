@@ -32,7 +32,7 @@ function PostHome() {
       display: 'flex',
       flexDirection: "column",
       gap: '2rem',
-      width: isMobile ? '70%' : undefined,  // Adatta la larghezza su dispositivi mobili
+      width: isMobile ? '100%' : undefined,  // Adatta la larghezza su dispositivi mobili
       padding: isMobile ? '0' : undefined  // Rimuovi il padding su dispositivi mobili
     }} item xs={4}>
       {posts.map(post => <PostPreview key={post._id} post={post} />)}
