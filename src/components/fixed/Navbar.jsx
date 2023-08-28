@@ -33,10 +33,12 @@ function Navbar() {
                   gap: "2rem",
                   justifyContent: "space-between"
               }}>
+                <a href='/'>
                   <img style={{
                       width: isMobile ? '120px' : '200px',  // Riduci la larghezza del logo per mobile
                       objectFit: 'contain'
                   }} src={logo} alt='logo'></img>
+                  </a>
 
                   <Hidden smDown> {/* Nasconde i seguenti elementi su schermi piccoli */}
                       <Link style={{ color: '#5CB574' }} to='/'>Home</Link>

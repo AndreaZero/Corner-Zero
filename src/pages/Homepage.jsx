@@ -57,11 +57,12 @@ function Homepage() {
 {
   isMobile ? (
     <>
-      <h1>Explore, learn, imagine, think, dream, live!</h1>
+      <h1>Welcome</h1>
     </>
   ) : (
     <>
-      <h1>Welcome</h1>
+          <h1>Explore, learn, imagine, think, dream, live!</h1>
+
     </>
   )
 }
