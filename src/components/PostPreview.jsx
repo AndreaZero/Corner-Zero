@@ -19,7 +19,7 @@ function PostPreview({ post }) {
   const truncatedText = plainText.length > 150 ? plainText.substring(0, 150) + "..." : plainText;
 
   return (
-    <Card style={{marginTop: "1rem",       width: isMobile ? '320px' : '800px',
+    <Card style={{marginTop: "1rem",       width: isMobile ? '100%' : '800px',
 
     
     background: 'rgb(0,0,0)',
