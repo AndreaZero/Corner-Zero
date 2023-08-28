@@ -47,13 +47,13 @@ function Corner() {
     return (
         <div style={{ width: isMobile ? '100%' : undefined }}>
             <Typography style={{
-                fontSize: "30px",
+                fontSize: isMobile ? "18px" : '30px',
                 color: "white",
                 fontWeight: 'bolder',
-                textAlign: "right"
+                textAlign: "center"
             }}>
                 Around the corner -
-                <img style={{ width: "40px", objectFit: 'contain' }} src={icon} alt='icon'></img>
+                <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={icon} alt='icon'></img>
 
             </Typography>
 
