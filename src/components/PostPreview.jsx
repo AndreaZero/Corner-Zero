@@ -4,19 +4,23 @@ import { Card, CardContent, Typography, CardActions, Button } from '@mui/materia
 import { convertFromRaw, EditorState, Editor } from 'draft-js';
 import '../styles/components/EditorStyles.css';
 import corner from "../styles/img/corner.png";
+import { useMediaQuery } from '@mui/material';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 function PostPreview({ post }) {
   const contentFromRaw = convertFromRaw(JSON.parse(post.content));
   const editorState = EditorState.createWithContent(contentFromRaw);
-
+  const mobileWidth = 600;
+  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   // Estrai il testo e troncalo
   const plainText = editorState.getCurrentContent().getPlainText();
   const truncatedText = plainText.length > 150 ? plainText.substring(0, 150) + "..." : plainText;
 
   return (
-    <Card style={{marginTop: "1rem", width: "800px",
+    <Card style={{marginTop: "1rem",       width: isMobile ? '320px' : '800px',
+
     
     background: 'rgb(0,0,0)',
 background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
