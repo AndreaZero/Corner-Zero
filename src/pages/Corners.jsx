@@ -45,7 +45,7 @@ function Corner() {
     }, []);
 
     return (
-        <div style={{ width: isMobile ? '100%' : undefined }}>
+        <div style={{ width: isMobile ? '340px' : undefined }}>
             <Typography style={{
                 fontSize: isMobile ? "18px" : '30px',
                 color: "white",
