@@ -10,6 +10,7 @@ import Footer from '../components/fixed/Footer';
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+import { fontSize } from '@mui/system';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -46,11 +47,14 @@ function Homepage() {
       flexDirection: "column",
       justifyContent: "space-between",
       minHeight: 'auto',
+      width: isMobile ?  '300px' : undefined,  // Adatta la larghezza su dispositivi mobili
     }}>
       <div style={{
         display: 'flex',
         flexDirection: "column",
-        lineHeight: "0"
+        lineHeight: "0",
+        fontSize: isMobile ? '14px' : undefined // Adatta la larghezza su dispositivi mobili
+
       }}>
         <h1>Explore, learn, imagine, think, dream, live!</h1>
         <h5>Dive into the Corners 
@@ -98,7 +102,6 @@ function Homepage() {
           )}
         </div>
       </div>
-
       <Footer />
     </div>
   );

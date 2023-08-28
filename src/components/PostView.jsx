@@ -83,7 +83,7 @@ function PostView() {
   return (
     <Container>
                         <Typography style={{
-                fontSize: "30px",
+                      fontSize: isMobile ? '15px' : '30px',  // Adatta la larghezza su dispositivi mobili
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
