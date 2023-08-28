@@ -73,7 +73,7 @@ function Homepage() {
           Instant access, <br />registration-free.</h5>
       </div>
 
-      <div style={{ display: 'flex', width: isMobile ? "300px" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
+      <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
         <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>  &lt; Corners: {postCount} &gt;
           <img style={{ width: "15px", objectFit: 'contain' }} src={cornerright}></img>
