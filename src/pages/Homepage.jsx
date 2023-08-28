@@ -47,7 +47,7 @@ function Homepage() {
       flexDirection: "column",
       justifyContent: "space-between",
       minHeight: 'auto',
-      width: isMobile ?  '300px' : undefined,  // Adatta la larghezza su dispositivi mobili
+      width: isMobile ?  '350px' : undefined,  // Adatta la larghezza su dispositivi mobili
     }}>
       <div style={{
         display: 'flex',
