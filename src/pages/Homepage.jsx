@@ -70,13 +70,12 @@ function Homepage() {
 
         <h5>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
-          Instant access, <br />registration-free.</h5>
+          <br />Instant access, <br />registration-free.</h5>
       </div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
         <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>  &lt; Corners: {postCount} &gt;
-          <img style={{ width: "15px", objectFit: 'contain' }} src={cornerright}></img>
         </h6>
         <h6>
           Time: {currentTime.toLocaleTimeString()} -

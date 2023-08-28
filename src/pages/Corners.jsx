@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useMediaQuery } from '@mui/material';
+
 import PostPreview from '../components/PostPreview';
 import { Typography, Select, Input, Button, Box } from '@mui/material';
 import icon from "../styles/img/icon.png";
@@ -11,6 +13,8 @@ function Corner() {
     const [page, setPage] = useState(1);  // Pagina corrente
     const [order, setOrder] = useState('desc');  // Ordine dei post
     const [search, setSearch] = useState('');  // Query di ricerca
+    const mobileWidth = 600;
+    const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
     useEffect(() => {
         loadPosts();
@@ -41,7 +45,7 @@ function Corner() {
     }, []);
 
     return (
-        <div style={{ padding: ''}}>
+        <div style={{ width: isMobile ? '100%' : undefined }}>
             <Typography style={{
                 fontSize: "30px",
                 color: "white",
