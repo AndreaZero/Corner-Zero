@@ -51,17 +51,30 @@ function Homepage() {
       <div style={{
         display: 'flex',
         flexDirection: "column",
-        lineHeight: "3px",
         fontSize: isMobile ? '14px' : undefined // Adatta la larghezza su dispositivi mobili
 
       }}>
-        <h1>Explore, learn, imagine, think, dream, live!</h1>
+{
+  isMobile ? (
+    <>
+      <h1>Explore, learn, imagine, think, dream, live!</h1>
+    </>
+  ) : (
+    <>
+      <h1>Welcome</h1>
+    </>
+  )
+}
+
+
+
+
         <h5>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
-          Instant access, registration-free.</h5>
+          Instant access, <br />registration-free.</h5>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
+      <div style={{ display: 'flex', width: isMobile ? "300px" : undefined, justifyContent: isMobile ? "center" : 'space-between', borderBottom: "1px solid #5CB574 " }}>
         <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>
           - Date: {currentTime.toLocaleDateString()}
