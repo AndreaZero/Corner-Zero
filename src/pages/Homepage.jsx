@@ -54,19 +54,6 @@ function Homepage() {
         fontSize: isMobile ? '14px' : undefined // Adatta la larghezza su dispositivi mobili
 
       }}>
-{
-  isMobile ? (
-    <>
-      <h1>Welcome</h1>
-    </>
-  ) : (
-    <>
-          <h1>Explore, learn, imagine, think, dream, live!</h1>
-
-    </>
-  )
-}
-
 
 
 
