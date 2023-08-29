@@ -41,12 +41,24 @@ function Navbar() {
                   }} src={logo} alt='logo'></img>
                   </a>
 
-                  <Hidden smDown> {/* Nasconde i seguenti elementi su schermi piccoli */}
-                      <Link style={{ color: '#5CB574' }} to='/'>Home</Link>
-                      <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link>
+                  {
+  isMobile ? (
+    <>
+
+<Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link>
                       <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link>
                       <Link style={{ color: '#5CB574' }} to='/contacts'>Contact Me</Link>
-                  </Hidden>
+    </>
+  ) : (
+    <>
+
+          <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link>
+                      <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link>
+                      <Link style={{ color: '#5CB574' }} to='/contacts'>Contact Me</Link>
+    </>
+  )
+}
+
 
                   {isAuthenticated && (
                       <Box>
