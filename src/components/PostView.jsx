@@ -65,13 +65,9 @@ function PostView() {
                 ...prevState,
                 likes: response.data.likes
             }));
-
-            // Aggiungi un flag nel localStorage per indicare che questo post è stato apprezzato
+            
             localStorage.setItem(`liked-${id}`, 'true');
-
-            // Aggiunta della logica per l'animazione
-            setLiked(true);
-            setTimeout(() => setLiked(false), 400); // Durata dell'animazione
+            setLiked('Liked :)');
         }
     } catch (error) {
         if (error.response && error.response.data.error) {
@@ -81,6 +77,7 @@ function PostView() {
         }
     }
 };
+
 
 
   const contentFromRaw = convertFromRaw(JSON.parse(post.content));
@@ -145,13 +142,14 @@ function PostView() {
         <Button 
     style={{backgroundColor: "#183D3D", fontSize: "12px", fontWeight: 'bolder', color: "#5CB574"}}
     onClick={addLike}
-    className={liked === true ? 'liked' : ''}
+    className={liked === 'Liked :)' ? 'liked' : ''}
 > 
-    <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}>
-    </FontAwesomeIcon>
+    <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}></FontAwesomeIcon>
     ({post.likes})
     {liked === 'Already liked!' && <span style={{ marginLeft: '10px', color: 'red' }}>{liked}</span>}
+    {liked === 'Liked :)' && <span style={{ marginLeft: '10px', color: 'green' }}>{liked}</span>}
 </Button>
+
 
               <SharePost />
               </div>
