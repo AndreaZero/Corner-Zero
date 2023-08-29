@@ -99,7 +99,7 @@ function PostView() {
 
 
             </Typography>
-    <Card style={{      width: isMobile ? '100%' : '850px',
+    <Card style={{      width: isMobile ? '100%' : '850px', marginTop: "1rem",
     
     
     borderBottom: '1px solid gray',              background: 'rgb(0,0,0)',
