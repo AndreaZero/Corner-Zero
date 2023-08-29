@@ -22,7 +22,7 @@ function PostView() {
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   const { id } = useParams();
   const navigate = useNavigate();
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(null);
 
   const { isAuthenticated } = useAuth(); // Usiamo 'useAuth' per ottenere 'isAuthenticated'
   // Usato per reindirizzare l'utente dopo l'eliminazione
@@ -53,9 +53,8 @@ function PostView() {
   if (!post) return <div>Loading...</div>;
 
   const addLike = async () => {
-    // Prima di tutto, verifica nel localStorage
     if (localStorage.getItem(`liked-${id}`)) {
-        alert('You have already liked this post');
+        setLiked('Already liked!');
         return;
     }
 
@@ -143,15 +142,17 @@ function PostView() {
           height: "30px",
           justifyContent: "space-between"
         }}>
-          <Button 
-              style={{backgroundColor: "#183D3D", fontSize: "12px", fontWeight: 'bolder', color: "#5CB574"}}
-                onClick={addLike}
-                className={liked ? 'liked' : ''}
-                > 
-                <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}>
-                </FontAwesomeIcon>
-                ({post.likes})
-              </Button>
+        <Button 
+    style={{backgroundColor: "#183D3D", fontSize: "12px", fontWeight: 'bolder', color: "#5CB574"}}
+    onClick={addLike}
+    className={liked === true ? 'liked' : ''}
+> 
+    <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}>
+    </FontAwesomeIcon>
+    ({post.likes})
+    {liked === 'Already liked!' && <span style={{ marginLeft: '10px', color: 'red' }}>{liked}</span>}
+</Button>
+
               <SharePost />
               </div>
           <div style={{color: '#1976D2',display: 'flex', alignItems: "center", borderBottom: "1px solid grey", padding: "5px"}}/>
