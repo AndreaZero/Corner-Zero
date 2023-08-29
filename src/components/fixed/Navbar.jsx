@@ -133,24 +133,26 @@ function Navbar() {
             <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
             <a href="https://instagram.com/ZeroTechLab" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
           </Box>
-            <ListItem button key="Home" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/">
-            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faHome}></FontAwesomeIcon>
-              <ListItemText style={{}} primary="Home" />
-            </ListItem>
-            <ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners">
-            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
+          <ListItem button key="Home" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/" onClick={handleDrawerToggle}>
+  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faHome}></FontAwesomeIcon>
+  <ListItemText primary="Home" />
+</ListItem>
 
-              <ListItemText primary="Corners" />
-            </ListItem>
-            <ListItem button key="Repos" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/repos">
-            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faLaptopCode}></FontAwesomeIcon>
-              <ListItemText primary="Repos" />
-            </ListItem>
+<ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners" onClick={handleDrawerToggle}>
+  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
+  <ListItemText primary="Corners" />
+</ListItem>
 
-            <ListItem button key="Contact Me"  style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/contacts">
-            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>
-              <ListItemText primary="Contact Me" />
-            </ListItem>
+<ListItem button key="Repos" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/repos" onClick={handleDrawerToggle}>
+  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faLaptopCode}></FontAwesomeIcon>
+  <ListItemText primary="Repos" />
+</ListItem>
+
+<ListItem button key="Contact Me" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/contacts" onClick={handleDrawerToggle}>
+  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>
+  <ListItemText primary="Contact Me" />
+</ListItem>
+
 
             <h3 style={{color: '#5CB574', textAlign: "center"}}>What's New?</h3>
 
@@ -162,9 +164,10 @@ function Navbar() {
                background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
             }}>
             {posts.map(post => (
-            <ListItem key={post.id} post={post} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post._id}`}>
-              <ListItemText primary={post.title} />   
-            </ListItem>
+              <ListItem key={post.id} post={post} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post._id}`} onClick={handleDrawerToggle}>
+  <ListItemText primary={post.title} />   
+</ListItem>
+
           ))}
           </Box>
 
