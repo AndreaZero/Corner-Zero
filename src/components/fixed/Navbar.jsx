@@ -116,7 +116,8 @@ function Navbar() {
           open={open}
           onClose={handleDrawerToggle}
         >
-          <List style={{ width: 250, height: "100%",backgroundColor: 'black', borderLeft :"1px solid #5CB574"}}>            <h3 style={{color: 'white', textAlign: "center"}}>Menu Corner</h3>
+          <List style={{ width: 250, height: "100%",backgroundColor: 'black', borderLeft :"1px solid #5CB574"}}>
+          <h3 style={{color: 'white', textAlign: "center"}}>Menu Corner</h3>
           <Box style={{
             width: "auto",
             display: 'flex',
@@ -150,6 +151,8 @@ function Navbar() {
             <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>
               <ListItemText primary="Contact Me" />
             </ListItem>
+
+            <h3 style={{color: 'white', textAlign: "center"}}>What's New?</h3>
 
           <Box style={{
                background: 'rgb(0,0,0)',
