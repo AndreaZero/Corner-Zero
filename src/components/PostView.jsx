@@ -53,6 +53,12 @@ function PostView() {
   if (!post) return <div>Loading...</div>;
 
   const addLike = async () => {
+    // Prima di tutto, verifica nel localStorage
+    if (localStorage.getItem(`liked-${id}`)) {
+        alert('You have already liked this post');
+        return;
+    }
+
     try {
         const response = await axios.put(`/api/posts/${id}/like`);
         if (response.status === 200) {
@@ -61,21 +67,22 @@ function PostView() {
                 likes: response.data.likes
             }));
 
+            // Aggiungi un flag nel localStorage per indicare che questo post è stato apprezzato
+            localStorage.setItem(`liked-${id}`, 'true');
+
             // Aggiunta della logica per l'animazione
             setLiked(true);
             setTimeout(() => setLiked(false), 400); // Durata dell'animazione
         }
     } catch (error) {
-        if (error.response && error.response.data.error === 'You have already liked this post') {
-            alert('You already liked this post!');
+        if (error.response && error.response.data.error) {
+            console.error('Error adding like:', error.response.data.error);
         } else {
             console.error('Error adding like:', error);
         }
     }
 };
 
-  
-  
 
   const contentFromRaw = convertFromRaw(JSON.parse(post.content));
   const editorState = EditorState.createWithContent(contentFromRaw);
