@@ -7,8 +7,8 @@ import axios from 'axios';
 import logo from "../../styles/img/logo.png";
 import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faConnectdevelop, faDev, faGithub, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faSignOutAlt, faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();

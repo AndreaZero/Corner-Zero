@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Divider } from '@mui/material';
+import { Container, Typography, Grid, Card, CardContent, CardMedia} from '@mui/material';
 import repos from '../data/repos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode} from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,7 @@ import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import { faGithub }  from '@fortawesome/free-brands-svg-icons';
 import "../styles/components/Repos.scss";
-import { FaReact, FaNode, FaScrewdriver, FaCss3, FaHtml5, FaJava, FaNpm, FaJs, FaGoogle,} from 'react-icons/fa';
+import { FaReact, FaNode, FaCss3, FaHtml5, FaNpm, FaJs, FaGoogle,} from 'react-icons/fa';
 import Vite from "../styles/img/vite.png";
 import MongoDB from "../styles/img/mongodb.png";
 

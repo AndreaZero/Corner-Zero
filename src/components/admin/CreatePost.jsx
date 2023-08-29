@@ -5,7 +5,6 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Button, Box, TextField, Container } from '@mui/material';
 import axios from 'axios';
 import '../../styles/components/EditorStyles.css';
-import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 

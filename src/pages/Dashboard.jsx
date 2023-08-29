@@ -1,12 +1,12 @@
 import React from 'react';
 import CreatePost from '../components/admin/CreatePost';
-import { Box, Button } from '@mui/material'; // Importa Button da @mui/material
+import { Box} from '@mui/material'; 
 import { useAuth } from "../context/AuthContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWarning, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; // Importa faSignOutAlt per il pulsante di logout
+import { faWarning} from '@fortawesome/free-solid-svg-icons';
 
 function Dashboard() {
-    const { isAuthenticated, logout } = useAuth();  // Ottieni sia isAuthenticated che logout dal contesto
+    const { isAuthenticated, logout } = useAuth();
 
     if (!isAuthenticated) {
         return (
@@ -41,11 +41,9 @@ function Dashboard() {
 
     return (
         <Box marginTop='3rem' display="flex" flexDirection="row" p={2} alignItems="center" justifyContent="space-between"> 
-            {/* Aggiunto alignItems e justifyContent */}
             <Box flex={3} pr={2}>
                 <CreatePost />
             </Box>
-            {/* Aggiunto pulsante di logout a destra */}
         </Box>
     );
 }

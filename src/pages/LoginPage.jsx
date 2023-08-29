@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Button, TextField, Typography, Container } from '@mui/material';
 import axios from "axios";
-import { redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWarning } from '@fortawesome/free-solid-svg-icons';
+
 
 
 function LoginPage() {

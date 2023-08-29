@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Container, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import axios from 'axios';
 import PostPreview from './PostPreview';
 import { useMediaQuery } from '@mui/material';

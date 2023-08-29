@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Container, Typography, TextField, Button, Link, Grid } from '@mui/material';
-import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLink } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faPaypal, faTwitter, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Box, Container, Typography, TextField, Button } from '@mui/material';
 import emailjs from 'emailjs-com';
 import { useMediaQuery } from '@mui/material';
-import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import Footer from '../components/fixed/Footer';
 

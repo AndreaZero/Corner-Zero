@@ -3,10 +3,10 @@ import axios from 'axios';
 import { useMediaQuery } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import PostPreview from '../components/PostPreview';
-import { Typography, Select, Input, Button, Box } from '@mui/material';
+import { Typography, Input, Button, Box } from '@mui/material';
 import cornerright from "../styles/img/cornerright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faArrowLeft, faEnvelope, faHandPointLeft, faHandPointRight, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 function Corner() {
     const [posts, setPosts] = useState([]);
@@ -62,7 +62,7 @@ function Corner() {
             {/* Filtri e ricerca */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", marginTop: "1rem", borderRadius: "0.5rem" }}>
             <h6>
-          <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>- Corners: {postCount}
+          <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
         </h6>
                 <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
                                     <Input style={{padding: "8px", height: "40px", backgroundColor: "white", color: "black"}} placeholder="Type smth.." value={search} onChange={(e) => setSearch(e.target.value)} />

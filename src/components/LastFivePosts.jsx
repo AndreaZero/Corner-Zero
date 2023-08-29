@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, List, ListItem, ListItemText, Typography } from '@mui/material';
+import { List, ListItem, ListItemText, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan} from '@fortawesome/free-solid-svg-icons';
@@ -56,7 +56,6 @@ function LastFivePosts() {
                 maxWidth: '350px',
                 borderRadius: "0.5rem",
                 boxShadow: "0px 0px 5px 0px black",
-                padding: "10px",
                 background: 'rgb(0,0,0)',
                 background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)',
             }}>

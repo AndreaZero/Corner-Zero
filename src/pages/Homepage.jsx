@@ -11,7 +11,6 @@ import Footer from '../components/fixed/Footer';
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
-import { display, fontSize } from '@mui/system';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -102,11 +101,11 @@ function Homepage() {
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
         <h6>
-          <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>- Corners: {postCount}
+          <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
         </h6>
         <h6>
           Time: {currentTime.toLocaleTimeString()} -
-          <img style={{ width: "15px", objectFit: 'contain' }} src={cornerright}></img>
+          <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
         </h6>
       </div>
 

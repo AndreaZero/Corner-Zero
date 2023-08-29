@@ -1,7 +1,6 @@
 import React from "react";
 import "../src/styles/main/index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { render } from "react-dom";                 // add this
 
 render(

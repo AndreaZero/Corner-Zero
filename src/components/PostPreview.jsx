@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, Typography, CardActions, Button } from '@mui/material';
-import { convertFromRaw, EditorState, Editor } from 'draft-js';
+import { convertFromRaw, EditorState} from 'draft-js';
 import '../styles/components/EditorStyles.css';
 import corner from "../styles/img/corner.png";
 import { useMediaQuery } from '@mui/material';
