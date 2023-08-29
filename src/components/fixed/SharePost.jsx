@@ -37,27 +37,27 @@ const SharePost = () => {
         justifyContent: "center"
       }}>
 
-        <TwitterShareButton url={url} title="Guarda questo post!">
+        <TwitterShareButton url={url} title="CornerZero.eu - Read this corner!">
           <TwitterIcon style={{ borderRadius: "0.3rem" }}  size={24} round={false} />
         </TwitterShareButton>
 
-        <RedditShareButton url={url} title="Guarda questo post!">
+        <RedditShareButton url={url} title="CornerZero.eu - Read this corner!">
           <RedditIcon style={{ borderRadius: "0.3rem" }} size={24} round={false} />
         </RedditShareButton>
 
-        <TelegramShareButton url={url} title="Guarda questo post!">
+        <TelegramShareButton url={url} title="CornerZero.eu - Read this corner!">
           <TelegramIcon style={{ borderRadius: "0.3rem" }} size={24} round={false} />
         </TelegramShareButton>
 
-        <FacebookShareButton url={url} quote="Guarda questo post!">
+        <FacebookShareButton url={url} quote="CornerZero.eu - Read this corner!">
           <FacebookIcon style={{ borderRadius: "0.3rem" }} size={24} round={false} />
         </FacebookShareButton>
 
-        <FacebookMessengerShareButton url={url} title="Guarda questo post!">
+        <FacebookMessengerShareButton url={url} title="CornerZero.eu - Read this corner!">
           <FacebookMessengerIcon style={{ borderRadius: "0.3rem" }} size={24} round={false} />
         </FacebookMessengerShareButton>
 
-        <WhatsappShareButton url={url} title="Guarda questo post!">
+        <WhatsappShareButton url={url} title="CornerZero.eu - Read this corner!">
           <WhatsappIcon style={{ borderRadius: "0.3rem" }}  size={24} round={false} />
         </WhatsappShareButton>
 
