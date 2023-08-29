@@ -70,7 +70,7 @@ function Homepage() {
 
         <h5>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
-          <br />Instant access, <br />registration-free.</h5>
+          Instant access.</h5>
       </div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>

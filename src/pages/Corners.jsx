@@ -46,7 +46,7 @@ function Corner() {
     }, []);
 
     return (
-        <div style={{ width: isMobile ? '340px' : undefined }}>
+        <div style={{ width: isMobile ? '340px' : undefined, alignItems: "center" }}>
             <Typography style={{
                 fontSize: isMobile ? "18px" : '30px',
                 color: "white",
@@ -54,7 +54,7 @@ function Corner() {
                 textAlign: "center"
             }}>
                  <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={iconright} alt='icon'></img>
-                Around the corner -
+                 - Around the corner -
                 <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={icon} alt='icon'></img>
 
             </Typography>
@@ -70,7 +70,9 @@ function Corner() {
                 <FontAwesomeIcon style={{marginLeft : '20px'}} icon={faHandPointLeft}></FontAwesomeIcon>
 
                </div>
-                <Button style={{
+            </div>
+            <center>
+            <Button style={{
                     backgroundColor: '#183D3D',
                     color: "#5CB574",
                     height: '35px',
@@ -78,9 +80,7 @@ function Corner() {
                 }} onClick={() => setPage(1)}>Search
                 <FontAwesomeIcon style={{marginLeft : '10px'}} icon={faMagnifyingGlass}></FontAwesomeIcon>
                 </Button>
-
-            </div>
-
+                </center>
             <div style={{border: '1px solid #5CB574', marginTop: "2rem"}}></div>
             
             <Box style={{
@@ -95,7 +95,7 @@ function Corner() {
                 <PostPreview key={post._id} post={post} />
             ))}
                         {/* Navigazione paginata */}
-                        <div style={{ borderRadius: '0.6rem', justifyContent: "space-between", display: "flex", marginTop: '1rem', alignItems: "center", backgroundColor: "#183D3D",  marginBottom:'1srem',padding: "10px"}}>
+                        <div style={{ borderRadius: '0.6rem', justifyContent: "space-between", display: "flex", marginTop: '1rem', alignItems: "center", backgroundColor: "#183D3D",  marginBottom:'1rem', padding: "10px"}}>
                 <Button style={{color: "red"}} disabled={page === 1} onClick={() => setPage(prevPage => prevPage - 1)}>Prev.</Button>
                 <FontAwesomeIcon style={{marginRight: "10px"}} icon={faArrowLeft}></FontAwesomeIcon>
                 <span>[page {page}] 
