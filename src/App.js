@@ -13,8 +13,7 @@ import Corners from "./pages/Corners";
 import Repos from "./pages/Repos";
 import Contacts from "./pages/Contacts";
 
-
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "https://cornerzeroserver-4b9300c63b20.herokuapp.com";
 axios.defaults.withCredentials = true;
 
 function App () {
