@@ -46,13 +46,6 @@ function Dashboard() {
                 <CreatePost />
             </Box>
             {/* Aggiunto pulsante di logout a destra */}
-            <Button 
-                variant="contained" 
-                color="secondary" 
-                startIcon={<FontAwesomeIcon icon={faSignOutAlt} />} 
-                onClick={logout}>
-                Logout
-            </Button>
         </Box>
     );
 }

@@ -49,11 +49,10 @@ function CreatePost() {
             flexDirection: "column",
             fontSize: "20px",
             gap: "2rem",
-            width: "600px",
-        }}><span style={{color: "white"}}>- Welcome Admin. Create a new post!
+            width: "auto",
+        }}><span style={{color: "white"}}>- Welcome Admin. Create a new Corner!
         <FontAwesomeIcon  style={{color: "white", marginLeft: "15px",}} icon={faPenToSquare} />
         </span>
-<div style={{borderBottom: '1px solid gray'}}></div>
         <Box style={{
             boxShadow: '0px 0px 4px 0px white',
             padding: "30px",
@@ -64,6 +63,7 @@ function CreatePost() {
             <TextField
             style={{
                 width: "100%",
+
             }}
                 type="text"
                 placeholder="Enter title"
@@ -73,6 +73,8 @@ function CreatePost() {
                         <TextField
             style={{
                 width: "100%",
+                marginTop: "1rem",
+                marginBottom: "1rem"
             }}
                 type="text"
                 placeholder="Enter tags"
@@ -88,7 +90,6 @@ function CreatePost() {
     placeholder='Type something here..'
     onEditorStateChange={setEditorState}
 />
-
             <center>
             <Button style={{
                 marginTop: '1rem'

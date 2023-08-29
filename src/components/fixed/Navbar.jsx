@@ -1,76 +1,166 @@
-import { AppBar, Hidden, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Hidden, Toolbar, Button, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import logo from "../../styles/img/logo.png";
-import zeroicon from "../../styles/img/zero-icon.png";
-import bannerzero from "../../styles/img/banner-zero.png";
+import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub,  faLinkedin, faXTwitter }  from '@fortawesome/free-brands-svg-icons'; 
+import { faConnectdevelop, faDev, faGithub, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faSignOutAlt, faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));  // Questo diventerà 'true' per dimensioni di schermo piccole
+  const [posts, setPosts] = useState([]);
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [open, setOpen] = React.useState(false);  // Stato per il drawer
+
+  const handleDrawerToggle = () => {
+    setOpen(!open);
+  };
+
+
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const response = await axios.get('/api/posts');
+        if (response.data && response.data.length > 0) {
+          setPosts(response.data.slice(0, 3)); // Prende i primi 3 post
+        } else {
+          setPosts([]);
+        }
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    }
+    fetchPosts();
+  }, []);
 
   return (
-      <Box style={{
+    <Box style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '0.4rem',
+      alignItems: 'center',
+      borderBottom: '1px solid grey',
+      justifyContent: 'center'
+    }} top={0} left={0} right={0} zIndex={1200}>
+      <AppBar style={{
+        color: "white",
+        fontWeight: 'bold',
+        padding: '10px',
+        height: isMobile ? '80px' : '100px',
+        display: 'flex',
+      }} position="static">
+        <Toolbar style={{
           display: 'flex',
-          flexDirection: 'column',
-          gap: '0.4rem',
-          alignItems: 'center',
-          borderBottom: '1px solid grey',
-          justifyContent: 'center'
-      }} top={0} left={0} right={0} zIndex={1200}>
-          <AppBar style={{
-              color: "white",
-              fontWeight: 'bold',
-              padding: '10px',
-              height: isMobile ? '80px' : '100px',  // Riduci l'altezza per mobile
-              display: 'flex',
-          }} position="static">
-              <Toolbar style={{
-                  display: 'flex',
-                  gap: "2rem",
-                  justifyContent: "space-between"
-              }}>
-                <a href='/'>
-                  <img style={{
-                      width: isMobile ? '120px' : '200px',  // Riduci la larghezza del logo per mobile
-                      objectFit: 'contain'
-                  }} src={logo} alt='logo'></img>
-                  </a>
+          gap: "2rem",
+          justifyContent: "space-between"
+        }}>
+          <a href='/'>
+            <img style={{
+              width: isMobile ? '40px' : '200px',
+              objectFit: 'contain'
+            }} src={isMobile ? iconright : logo} alt='logo'></img> 
+          </a>
 
-                  <Hidden smDown> {/* Nasconde i seguenti elementi su schermi piccoli */}
-                      <Link style={{ color: '#5CB574' }} to='/'>Home</Link>
-                      <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link>
-                      <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link>
-                      <Link style={{ color: '#5CB574' }} to='/contacts'>Contact Me</Link>
-                  </Hidden>
+          <Hidden smDown> 
+            <Link style={{ color: '#5CB574' }} to='/'>Home</Link>
+            <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link>
+            <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link>
+            <Link style={{ color: '#5CB574' }} to='/contacts'>Contact Me</Link>
+          </Hidden>
 
-                  {isAuthenticated && (
-                      <Box>
-                          <Link style={{ color: "#5CB574" }} to="/admin/dashboard">DASH</Link>
-                      </Box>
-                  )}
+          <Box style={{
+            width: "auto",
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: 'center',
+            padding: '5px',
+            gap: "0.4rem",
+            color: "white",
+            borderRadius: "0.3rem"
+          }}>
+            <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
+            <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
+            <a href="https://instagram.com/ZeroTechLab" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
+          </Box>
 
-                  <Box style={{
-                      width: "auto",
-                      display: 'flex',
-                      alignItems: "center",
-                      justifyContent: 'center',
-                      padding: '5px',
-                      gap: "0.4rem",
-                      color: "white",
-                      borderRadius: "0.3rem"
-                  }}>
-                      <FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon> •
-                      <FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon> •
-                      <FontAwesomeIcon color='white' icon={faLinkedin}></FontAwesomeIcon>
-                  </Box>
-              </Toolbar>
-          </AppBar>
-      </Box>
+          {isAuthenticated && (
+            <Box>
+              <Link style={{ color: "#5CB574" }} to="/admin/dashboard">DASH</Link>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={logout}
+                startIcon={<FontAwesomeIcon icon={faSignOutAlt} />}
+              >
+                Logout
+              </Button>
+            </Box>
+          )}
+
+          {isMobile && (
+            <IconButton edge="end" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
+              <FontAwesomeIcon icon={faListUl}></FontAwesomeIcon>
+            </IconButton>
+          )}
+
+        </Toolbar>
+        
+        <Drawer
+          anchor={"right"}
+          open={open}
+          onClose={handleDrawerToggle}
+        >
+          <List style={{ width: 250, height: "100%",backgroundColor: 'black', borderLeft :"1px solid #5CB574"}}>            <h3 style={{color: 'white', textAlign: "center"}}>Menu Corner</h3>
+            <ListItem button key="Home" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/">
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faHome}></FontAwesomeIcon>
+              <ListItemText style={{}} primary="Home" />
+            </ListItem>
+            <ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners">
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
+
+              <ListItemText primary="Corners" />
+            </ListItem>
+            <ListItem button key="Repos" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/repos">
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faLaptopCode}></FontAwesomeIcon>
+              <ListItemText primary="Repos" />
+            </ListItem>
+
+            <ListItem button key="Contact Me"  style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/contacts">
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>
+              <ListItemText primary="Contact Me" />
+            </ListItem>
+
+            {posts.map(post => (
+  <ListItem key={post.id} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/post/${post.id}`}>
+    <ListItemText primary={post.title} />
+  </ListItem>
+))}
+
+            <Box style={{
+            width: "auto",
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: 'center',
+            padding: '5px',
+            gap: "0.4rem",
+            color: "white",
+            marginTop: "3rem",
+            borderRadius: "0.3rem"
+          }}>
+            <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
+            <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
+            <a href="https://instagram.com/ZeroTechLab" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
+          </Box>
+          </List>
+          
+        </Drawer>
+      </AppBar>
+    </Box>
   );
 }
 

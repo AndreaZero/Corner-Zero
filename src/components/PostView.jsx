@@ -14,6 +14,7 @@ import { useMediaQuery } from '@mui/material';
 import { useAuth } from '../context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faHeart } from '@fortawesome/free-solid-svg-icons';
+import SharePost from './fixed/SharePost';
 
 function PostView() {
   const [post, setPost] = useState(null);
@@ -132,7 +133,7 @@ function PostView() {
             <FontAwesomeIcon style={{marginLeft: "5px"}} icon={faClock}></FontAwesomeIcon>
             </div>
         <Typography style={{marginTop: '2rem',}} component="div" dangerouslySetInnerHTML={{ __html: contentHTML }} />
-      
+            <SharePost />
       </CardContent>
       <div style={{
         marginTop: "0.4rem",

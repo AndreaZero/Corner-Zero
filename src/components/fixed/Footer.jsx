@@ -16,7 +16,7 @@ const Footer = () => {
     >
       <Container>
         <Typography align="center" variant="body2">
-          © 2023 dev by AndreaZero. <a href='http://paypal.me/andreazero/'>Support me</a>
+          © 2023 dev by AndreaZero. <a href='http://paypal.me/andreazero/' target='black' rel='noopener noreferrer'>Support me</a>
         </Typography>
       </Container>
     </Box>
