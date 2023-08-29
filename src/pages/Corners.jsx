@@ -31,6 +31,13 @@ function Corner() {
         }
     };
 
+    const handlePostsPerPageChange = (event) => {
+        setPostsPerPage(event.target.value);
+        setPage(1);  // Reimposta la pagina a 1
+    }
+    
+    
+
     useEffect(() => {
         async function fetchPostCount() {
             try {
@@ -65,7 +72,7 @@ function Corner() {
                 </h6>
                 <div style={{display: 'flex', alignItems: "center", gap: '0.5rem', justifyContent: 'center'}}>
                     <Input style={{padding: "8px", height: "40px", backgroundColor: "white", color: "black"}} placeholder="Type smth.." value={search} onChange={(e) => setSearch(e.target.value)} />
-                    <Select value={postsPerPage} onChange={(e) => setPostsPerPage(e.target.value)}>
+                    <Select value={postsPerPage} onChange={handlePostsPerPageChange}>
                         <MenuItem value={3}>3 per page</MenuItem>
                         <MenuItem value={5}>5 per page</MenuItem>
                         <MenuItem value={10}>10 per page</MenuItem>
