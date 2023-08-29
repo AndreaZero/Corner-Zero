@@ -26,7 +26,7 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
     }}>
       <CardContent>
       <Typography style={{
-          fontSize: "20px",
+          fontSize: isMobile ? "12px" : "20px",
           color: "#5CB574",
           fontWeight: 'bolder',
           display: 'flex',
@@ -82,7 +82,7 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
           <Button style={{
             backgroundColor: '#183D3D'
           }} size="small" color="primary">
-            <Link to={`/posts/${post._id}`} style={{textDecoration: 'none', color: "#5CB574"}}>Read More</Link>
+            <Link to={`/posts/${post._id}`} style={{textDecoration: 'none', color: "#5CB574"}}>Open</Link>
           </Button>
         </Card>
       </CardActions>

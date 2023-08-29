@@ -35,12 +35,10 @@ const theme = createTheme({
     },
     MuiInputBase: {
       styleOverrides: {
-        input: {
+        root: {
           fontWeight: "bold",
           backgroundColor: 'white',
           borderRadius: '0.3rem',
-          padding: '10px',
-          height: "10px"
         },
       }
     },

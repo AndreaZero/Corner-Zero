@@ -5,11 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faPaypal, faTwitter, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import emailjs from 'emailjs-com';
+import { useMediaQuery } from '@mui/material';
+import corner from "../styles/img/corner.png";
+import cornerright from "../styles/img/cornerright.png";
 
 
 function Contacts() {
     const [message, setMessage] = useState('');
     const [email, setEmail] = useState('');
+    const mobileWidth = 600;
+    const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
     const handleSubmit = async () => {
         try {
@@ -26,40 +31,55 @@ function Contacts() {
             const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID);
     
             if (response.text === "OK") {
-                alert('Grazie per avermi contattato!');
+                alert('Thanks for message me.');
                 // Resetta il modulo
                 setEmail('');
                 setMessage('');
             } else {
-                alert('Si è verificato un errore. Riprova.');
+                alert('There was an error. Please try again.');
             }
         } catch (error) {
-            console.error('There was an error sending the message:', error);
-            alert('Si è verificato un errore. Riprova.');
+            console.error('There was an error while sending the message:', error);
+            alert('There was an error. Please try again.');
         }
     };
     return (
         <Container style={{
             display: "flex",
             flexDirection: "column",
-            gap: "2rem",
+            justifyContent: "center",
+            gap: "1rem",
+            width: isMobile ?  'auto' : undefined
         }}>
-            <Typography variant="h4" style={{ textAlign: 'center', color: 'white' }}>Send me a message!
-            <FontAwesomeIcon style={{marginLeft: "10px"}} icon={faEnvelope}></FontAwesomeIcon>
+ <Typography style={{
+                fontSize: isMobile ? '20px' : '30px',  // Adatta la larghezza su dispositivi mobili
+                color: "white",
+                fontWeight: 'bolder',
+                textAlign: "right",
+                marginTop: "1rem"
+            }}>
+                 Contact Corner - 
+                 <img style={{ width: "40px", 
+                 objectFit: 'contain' }} src={cornerright} alt='icon'></img>
+
+
             </Typography>
             
             <Box style={{
-                boxShadow: '0px 0px 4px 0px white',
                 padding: "30px",
-                backgroundColor: '#183D3D',
+                background: 'rgb(0,0,0)',
+                background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)',
                 borderRadius: "1rem",
-                marginBottom: '2rem',
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center"
             }}>
-                <Typography variant="h6" style={{ color: 'white', marginBottom: '1rem' }}>Ask me anything, or reach me for serious requests.</Typography>
+                <Typography style={{ color: 'white', marginBottom: '1rem', fontSize: "16px" }}>Ask me anything, or reach me for serious requests.</Typography>
 
                 <TextField
                     fullWidth
-                    style={{ marginBottom: '1rem' }}
+                    style={{ marginBottom: '1rem'}}
                     type="email"
                     placeholder="Your email address"
                     value={email}
@@ -67,51 +87,24 @@ function Contacts() {
                 />
 
                 <TextField
-                    fullWidth
+                    style={{
+                        width:" 100%",
+                    }}
                     type='text'
                     multiline
-                    rows={4}
+                    rows={5}
                     placeholder="Type your message.."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />
 
                 <Button style={{ marginTop: '1rem' }} variant="contained" color="primary" onClick={handleSubmit}>
-                    Invia
+                    Send message
                 </Button>
             </Box>
 
-            <Box style={{
-                display: 'flex',
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                width: '100%'
-            }}>
-            <Typography variant="h6" style={{ color: 'white', marginBottom: '1rem' }}>
-                <FontAwesomeIcon style={{marginRight: "10px"}} icon={faLink}></FontAwesomeIcon>
-                links:
-                </Typography>
-                <div style={{
-                    display: "flex",
-                    justifyContent: 'center',
-                    gap: "5rem",
-                    alignItems: 'center',
-                    width: "100%",
-                }}>
-
-                    <Typography style={{ color: 'white', fontSize: "14px" }}>
-                        <FontAwesomeIcon style={{marginRight: "8px"}} icon={faEnvelope}></FontAwesomeIcon>
-                        Email - <Link href="mailto:andreazero@cornerzero.it" style={{color: '#5CB574'}}>andreazero@cornerzero.it</Link></Typography>
-                    <Typography style={{ color: 'white', fontSize: "14px"  }}>
-                    <FontAwesomeIcon style={{marginRight: "8px"}} icon={faXTwitter}></FontAwesomeIcon>
-                    <Link href="https://twitter.com/Andrea__Zero" target="_blank" style={{color: '#5CB574'}}>@Andrea__Zero</Link></Typography>
-
-                    <Typography style={{ color: 'white', fontSize: "14px"  }}>
-                    <FontAwesomeIcon style={{marginRight: "8px"}} icon={faGithub}></FontAwesomeIcon>
-                        GitHub: <Link href="https://github.com/AndreaZero" target="_blank" style={{color: '#5CB574'}}>AndreaZero</Link></Typography>
-            </div>
-            <Typography variant="h6" style={{ color: 'white', marginTop: "2rem" }}>
+          
+            <Typography variant="h6" style={{ color: 'white'}}>
                 Support my work
                 <FontAwesomeIcon style={{marginLeft: "10px"}} icon={faPaypal}></FontAwesomeIcon>
                 </Typography>
@@ -126,7 +119,7 @@ function Contacts() {
                     <Typography style={{ color: '#5CB574' }}>paypal.me/andreazero</Typography>
                 </Link>
                     </div>
-            </Box>
+
         </Container>
     );
 }
