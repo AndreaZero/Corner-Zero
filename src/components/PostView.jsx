@@ -99,7 +99,7 @@ function PostView() {
 
 
             </Typography>
-    <Card style={{      width: isMobile ? '100%' : '850px', marginTop: "1rem",
+    <Card style={{      width: isMobile ? '100%' : '850px',
     
     
     borderBottom: '1px solid gray',              background: 'rgb(0,0,0)',
@@ -107,7 +107,7 @@ function PostView() {
 
       
       <CardContent>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center',}}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: "1rem",}}>
           <Typography variant="h5" style={{color: '#5CB574'}} component="div">
             {post.title}
           </Typography>
