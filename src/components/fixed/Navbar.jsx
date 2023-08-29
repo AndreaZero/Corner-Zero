@@ -135,12 +135,6 @@ function Navbar() {
               <ListItemText primary="Contact Me" />
             </ListItem>
 
-            {posts.map(post => (
-  <ListItem key={post.id} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/post/${post.id}`}>
-    <ListItemText primary={post.title} />
-  </ListItem>
-))}
-
             <Box style={{
             width: "auto",
             display: 'flex',
@@ -156,6 +150,22 @@ function Navbar() {
             <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
             <a href="https://instagram.com/ZeroTechLab" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
           </Box>
+
+
+          <Box style={{
+               background: 'rgb(0,0,0)',
+               marginTop: "1rem",
+               padding: "10px",
+               color: "#5CB574",
+               background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
+            }}>
+            {posts.map(post => (
+            <ListItem key={post.id} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/post/${post.id}`}>
+              <ListItemText primary={post.title} />   
+            </ListItem>
+          ))}
+          </Box>
+
           </List>
           
         </Drawer>
