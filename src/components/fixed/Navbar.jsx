@@ -92,10 +92,11 @@ function Navbar() {
             <Box>
               <Link style={{ color: "#5CB574" }} to="/admin/dashboard">DASH</Link>
               <Button
-                variant="contained"
+              style={{
+                fontSize: "14px"
+              }}
                 color="secondary"
                 onClick={logout}
-                startIcon={<FontAwesomeIcon icon={faSignOutAlt} />}
               >
                 Logout
               </Button>
@@ -116,6 +117,21 @@ function Navbar() {
           onClose={handleDrawerToggle}
         >
           <List style={{ width: 250, height: "100%",backgroundColor: 'black', borderLeft :"1px solid #5CB574"}}>            <h3 style={{color: 'white', textAlign: "center"}}>Menu Corner</h3>
+          <Box style={{
+            width: "auto",
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: 'center',
+            padding: '5px',
+            gap: "0.4rem",
+            color: "white",
+            marginTop: "0.6rem",
+            borderRadius: "0.3rem"
+          }}>
+            <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
+            <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
+            <a href="https://instagram.com/ZeroTechLab" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
+          </Box>
             <ListItem button key="Home" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/">
             <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faHome}></FontAwesomeIcon>
               <ListItemText style={{}} primary="Home" />
@@ -134,23 +150,6 @@ function Navbar() {
             <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>
               <ListItemText primary="Contact Me" />
             </ListItem>
-
-            <Box style={{
-            width: "auto",
-            display: 'flex',
-            alignItems: "center",
-            justifyContent: 'center',
-            padding: '5px',
-            gap: "0.4rem",
-            color: "white",
-            marginTop: "1.5rem",
-            borderRadius: "0.3rem"
-          }}>
-            <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
-            <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
-            <a href="https://instagram.com/ZeroTechLab" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
-          </Box>
-
 
           <Box style={{
                background: 'rgb(0,0,0)',
