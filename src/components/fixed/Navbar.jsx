@@ -143,7 +143,7 @@ function Navbar() {
             padding: '5px',
             gap: "0.4rem",
             color: "white",
-            marginTop: "3rem",
+            marginTop: "1.5rem",
             borderRadius: "0.3rem"
           }}>
             <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
@@ -161,7 +161,7 @@ function Navbar() {
                background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
             }}>
             {posts.map(post => (
-            <ListItem key={post.id} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/post/${post.id}`}>
+            <ListItem key={post.id} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post.id}`}>
               <ListItemText primary={post.title} />   
             </ListItem>
           ))}
