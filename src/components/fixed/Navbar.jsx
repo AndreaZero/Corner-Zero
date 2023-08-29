@@ -156,6 +156,7 @@ function Navbar() {
                background: 'rgb(0,0,0)',
                marginTop: "1rem",
                padding: "10px",
+               borderRadius: "0.4rem",
                color: "#5CB574",
                background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
             }}>
