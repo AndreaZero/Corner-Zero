@@ -88,7 +88,8 @@ function PostView() {
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginBottom: "1rem"
+                marginBottom: "1rem",
+                marginTop: "1rem"
             }}>
                               <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
 
