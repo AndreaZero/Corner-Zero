@@ -18,6 +18,26 @@ function Homepage() {
   const mobileWidth = 600;
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
+  const [currentText, setCurrentText] = useState('');
+  const fullText = "Explore, learn, imagine, think, dream, live!";
+
+  useEffect(() => {
+    let index = 0;
+
+    const typingInterval = setInterval(() => {
+      setCurrentText(prevText => prevText + fullText[index]);
+      index++;
+
+      if (index > fullText.length - 1) {
+        clearInterval(typingInterval);  // ferma l'intervallo una volta che tutto il testo è stato "digitato"
+      }
+    }, 100);  // velocità di digitazione: 100ms per lettera
+
+    return () => clearInterval(typingInterval);  // pulisci l'intervallo se il componente viene smontato
+  }, []);
+
+
+
   useEffect(() => {
     async function fetchPostCount() {
       try {
@@ -57,11 +77,13 @@ function Homepage() {
 {
   isMobile ? (
     <>
-          <h1>Explore, learn, imagine, think, dream, live!</h1>
+          <h1>{currentText}</h1>
+
     </>
   ) : (
     <>
-          <h1>Explore, learn, imagine, think, dream, live!</h1>
+          <h1>{currentText}</h1>
+
     </>
   )
 }
