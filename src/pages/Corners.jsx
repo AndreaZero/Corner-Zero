@@ -1,41 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useMediaQuery, Select, MenuItem } from '@mui/material'; 
-import corner from "../styles/img/corner.png";
+import { useMediaQuery } from '@mui/material';
 import PostPreview from '../components/PostPreview';
-import { Typography, Input, Button, Box } from '@mui/material';
+import { Typography, Input, Box } from '@mui/material';
+import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
 function Corner() {
     const [posts, setPosts] = useState([]);
-    const [page, setPage] = useState(1);
-    const [order, setOrder] = useState('desc');
-    const [search, setSearch] = useState('');
-    const [postsPerPage, setPostsPerPage] = useState(3);
+    const [search, setSearch] = useState('');  // Query di ricerca
     const mobileWidth = 600;
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
-    const [postCount, setPostCount] = useState(0);
 
-    useEffect(() => {
-        loadPosts();
-    }, [page, order, search, postsPerPage]);
-
-    const loadPosts = async () => {
+    const handleSearch = async () => {
+        if(search.trim() === '') {
+            setPosts([]);
+            return;
+        }
+        
         try {
-            const response = await axios.get(`/api/posts?skip=${(page - 1) * postsPerPage}&limit=${postsPerPage}&order=${order}&search=${search}`);
+            const response = await axios.get(`/api/posts?search=${search}`);
             setPosts(response.data);
         } catch (error) {
             console.error('Error fetching posts:', error);
         }
     };
-
-    const handlePostsPerPageChange = (event) => {
-        setPostsPerPage(event.target.value);
-        setPage(1);  // Reimposta la pagina a 1
-    }
-    
     
 
     useEffect(() => {
@@ -71,7 +60,16 @@ function Corner() {
                     <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
                 </h6>
                 <div style={{display: 'flex', alignItems: "center", gap: '0.5rem', justifyContent: 'center'}}>
-                    <Input style={{padding: "8px", height: "40px", backgroundColor: "white", color: "black"}} placeholder="Type smth.." value={search} onChange={(e) => setSearch(e.target.value)} />
+
+                <Input 
+                style={{padding: "8px", height: "40px", backgroundColor: "white", color: "black"}} 
+                placeholder="Type smth.." 
+                value={search} 
+                onChange={(e) => {
+                    setSearch(e.target.value);
+                    handleSearch();
+                }} 
+            />
                     <Select value={postsPerPage} onChange={handlePostsPerPageChange}>
                         <MenuItem value={3}>3 per page</MenuItem>
                         <MenuItem value={5}>5 per page</MenuItem>
@@ -90,9 +88,9 @@ function Corner() {
                 justifyContent: "center",
                 gap: '2rem',
             }}>
-                {posts.map(post => (
-                    <PostPreview key={post._id} post={post} />
-                ))}
+            {posts.map(post => (
+                <PostPreview key={post._id} post={post} />
+            ))}
                 <div style={{ borderRadius: '0.6rem', justifyContent: "space-between", display: "flex", marginTop: '1rem', alignItems: "center", backgroundColor: "#183D3D",  marginBottom:'1rem', padding: "10px"}}>
                     <Button style={{color: "red"}} disabled={page === 1} onClick={() => setPage(prevPage => prevPage - 1)}>Prev.</Button>
                     <FontAwesomeIcon style={{marginRight: "10px"}} icon={faArrowLeft}></FontAwesomeIcon>
