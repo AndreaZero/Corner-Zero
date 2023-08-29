@@ -44,9 +44,10 @@ function Repos() {
             display: "flex",
             flexDirection: "column",
             gap: "2rem",
+            marginTop: "1rem"
         }}>
   <Typography style={{
-                fontSize: "30px",
+                fontSize: "20px",
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
@@ -56,7 +57,7 @@ function Repos() {
                  - Repos Corner - 
                  <img style={{ width: "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
             </Typography>
-            <Typography style={{ textAlign: 'center', color: 'white' }}>Repos and projects built or worked on.  
+            <Typography style={{ textAlign: 'center', color: 'white', fontSize: "14px" }}>Repos and projects built or worked on.  
             <FontAwesomeIcon style={{marginLeft: "15px"}} icon={faLaptopCode}></FontAwesomeIcon>
             </Typography>
             <div style={{

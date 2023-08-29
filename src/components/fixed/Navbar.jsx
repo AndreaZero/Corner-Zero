@@ -19,6 +19,7 @@ function Navbar() {
           flexDirection: 'column',
           gap: '0.4rem',
           alignItems: 'center',
+          borderBottom: '1px solid grey',
           justifyContent: 'center'
       }} top={0} left={0} right={0} zIndex={1200}>
           <AppBar style={{
