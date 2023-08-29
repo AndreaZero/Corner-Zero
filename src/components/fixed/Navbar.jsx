@@ -155,13 +155,12 @@ function Navbar() {
           <Box style={{
                background: 'rgb(0,0,0)',
                marginTop: "1rem",
-               padding: "10px",
-               borderRadius: "0.4rem",
+               padding: "5px",
                color: "#5CB574",
                background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
             }}>
             {posts.map(post => (
-            <ListItem key={post.id} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post.id}`}>
+            <ListItem key={post.id} post={post} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post._id}`}>
               <ListItemText primary={post.title} />   
             </ListItem>
           ))}
