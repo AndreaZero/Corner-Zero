@@ -19,7 +19,7 @@ function PostPreview({ post }) {
   const truncatedText = plainText.length > 150 ? plainText.substring(0, 150) + "..." : plainText;
 
   return (
-    <Card style={{marginTop: "1rem",       width: isMobile ? '100%' : '850px',
+    <Card style={{marginTop: "1rem",       width: isMobile ? '100%' : '650px',
     background: 'rgb(0,0,0)',
 background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
     
@@ -67,6 +67,7 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
           alignItems: "center",
           borderRadius: 0
         }}>
+          <div style={{display: "flex", justifyContent: 'center', alignItems: "center", gap: '1rem'}}>
            <span style={{
             color: 'grey'
           }}>
@@ -79,6 +80,7 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
              <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon> {post.likes}
             
           </Typography>
+          </div>
           <Button style={{
             backgroundColor: '#183D3D'
           }} size="small" color="primary">

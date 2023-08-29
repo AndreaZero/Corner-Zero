@@ -6,7 +6,7 @@ import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
 import { useMediaQuery } from '@mui/material';
 import { motion, useAnimation } from "framer-motion";
-
+import bannerzero from "../styles/img/banner-zero.png";
 import Footer from '../components/fixed/Footer';
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -75,7 +75,6 @@ function Homepage() {
         display: 'flex',
         flexDirection: "column",
         fontSize: isMobile ? '14px' : undefined // Adatta la larghezza su dispositivi mobili
-
       }}>
 {
   isMobile ? (
@@ -91,10 +90,13 @@ function Homepage() {
   )
 }
 
-
+        <div style={{display: "flex", justifyContent: 'space-between', alignItems: "center"}}>
         <h5>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
           Instant access.</h5>
+
+          <img src={bannerzero} alt='bannerzero' style={{height:  "80px", borderRadius: '0.4rem', objectFit: "contain"}}></img>
+          </div>
       </div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>

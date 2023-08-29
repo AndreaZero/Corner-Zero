@@ -38,7 +38,7 @@ const theme = createTheme({
         root: {
           fontWeight: "bold",
           backgroundColor: 'white',
-          borderRadius: '0.3rem',
+          borderRadius: '0.3rem'
         },
       }
     },

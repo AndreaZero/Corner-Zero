@@ -8,6 +8,7 @@ import emailjs from 'emailjs-com';
 import { useMediaQuery } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
+import Footer from '../components/fixed/Footer';
 
 
 function Contacts() {
@@ -75,7 +76,7 @@ function Contacts() {
                 alignItems: "center",
                 justifyContent: "center"
             }}>
-                <Typography style={{ color: 'white', marginBottom: '1rem', fontSize: "16px" }}>Ask me anything, or reach me for serious requests.</Typography>
+                <Typography style={{ color: '#5cb574', marginBottom: '1rem', fontSize: "16px" }}>Ask me anything, or reach me for serious requests.</Typography>
 
                 <TextField
                     fullWidth
@@ -88,38 +89,21 @@ function Contacts() {
 
                 <TextField
                     style={{
-                        width:" 100%",
+                        width:"100%"
                     }}
                     type='text'
                     multiline
-                    rows={5}
+                    rows={4}
                     placeholder="Type your message.."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />
 
-                <Button style={{ marginTop: '1rem' }} variant="contained" color="primary" onClick={handleSubmit}>
+                <Button style={{ marginTop: '1rem', backgroundColor: '#183D3D', color: "#5cb574", fontWeight: "bolder"}} variant="contained" onClick={handleSubmit}>
                     Send message
                 </Button>
             </Box>
-
-          
-            <Typography variant="h6" style={{ color: 'white'}}>
-                Support my work
-                <FontAwesomeIcon style={{marginLeft: "10px"}} icon={faPaypal}></FontAwesomeIcon>
-                </Typography>
-                <div style={{
-                    display: "flex",
-                    justifyContent: 'center',
-                    gap: "5rem",
-                    alignItems: 'center',
-                    width: "100%",
-                }}>
-                     <Link href="https://paypal.me/andreazero" target="_blank" color="primary">
-                    <Typography style={{ color: '#5CB574' }}>paypal.me/andreazero</Typography>
-                </Link>
-                    </div>
-
+            <Footer />
         </Container>
     );
 }
