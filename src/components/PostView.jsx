@@ -13,7 +13,7 @@ import { useMediaQuery } from '@mui/material';
 
 import { useAuth } from '../context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import SharePost from './fixed/SharePost';
 
 function PostView() {
@@ -112,35 +112,46 @@ function PostView() {
             {post.title}
           </Typography>
           {isAuthenticated && (
-          <Button color="secondary" onClick={deletePost}>Elimina</Button>
+            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
+          <Button style={{color: 'red'}} onClick={deletePost}>Delete</Button>
+          <FontAwesomeIcon style={{color: "red"}} icon={faTrashCan}></FontAwesomeIcon>
+          </div>
           )}
-            <SharePost />
+        </div>
+        <div style={{
+          display: 'flex',
+          color: "#279EFF",
+        }}>
+          
+          <h5>#{post.tags} - </h5>
+          <h5 style={{marginLeft: "5px"}}>
+             {moment(post.createdAt).format('D MMMM YYYY')}
+             <FontAwesomeIcon style={{marginLeft: "5px"}} icon={faClock}></FontAwesomeIcon>
+            </h5>
+          </div>
+          <div style={{
+          display: 'flex',
+          color: "#279EFF",
+          height: "30px",
+          justifyContent: "space-between"
+        }}>
           <Button 
-              style={{backgroundColor: "#183D3D", fontWeight: 'bolder', color: "#5CB574", padding: '10px'}}
+              style={{backgroundColor: "#183D3D", fontSize: "12px", fontWeight: 'bolder', color: "#5CB574"}}
                 onClick={addLike}
                 className={liked ? 'liked' : ''}
                 > 
                 <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}>
                 </FontAwesomeIcon>
                 ({post.likes})
-
               </Button>
-        </div>
-          <div style={{color: '#1976D2',display: 'flex', alignItems: "center", borderBottom: "1px solid grey", padding: "5px"}}>
-          <h5>#{post.tags} -</h5> 
-          <h5 style={{marginLeft: "5px"}}>
-             {moment(post.createdAt).format('D MMMM YYYY')}
-            </h5>
-            <FontAwesomeIcon style={{marginLeft: "5px"}} icon={faClock}></FontAwesomeIcon>
-            </div>
+              <SharePost />
+              </div>
+          <div style={{color: '#1976D2',display: 'flex', alignItems: "center", borderBottom: "1px solid grey", padding: "5px"}}/>
+          
         <Typography style={{marginTop: '2rem',}} component="div" dangerouslySetInnerHTML={{ __html: contentHTML }} />
 
       </CardContent>
-      <div style={{
-        marginTop: "0.4rem",
-        padding: "10px",
-      }}>
-      </div>
+
     </Card>
           <Footer />
           </Container>
