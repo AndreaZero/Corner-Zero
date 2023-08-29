@@ -114,7 +114,7 @@ function PostView() {
           {isAuthenticated && (
           <Button color="secondary" onClick={deletePost}>Elimina</Button>
           )}
-
+            <SharePost />
           <Button 
               style={{backgroundColor: "#183D3D", fontWeight: 'bolder', color: "#5CB574", padding: '10px'}}
                 onClick={addLike}
@@ -134,7 +134,7 @@ function PostView() {
             <FontAwesomeIcon style={{marginLeft: "5px"}} icon={faClock}></FontAwesomeIcon>
             </div>
         <Typography style={{marginTop: '2rem',}} component="div" dangerouslySetInnerHTML={{ __html: contentHTML }} />
-            <SharePost />
+
       </CardContent>
       <div style={{
         marginTop: "0.4rem",

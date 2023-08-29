@@ -12,7 +12,9 @@ const SharePost = () => {
   const url = window.location.href; // Ottieni l'URL della pagina corrente
 
   return (
-    <div>
+    <div style={{
+
+    }}>
       <FacebookShareButton url={url} quote="Guarda questo post!">
         <FacebookIcon size={32} round={false} />
       </FacebookShareButton>
