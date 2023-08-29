@@ -14,12 +14,11 @@ function PostPreview({ post }) {
   const editorState = EditorState.createWithContent(contentFromRaw);
   const mobileWidth = 600;
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
-  // Estrai il testo e troncalo
   const plainText = editorState.getCurrentContent().getPlainText();
   const truncatedText = plainText.length > 150 ? plainText.substring(0, 150) + "..." : plainText;
 
   return (
-    <Card style={{marginTop: "1rem",       width: isMobile ? '100%' : '650px',
+    <Card style={{marginTop: "1rem", width: isMobile ? '100%' : '650px',
     background: 'rgb(0,0,0)',
 background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
     
@@ -67,7 +66,7 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
           alignItems: "center",
           borderRadius: 0
         }}>
-          <div style={{display: "flex", justifyContent: 'center', alignItems: "center", gap: '1rem'}}>
+          <div style={{display: "flex", justifyContent: 'center', alignItems: "center", gap: '1rem', marginTop: "8px"}}>
            <span style={{
             color: 'grey'
           }}>
@@ -82,7 +81,9 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
           </Typography>
           </div>
           <Button style={{
-            backgroundColor: '#183D3D'
+            backgroundColor: '#183D3D',
+            height: '30px',
+            marginTop: "8px"
           }} size="small" color="primary">
             <Link to={`/posts/${post._id}`} style={{textDecoration: 'none', color: "#5CB574"}}>Open</Link>
           </Button>

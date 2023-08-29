@@ -4,8 +4,7 @@ import { useMediaQuery } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import PostPreview from '../components/PostPreview';
 import { Typography, Select, Input, Button, Box } from '@mui/material';
-import icon from "../styles/img/icon.png";
-import iconright from "../styles/img/iconright.png";
+import cornerright from "../styles/img/cornerright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faArrowLeft, faEnvelope, faHandPointLeft, faHandPointRight, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
@@ -47,15 +46,16 @@ function Corner() {
 
     return (
         <div style={{ width: isMobile ? '340px' : undefined, alignItems: "center", marginTop: "1rem" }}>
-            <Typography style={{
-                fontSize: isMobile ? "18px" : '30px',
+  <Typography style={{
+                fontSize: "20px",
                 color: "white",
                 fontWeight: 'bolder',
-                textAlign: "center"
+                textAlign: "center",
+                marginBottom: "1rem"
             }}>
-                 <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={iconright} alt='icon'></img>
+                 <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
                  - Around the corner -
-                <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={icon} alt='icon'></img>
+                <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
 
             </Typography>
 

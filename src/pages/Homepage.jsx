@@ -11,7 +11,7 @@ import Footer from '../components/fixed/Footer';
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
-import { fontSize } from '@mui/system';
+import { display, fontSize } from '@mui/system';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -22,7 +22,7 @@ function Homepage() {
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
   const [currentText, setCurrentText] = useState('');
-  const fullText = "Explore, learn, imagine, think, dream, live!";
+  const fullText = "Explore, learn, dream, live!";
 
   useEffect(() => {
     let index = 0;
@@ -94,8 +94,9 @@ function Homepage() {
         <h5>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
           Instant access.</h5>
-
-          <img src={bannerzero} alt='bannerzero' style={{height:  "80px", borderRadius: '0.4rem', objectFit: "contain"}}></img>
+          {!isMobile && ( 
+          <img src={bannerzero} alt='bannerzero' style={{height: "80px", borderRadius: '0.4rem', objectFit: "contain"}}></img>
+          )}
           </div>
       </div>
 
