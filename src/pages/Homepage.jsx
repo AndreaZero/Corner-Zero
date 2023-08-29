@@ -62,7 +62,6 @@ function Homepage() {
   ) : (
     <>
           <h1>Explore, learn, imagine, think, dream, live!</h1>
-
     </>
   )
 }
