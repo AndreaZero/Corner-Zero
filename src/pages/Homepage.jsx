@@ -94,7 +94,7 @@ function Homepage() {
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
           Instant access.</h5>
           {!isMobile && ( 
-          <img src={bannerzero} alt='bannerzero' style={{height: "80px", borderRadius: '0.4rem', objectFit: "contain"}}></img>
+          <img src={bannerzero} alt='bannerzero' style={{height: "80px", objectFit: "contain"}}></img>
           )}
           </div>
       </div>
