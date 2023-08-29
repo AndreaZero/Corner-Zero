@@ -46,7 +46,7 @@ function Corner() {
     }, []);
 
     return (
-        <div style={{ width: isMobile ? '340px' : undefined, alignItems: "center" }}>
+        <div style={{ width: isMobile ? '340px' : undefined, alignItems: "center", marginTop: "1rem" }}>
             <Typography style={{
                 fontSize: isMobile ? "18px" : '30px',
                 color: "white",
@@ -65,9 +65,8 @@ function Corner() {
             Corners: {postCount}
             </h6>
                 <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
-                <FontAwesomeIcon style={{marginRight : '20px'}} icon={faHandPointRight}></FontAwesomeIcon>
-                <Input placeholder="Find the corner.." value={search} onChange={(e) => setSearch(e.target.value)} />
-                <FontAwesomeIcon style={{marginLeft : '20px'}} icon={faHandPointLeft}></FontAwesomeIcon>
+                                    <Input placeholder="Find the corner.." value={search} onChange={(e) => setSearch(e.target.value)} />
+                <FontAwesomeIcon style={{marginLeft : '8px'}} icon={faHandPointLeft}></FontAwesomeIcon>
 
                </div>
             </div>
