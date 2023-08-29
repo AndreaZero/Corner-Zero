@@ -5,6 +5,7 @@ import cornerright from "../styles/img/cornerright.png";
 import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
 import { useMediaQuery } from '@mui/material';
+import { motion, useAnimation } from "framer-motion";
 
 import Footer from '../components/fixed/Footer';
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
@@ -16,6 +17,8 @@ function Homepage() {
   const [postCount, setPostCount] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const mobileWidth = 600;
+  const controls = useAnimation();
+
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
   const [currentText, setCurrentText] = useState('');
@@ -96,7 +99,7 @@ function Homepage() {
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
         <h6>
-          <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>  &lt; Corners: {postCount} &gt;
+          <img style={{ width: "15px", objectFit: 'contain' }} src={corner}></img>- Corners: {postCount}
         </h6>
         <h6>
           Time: {currentTime.toLocaleTimeString()} -
