@@ -5,6 +5,7 @@ import { useMediaQuery } from '@mui/material';
 import PostPreview from '../components/PostPreview';
 import { Typography, Select, Input, Button, Box } from '@mui/material';
 import icon from "../styles/img/icon.png";
+import iconright from "../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faArrowLeft, faEnvelope, faHandPointLeft, faHandPointRight, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
@@ -52,16 +53,17 @@ function Corner() {
                 fontWeight: 'bolder',
                 textAlign: "center"
             }}>
+                 <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={iconright} alt='icon'></img>
                 Around the corner -
                 <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={icon} alt='icon'></img>
 
             </Typography>
 
             {/* Filtri e ricerca */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: "1rem", borderRadius: "0.5rem" }}>
-            <h6>
-  Total Corners: {postCount}
-</h6>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", marginTop: "1rem", borderRadius: "0.5rem" }}>
+             <h6>
+            Corners: {postCount}
+            </h6>
                 <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
                 <FontAwesomeIcon style={{marginRight : '20px'}} icon={faHandPointRight}></FontAwesomeIcon>
                 <Input placeholder="Find the corner.." value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -70,8 +72,8 @@ function Corner() {
                </div>
                 <Button style={{
                     backgroundColor: '#183D3D',
-                    padding: "10px",
                     color: "#5CB574",
+                    height: '35px',
                     fontWeight: 'bolder'
                 }} onClick={() => setPage(1)}>Search
                 <FontAwesomeIcon style={{marginLeft : '10px'}} icon={faMagnifyingGlass}></FontAwesomeIcon>

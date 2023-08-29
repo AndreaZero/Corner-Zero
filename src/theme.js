@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-
 const theme = createTheme({
   typography: {
     fontFamily: 'Roboto Mono, monospace',
@@ -23,7 +22,7 @@ const theme = createTheme({
     MuiInput: {
       styleOverrides: {
         root: {
-          width: "300px",
+          width: "200px",
         }
       }
     },
@@ -40,7 +39,8 @@ const theme = createTheme({
           fontWeight: "bold",
           backgroundColor: 'white',
           borderRadius: '0.3rem',
-          padding: '10px'
+          padding: '10px',
+          height: "10px"
         },
       }
     },
