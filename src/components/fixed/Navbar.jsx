@@ -152,7 +152,7 @@ function Navbar() {
               <ListItemText primary="Contact Me" />
             </ListItem>
 
-            <h3 style={{color: 'white', textAlign: "center"}}>What's New?</h3>
+            <h3 style={{color: '#5CB574', textAlign: "center"}}>What's New?</h3>
 
           <Box style={{
                background: 'rgb(0,0,0)',
