@@ -25,39 +25,36 @@ function LoginPage() {
       const token = response.data.token;
       localStorage.setItem('authToken', token);
       
-      // Aggiorna il contesto per riflettere l'autenticazione
       setIsAuthenticated(true);
       
       navigate('/admin/dashboard');
     } catch (error) {
-      // Gestisci gli errori (ad esempio, mostra un messaggio all'utente)
       console.error("Errore durante il login:", error.response.data.error);
     }
   };
 
   return (
-    <Container style={{
-      marginTop: "3rem",
-      backgroundColor: '#183D3D',
-      padding: "20px",
-      color: "white",
-      borderRadius: "1rem"
-    }}>
-            <Typography variant="h4" gutterBottom>Admin Panel - Corner Zero</Typography>
-
-      <Typography variant="h6" gutterBottom>Login</Typography>
-      <form onSubmit={handleSubmit}>
-        <Box mb={3}>
-          <TextField
-            fullWidth
-            label="Username"
-            variant="outlined"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Box>
-        <Box mb={3}>
-          <TextField
+        <Container style={{
+          marginTop: "3rem",
+          backgroundColor: '#183D3D',
+          padding: "20px",
+          color: "white",
+          borderRadius: "1rem"
+        }}>
+        <Typography variant="h4" gutterBottom>Admin Panel - Corner Zero</Typography>
+        <Typography variant="h6" gutterBottom>Login</Typography>
+        <form onSubmit={handleSubmit}>
+          <Box mb={3}>
+            <TextField
+              fullWidth
+              label="Username"
+              variant="outlined"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </Box>
+          <Box mb={3}>
+            <TextField
             fullWidth
             type="password"
             label="Password"

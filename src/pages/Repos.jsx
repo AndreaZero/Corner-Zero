@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { Container, Typography, Grid, Card, CardContent, CardMedia} from '@mui/material';
+import { Container, Typography, Grid, Card, CardContent} from '@mui/material';
 import repos from '../data/repos';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLink, faImage, faLaptopCode, faMessage, faToolbox, faTools} from "@fortawesome/free-solid-svg-icons";
+import { faExternalLink, faImage, faLaptopCode, faTools} from "@fortawesome/free-solid-svg-icons";
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import { faGithub }  from '@fortawesome/free-brands-svg-icons';
@@ -36,7 +36,7 @@ const getToolIcon = (tool) => {
         case 'MongoDB':
                 return <img style={{width: '25px', objectFit: 'contain'}} src={MongoDB} alt='vite'></img>
         default:
-            return null;  // o un'icona di default se lo preferisci
+            return null;
     }
 }
 
@@ -94,7 +94,7 @@ function Repos() {
                                         </div>
                                 <FontAwesomeIcon
                                 icon={faImage}
-                                onClick={() => handleOpen(repo.screen[0])}  // aggiungi questa riga
+                                onClick={() => handleOpen(repo.screen[0])}
                             >
                             </FontAwesomeIcon>
                                 </Typography>

@@ -25,7 +25,6 @@ function CreatePost() {
         const rawContent = convertToRaw(editorState.getCurrentContent());
         const content = JSON.stringify(rawContent);
 
-        // Assuming that your backend expects the title and content as a part of the request body
         const payload = {
             title,
             content,
@@ -33,7 +32,7 @@ function CreatePost() {
         };
 
         try {
-            const response = await axios.post('/api/posts', payload);  // Assumi l'endpoint corretto per creare un post
+            const response = await axios.post('/api/posts', payload);
             if (response.status === 201) {
                 console.log('Post created successfully:', response.data);
             }

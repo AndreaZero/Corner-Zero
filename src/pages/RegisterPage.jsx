@@ -16,9 +16,7 @@ function RegisterPage() {
   
       const token = response.data.token;
       localStorage.setItem('authToken', token);
-      // Puoi reindirizzare l'utente alla homepage o mostrare un messaggio di successo
     } catch (error) {
-      // Gestisci gli errori (ad esempio, mostra un messaggio all'utente)
       console.error("Errore durante la registrazione:", error.response.data.error);
     }
   };

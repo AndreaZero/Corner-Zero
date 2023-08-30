@@ -14,7 +14,6 @@ function Contacts() {
 
     const handleSubmit = async () => {
         try {
-            // I dettagli del servizio, del template e dell'utente si possono trovare nella dashboard di EmailJS
             const SERVICE_ID = 'CZERO';
             const TEMPLATE_ID = 'template_xgpvxdj';
             const USER_ID = 'gU_RtDsXhi0IJk2xL';
@@ -28,7 +27,6 @@ function Contacts() {
     
             if (response.text === "OK") {
                 alert('Thanks for message me.');
-                // Resetta il modulo
                 setEmail('');
                 setMessage('');
             } else {
@@ -48,7 +46,7 @@ function Contacts() {
             width: isMobile ?  'auto' : undefined
         }}>
  <Typography style={{
-                fontSize: isMobile ? '20px' : '30px',  // Adatta la larghezza su dispositivi mobili
+                fontSize: isMobile ? '20px' : '30px',
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "right",

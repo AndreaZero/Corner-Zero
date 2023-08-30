@@ -15,7 +15,7 @@ function Navbar() {
   const theme = useTheme();
   const [posts, setPosts] = useState([]);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const [open, setOpen] = React.useState(false);  // Stato per il drawer
+  const [open, setOpen] = React.useState(false); 
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -27,7 +27,7 @@ function Navbar() {
       try {
         const response = await axios.get('/api/posts');
         if (response.data && response.data.length > 0) {
-          setPosts(response.data.slice(0, 3)); // Prende i primi 3 post
+          setPosts(response.data.slice(0, 3));
         } else {
           setPosts([]);
         }
@@ -67,10 +67,10 @@ function Navbar() {
           </a>
 
           <Hidden smDown> 
-            <Link style={{ color: '#5CB574' }} to='/'>Home</Link>
-            <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link>
-            <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link>
-            <Link style={{ color: '#5CB574' }} to='/contacts'>Contact Me</Link>
+            | <Link style={{ color: '#5CB574' }} to='/'>Home</Link> - 
+            <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link> - 
+            <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> - 
+            <Link style={{ color: '#5CB574' }} to='/contacts'>Contact Me</Link> |
           </Hidden>
 
           <Box style={{
