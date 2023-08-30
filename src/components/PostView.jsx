@@ -15,6 +15,7 @@ import { useAuth } from '../context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import SharePost from './fixed/SharePost';
+import { borderBottom } from '@mui/system';
 
 function PostView() {
   const [post, setPost] = useState(null);
@@ -92,7 +93,8 @@ function PostView() {
                 fontWeight: 'bolder',
                 textAlign: "center",
                 marginBottom: "1rem",
-                marginTop: "2rem"
+                marginTop: "2rem",
+                borderBottom: "1px solid #5cb574"
             }}>
                               <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
 
@@ -105,7 +107,7 @@ function PostView() {
     <Card style={{      width: isMobile ? '100%' : '100%',
     borderBottom: '1px solid gray',              
     background: 'rgb(0,0,0)',
-    background: 'linear-gradient(90deg, rgba(0,0,0,1) 32%, rgba(56,56,56,0.8820320364473915) 100%)',}}>
+    background: 'linear-gradient(180deg, rgba(0,0,0,1) 32%, rgba(56,56,56,0.8820320364473915) 100%)',}}>
 
       
       <CardContent>
