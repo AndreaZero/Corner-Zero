@@ -106,7 +106,7 @@ function PostView() {
 
 
             </Typography>
-    <Card style={{      width: isMobile ? '100%' : '100%', width: isTablet ? '100%' : '100%',
+    <Card style={{      width: isMobile ? '100%' : '100%',
     borderBottom: '1px solid gray',              
     background: 'rgb(0,0,0)',
     background: 'linear-gradient(180deg, rgba(0,0,0,1) 32%, rgba(56,56,56,0.8820320364473915) 100%)',}}>
