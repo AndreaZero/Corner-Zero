@@ -45,6 +45,14 @@ function Repos() {
     const [open, setOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
 
+    React.useEffect(() => {
+        document.title = "CornerZero - Repos";
+        return () => {
+          // Reimposta il titolo quando il componente viene smontato
+          document.title = "CornerZero - Homepage";
+        };
+      }, []);
+
     const handleOpen = (imageSrc) => {
         setSelectedImage(imageSrc);
         setOpen(true);

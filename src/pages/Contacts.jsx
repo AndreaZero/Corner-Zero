@@ -12,6 +12,14 @@ function Contacts() {
     const mobileWidth = 600;
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
+    React.useEffect(() => {
+        document.title = "CornerZero - Contact";
+        return () => {
+          // Reimposta il titolo quando il componente viene smontato
+          document.title = "CornerZero - Homepage";
+        };
+      }, []);
+
     const handleSubmit = async () => {
         try {
             const SERVICE_ID = 'CZERO';

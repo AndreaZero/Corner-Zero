@@ -11,6 +11,14 @@ function LoginPage() {
   const [username, setUsername] = useState(''); 
   const { isAuthenticated, setIsAuthenticated } = useAuth(); 
 
+  React.useEffect(() => {
+    document.title = "CornerZero - Admin Login";
+    return () => {
+      // Reimposta il titolo quando il componente viene smontato
+      document.title = "CornerZero - Homepage";
+    };
+  }, []);
+
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {

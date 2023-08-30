@@ -5,6 +5,14 @@ function RegisterPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  React.useEffect(() => {
+    document.title = "CornerZero - Admin Register";
+    return () => {
+      // Reimposta il titolo quando il componente viene smontato
+      document.title = "CornerZero - Homepage";
+    };
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   

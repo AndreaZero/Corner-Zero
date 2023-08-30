@@ -15,6 +15,14 @@ function Corner() {
     const mobileWidth = 600;
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
+    React.useEffect(() => {
+        document.title = "CornerZero - Corners";
+        return () => {
+          // Reimposta il titolo quando il componente viene smontato
+          document.title = "CornerZero - Homepage";
+        };
+      }, []);
+
     useEffect(() => {
         loadPosts();
     }, [order, search]);

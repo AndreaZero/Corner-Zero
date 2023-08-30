@@ -8,6 +8,14 @@ import { faWarning} from '@fortawesome/free-solid-svg-icons';
 function Dashboard() {
     const { isAuthenticated, logout } = useAuth();
 
+    React.useEffect(() => {
+        document.title = "CornerZero - Admin DASH";
+        return () => {
+          // Reimposta il titolo quando il componente viene smontato
+          document.title = "CornerZero - Homepage";
+        };
+      }, []);
+
     if (!isAuthenticated) {
         return (
             <div style={{
