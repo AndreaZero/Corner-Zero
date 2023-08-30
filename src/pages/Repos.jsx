@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, Typography, Grid, Card, CardContent, CardMedia} from '@mui/material';
 import repos from '../data/repos';
+import { Dialog, DialogContent, DialogTitle } from '@mui/material';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode} from "@fortawesome/free-solid-svg-icons";
+import { faExternalLink, faImage, faLaptopCode, faMessage, faToolbox, faTools} from "@fortawesome/free-solid-svg-icons";
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import { faGithub }  from '@fortawesome/free-brands-svg-icons';
@@ -30,9 +32,9 @@ const getToolIcon = (tool) => {
                     return <FaNpm />;
         
         case 'Vite':
-            return <img style={{width: '32px', objectFit: 'contain'}} src={Vite} alt='vite'></img>;
+            return <img style={{width: '25px', objectFit: 'contain'}} src={Vite} alt='vite'></img>;
         case 'MongoDB':
-                return <img style={{width: '32px', objectFit: 'contain'}} src={MongoDB} alt='vite'></img>
+                return <img style={{width: '25px', objectFit: 'contain'}} src={MongoDB} alt='vite'></img>
         default:
             return null;  // o un'icona di default se lo preferisci
     }
@@ -40,6 +42,19 @@ const getToolIcon = (tool) => {
 
 
 function Repos() {
+    const [open, setOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState('');
+
+    const handleOpen = (imageSrc) => {
+        setSelectedImage(imageSrc);
+        setOpen(true);
+    };
+    
+    const handleClose = () => {
+        setOpen(false);
+    };
+    
+
     return (
         <Container style={{
             display: "flex",
@@ -47,12 +62,12 @@ function Repos() {
             gap: "2rem",
             marginTop: "1rem"
         }}>
-  <Typography style={{
+                <Typography style={{
                 fontSize: "20px",
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginBottom: "1rem"
+
             }}>
               <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
                  - Repos Corner - 
@@ -62,39 +77,46 @@ function Repos() {
             <FontAwesomeIcon style={{marginLeft: "15px"}} icon={faLaptopCode}></FontAwesomeIcon>
             </Typography>
             <div style={{
-                border: "1px solid #5BB272"
+                border: "1px solid #5CB574"
             }}></div>
-            <Grid container spacing={3}>
+            <Grid container spacing={2}>
                 {repos.map((repo) => (
                     <Grid item xs={12} md={4} key={repo.id}>
-<Card style={{ backgroundColor: '#183D3D', height: '450px', overflow: 'hidden' }}>
-                            <CardContent>
-                                <Typography variant="h5" style={{ color: 'white' }}>{repo.title}
+<Card style={{ backgroundColor: '#183D3D', height: 'auto', overflow: 'hidden', padding: "10px" }}>
+                            <CardContent style={{
+                                padding: "5px"
+                            }}>
+
+                                <Typography style={{ color: 'white', alignItems: "center", display: "flex", justifyContent: "space-between"}}>
+                                    <div style={{display: 'flex', alignItems: "center"}}>
+                                    <img style={{ width: "30px", objectFit: 'contain' }} alt='corner' src={corner}></img>
+                                    - {repo.title}
+                                        </div>
+                                <FontAwesomeIcon
+                                icon={faImage}
+                                onClick={() => handleOpen(repo.screen[0])}  // aggiungi questa riga
+                            >
+                            </FontAwesomeIcon>
                                 </Typography>
+                                
                                 <Card style={{
                                     backgroundColor: '#0E0E0E',
-                                    marginTop: "0.5rem",
-                                    marginBottom: "1rem",
-                                    padding: "10px"
+                                    padding: "8px",
+                                    marginTop: "0.5rem"
                                 }}>
-                                <Typography style={{ color: 'white', marginBottom: '1rem', fontSize: '14px' }}>{repo.description}</Typography>
+                                <Typography style={{ color: 'white', marginBottom: '1rem', fontSize: '12px', padding: "5px" }}>{repo.description}</Typography>
+                               
                                 </Card>
-                                {repo.screen.slice(0, 3).map((imgSrc, idx) => (
-            <CardMedia
-                key={idx}
-                component="img"
-                image={imgSrc}
-                alt={`${repo.title} - image ${idx}`}
-                style={{ width: '50%', objectFit: 'contain', borderRadius: '0.4rem', marginBottom: "1rem"}}
-            />
-        ))}
+                                <h5 style={{color: "#5CB574", textAlign: "center"}}>DEV Tools
+                                <FontAwesomeIcon style={{marginLeft: '8px'}} icon={faTools}></FontAwesomeIcon>
+                                </h5>
                                 <div style={{
                                     display: "flex",
-                                    gap: "3rem",
                                     color:"white",
                                     alignItems: "center",
-                                    justifyContent:"center",
-                                    fontSize: "30px"
+                                    justifyContent: "center",
+                                    gap: '25px',
+                                    fontSize: "20px"
                                 }}>
                                 {repo.toolsUsed.map(tool => (
                                     <span style={{
@@ -107,23 +129,45 @@ function Repos() {
                                 <div style={{
                                     display:'flex',
                                     alignItems: "center",
-                                    justifyContent:"center",
+                                    justifyContent: 'space-between',
+                                    borderTop: "1px solid grey",
                                 }}>
-                                    <a style={{textDecoration:"none", color: '#5CB574', fontWeight: "bold"}} href={repo.link}>
-                                    Github Repository
-                                    </a>
+                                    <a style={{textDecoration:"none", color: '#5CB574', fontWeight: "bold", marginTop: "0.6rem"}} href={repo.github}>
+                                    Github
                                     <FontAwesomeIcon style={{
-                                    marginLeft: "10px"
+                                    marginLeft: "10px", color: 'white'
                                 }} icon={faGithub}></FontAwesomeIcon>
-</div>
-
+                                    </a>
+                                    <a style={{textDecoration:"none", color: '#279EFF', fontWeight: "bold", marginTop: "0.6rem"}} href={repo.link}>
+                                    Visit
+                                    <FontAwesomeIcon style={{
+                                    marginLeft: "10px", color: 'white'
+                                }} icon={faExternalLink}></FontAwesomeIcon>
+                                    </a>
+                                    </div>
                                 </Typography>
                             </CardContent>
                         </Card>
+                        <Dialog open={open} onClose={handleClose}>
+    <DialogTitle style={{ height: "40px" ,display: "flex", fontSize: '14px', borderBottom: "1px solid gray", justifyContent: "space-between", alignItems: "center", fontWeight: 'bold', backgroundColor: '#183D3D', color: '#5CB574'}}>{`${repo.title}`}
+    
+<FontAwesomeIcon style={{marginLeft: "10px"}} icon={faImage}></FontAwesomeIcon>
+
+
+
+    </DialogTitle>
+    <DialogContent style={{
+        backgroundColor: 'black', 
+    }}>
+        <img src={selectedImage} alt="Preview" style={{ marginTop: "1rem", width: '100%', height: 'auto', borderRadius: "0.4rem" }} />
+    </DialogContent>
+</Dialog>
                     </Grid>
+                    
                 ))}
             </Grid>
             <Footer />
+
         </Container>
     );
 }
