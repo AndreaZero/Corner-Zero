@@ -85,7 +85,7 @@ function PostView() {
   const contentHTML = stateToHTML(editorState.getCurrentContent());
 
   return (
-    <Container style={{width: "100%"}}>
+    <Container style={{width: "100%", alignItems: "center", justifyContent: "center"}}>
                         <Typography style={{
                 fontSize: isMobile ? '15px' : '30px',  // Adatta la larghezza su dispositivi mobili
                 color: "white",
