@@ -56,7 +56,7 @@ function Navbar() {
       }} position="static">
         <Toolbar style={{
           display: 'flex',
-          gap: "2rem",
+          gap: "1rem",
           justifyContent: "space-between"
         }}>
           <a href='/'>
