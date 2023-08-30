@@ -53,10 +53,6 @@ const SharePost = () => {
           <FacebookIcon style={{ borderRadius: "0.3rem" }} size={24} round={false} />
         </FacebookShareButton>
 
-        <FacebookMessengerShareButton url={url} title="CornerZero.eu - Read this corner!">
-          <FacebookMessengerIcon style={{ borderRadius: "0.3rem" }} size={24} round={false} />
-        </FacebookMessengerShareButton>
-
         <WhatsappShareButton url={url} title="CornerZero.eu - Read this corner!">
           <WhatsappIcon style={{ borderRadius: "0.3rem" }}  size={24} round={false} />
         </WhatsappShareButton>
