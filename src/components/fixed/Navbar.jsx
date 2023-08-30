@@ -10,17 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
   const theme = useTheme();
-  const tabletWidth = 820;
   const [posts, setPosts] = useState([]);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = React.useState(false); 
-  const isTablet = useMediaQuery(`(max-width: ${tabletWidth}px)`);     
-
-
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -121,7 +116,7 @@ function Navbar() {
           open={open}
           onClose={handleDrawerToggle}
         >
-          <List style={{ width: isTablet ? '150px' : '250px', height: "100%",backgroundColor: 'black', borderLeft :"1px solid #5CB574"}}>
+          <List style={{ width: 250, height: "100%",backgroundColor: 'black', borderLeft :"1px solid #5CB574"}}>
           <h3 style={{color: 'white', textAlign: "center"}}>Menu Corner</h3>
           <Box style={{
             width: "auto",
