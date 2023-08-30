@@ -144,8 +144,8 @@ function PostView() {
 > 
     <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}></FontAwesomeIcon>
     ({post.likes})
-    {liked === 'Already liked!' && <span style={{ marginLeft: '10px', color: 'red' }}>{liked}</span>}
-    {liked === 'Liked :)' && <span style={{ marginLeft: '10px', color: 'green' }}>{liked}</span>}
+    <h6 style={{fontSize: '12px'}}>{liked === 'Already liked!' && <span style={{ marginLeft: '10px', color: 'red' }}>{liked}</span>}</h6>
+    <h6 style={{fontSize: '12px'}}>{liked === 'Liked :)' && <span style={{ marginLeft: '10px', color: 'green' }}>{liked}</span>}</h6>
 </Button>
 
 
