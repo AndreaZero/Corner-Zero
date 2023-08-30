@@ -20,7 +20,9 @@ import { borderBottom } from '@mui/system';
 function PostView() {
   const [post, setPost] = useState(null);
   const mobileWidth = 600;
+  const tabletWidth = 820;
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
+  const isTablet = useMediaQuery(`(max-width: ${tabletWidth}px)`);           
   const { id } = useParams();
   const navigate = useNavigate();
   const [liked, setLiked] = useState(null);
@@ -104,7 +106,7 @@ function PostView() {
 
 
             </Typography>
-    <Card style={{      width: isMobile ? '100%' : '100%',
+    <Card style={{      width: isMobile ? '100%' : '100%', width: isTablet ? '100%' : '100%',
     borderBottom: '1px solid gray',              
     background: 'rgb(0,0,0)',
     background: 'linear-gradient(180deg, rgba(0,0,0,1) 32%, rgba(56,56,56,0.8820320364473915) 100%)',}}>
