@@ -112,7 +112,7 @@ function PostView() {
           <Typography variant="h5" style={{color: '#5CB574'}} component="div">
             {post.title}
           </Typography>
-          <img src={bannerzero} style={{height: '20px', objectFit: "auto"}} alt='bannerzero'></img>
+          <img src={bannerzero} style={{height: '60px', objectFit: "auto"}} alt='bannerzero'></img>
           {isAuthenticated && (
             <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
           <Button style={{color: 'red'}} onClick={deletePost}>Delete</Button>
