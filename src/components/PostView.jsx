@@ -93,7 +93,7 @@ function PostView() {
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                borderBottom: "1px solid #5cb574"
+                marginTop: "1rem",
             }}>
                               <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
 
@@ -103,6 +103,8 @@ function PostView() {
 
 
             </Typography>
+<div style={{borderBottom: "1px solid #5cb574"}}></div>
+
     <Card style={{      width: isMobile ? '100%' : isTablet ? '800px' : '100%',
     borderBottom: '1px solid gray',              
     background: 'rgb(0,0,0)',
