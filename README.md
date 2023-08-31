@@ -2,7 +2,7 @@
 
 ![CornerZero Banner](https://i.postimg.cc/MK2LV9rz/meta.png)
 
-Welcome to the repository of **CornerZero**. 
+Welcome to the repository of **CornerZero**.  [CLIENT]
 
 ## Overview 🌍
 
@@ -56,8 +56,8 @@ Ensure you have the following installed on your system:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your_username/CornerZero.git
-   cd CornerZero
+   git clone https://github.com/AndreaZero/Corner-Zero.git
+   cd Corner-Zero
 
 
 2. **Installing Dependencies**:
