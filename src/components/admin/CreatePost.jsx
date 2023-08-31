@@ -5,7 +5,7 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Button, Box, TextField, Container } from '@mui/material';
 import axios from 'axios';
 import '../../styles/components/EditorStyles.css';
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
