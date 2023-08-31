@@ -4,6 +4,8 @@ import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { TextField, useMediaQuery } from '@mui/material';
 import { motion, useAnimation } from "framer-motion";
 import bannerzero from "../styles/img/banner-zero.png";
@@ -71,18 +73,26 @@ function Homepage() {
   const handleEmailSubmission = async () => {
     if (userEmail) {
       try {
-        await axios.post('/api/newsletter/subscribe', { email: userEmail });
-        alert('Thank you for subscribing!');
-        setShowEmailInput(false);
-        setUserEmail('');
+        const response = await axios.post('/api/newsletter/subscribe', { email: userEmail });
+        
+        // Controllo se l'utente è già iscritto
+        if (response.data === 'Already subscribed') {
+          toast.error('You are already subscribed!');
+        } else {
+          toast.success('Thank you for subscribing!');
+          setShowEmailInput(false);
+          setUserEmail('');
+        }
+        
       } catch (error) {
         console.error('Error subscribing to the newsletter:', error);
-        alert('There was an error. Please try again later.');
+        toast.error('There was an error. Please try again later.');
       }
     } else {
-      alert('Please enter a valid email.');
+      toast.warn('Please enter a valid email.');
     }
   };
+  
   
 
   return (
@@ -156,6 +166,7 @@ function Homepage() {
       </Button>
     </div>
   )}
+  <ToastContainer />
 
   
 </div>
