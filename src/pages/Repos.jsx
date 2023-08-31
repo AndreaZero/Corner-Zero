@@ -75,7 +75,6 @@ function Repos() {
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-
             }}>
               <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
                  - Repos Corner - 

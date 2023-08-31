@@ -52,15 +52,16 @@ function Contacts() {
             gap: "1rem",
             width: isMobile ?  'auto' : undefined
         }}>
- <Typography style={{
-                fontSize: isMobile ? '20px' : '30px',
+                <Typography style={{
+                fontSize: "20px",
                 color: "white",
                 fontWeight: 'bolder',
-                textAlign: "right",
-                marginTop: "1rem"
+                textAlign: "center",
             }}>
-                 Contact Corner - 
-                 <img style={{ width: "40px", 
+                              <img style={{ width: isMobile ? "25px" : "40px",  
+                 objectFit: 'contain' }} src={cornerright} alt='icon'></img>
+                - Contact Corner - 
+              <img style={{ width: isMobile ? "25px" : "40px",  
                  objectFit: 'contain' }} src={cornerright} alt='icon'></img>
 
 
