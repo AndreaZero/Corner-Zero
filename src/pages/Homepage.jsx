@@ -127,11 +127,15 @@ function Homepage() {
         </h6>
         <div style={{ display: 'flex', alignItems: 'center' }}>
   {!showEmailInput ? (
-    <h6 style={{textDecoration: 'underline', cursor: 'pointer'}}
+          <Button style={{
+            backgroundColor: '#183D3D',
+            height: '30px',
+            marginTop: "8px"
+          }} size="small" color="primary"
       onClick={() => setShowEmailInput(true)}
     >
       Join the Corner!
-    </h6>
+    </Button>
   ) : (
     <div style={{ display: 'flex', alignItems: 'center' }}> 
       <input 
