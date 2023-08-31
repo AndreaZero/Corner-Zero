@@ -6,7 +6,6 @@ import PostPreview from '../components/PostPreview';
 import Footer from "../components/fixed/Footer";
 import { Typography, Input, Box } from '@mui/material';
 import cornerright from "../styles/img/cornerright.png";
-import bannerzero from "../styles/img/banner-zero.png";
 
 function Corner() {
     const [posts, setPosts] = useState([]);
@@ -52,28 +51,17 @@ function Corner() {
 
     return (
         <div style={{ width: isMobile ? '340px' : undefined, alignItems: "center", marginTop: "1rem" }}>
-            <div style={{
-        display: 'flex',
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}>
-                <Typography style={{
-                fontSize: '20px',
+            <Typography style={{
+                fontSize: "20px",
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginTop: "1rem",
+                marginBottom: "1rem"
             }}>
-          <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
-                 - Arount the Corner 
+                <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon' />
+                - Around the corner -
+                <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon' />
             </Typography>
-            <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
-      </div>
-          {isMobile && (
-          <center>
-          <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
-          </center>
-          )}
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", marginTop: "1rem", borderRadius: "0.5rem" }}>
                 <h6>
