@@ -69,7 +69,7 @@ function PostView() {
             }));
             
             localStorage.setItem(`liked-${id}`, 'true');
-            setLiked('Liked!');
+            setLiked('Liked :)');
         }
     } catch (error) {
         if (error.response && error.response.data.error) {
@@ -143,12 +143,12 @@ function PostView() {
         <Button 
     style={{backgroundColor: "#183D3D", fontSize: "12px", fontWeight: 'bolder', color: "#5CB574"}}
     onClick={addLike}
-    className={liked === 'Liked!' ? 'liked' : ''}
+    className={liked === 'Liked :)' ? 'liked' : ''}
 > 
     <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}></FontAwesomeIcon>
     ({post.likes})
     <h6 style={{fontSize: '12px'}}>{liked === 'Liked!' && <span style={{ marginLeft: '10px', color: 'red' }}>{liked}</span>}</h6>
-    <h6 style={{fontSize: '12px'}}>{liked === 'Liked!' && <span style={{ marginLeft: '10px', color: 'green' }}>{liked}</span>}</h6>
+    <h6 style={{fontSize: '12px'}}>{liked === 'Liked :)' && <span style={{ marginLeft: '10px', color: 'green' }}>{liked}</span>}</h6>
 </Button>
 
 
