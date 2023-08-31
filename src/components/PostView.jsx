@@ -103,7 +103,7 @@ function PostView() {
 
 
             </Typography>
-<div style={{borderBottom: "1px solid #5cb574", marginTop: "1rem"}}></div>
+<div style={{borderBottom: "1px solid #5cb574", marginTop: "2rem"}}></div>
 
     <Card style={{      width: isMobile ? '100%' : isTablet ? '800px' : '100%',
     borderBottom: '1px solid gray',              
