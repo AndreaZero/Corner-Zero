@@ -2,7 +2,7 @@
 
 ![CornerZero Banner](https://i.postimg.cc/MK2LV9rz/meta.png)
 
-Welcome to the repository of **CornerZero**.  [CLIENT]
+Welcome to the repository of **CornerZero**.  (Client Repo)
 
 ## Overview 🌍
 
