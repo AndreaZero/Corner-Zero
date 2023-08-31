@@ -17,6 +17,9 @@ function Homepage() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const mobileWidth = 600;
   const controls = useAnimation();
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
+
 
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
@@ -63,6 +66,23 @@ function Homepage() {
     };
   }, []);
 
+  const handleEmailSubmission = async () => {
+    if (userEmail) {
+      try {
+        await axios.post('/api/newsletter/subscribe', { email: userEmail });
+        alert('Thank you for subscribing!');
+        setShowEmailInput(false);
+        setUserEmail('');
+      } catch (error) {
+        console.error('Error subscribing to the newsletter:', error);
+        alert('There was an error. Please try again later.');
+      }
+    } else {
+      alert('Please enter a valid email.');
+    }
+  };
+  
+
   return (
     <div style={{
       display: 'flex',
@@ -103,6 +123,33 @@ function Homepage() {
         <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
         </h6>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+  {!showEmailInput ? (
+    <button 
+      style={{ backgroundColor: '#5CB574', color: 'white', padding: '5px 10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+      onClick={() => setShowEmailInput(true)}
+    >
+      Subscribe to Newsletter
+    </button>
+  ) : (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <input 
+        type="email" 
+        value={userEmail} 
+        onChange={e => setUserEmail(e.target.value)} 
+        placeholder="Insert your email..." 
+        style={{ padding: '5px', borderRadius: '5px' }}
+      />
+      <button 
+        style={{ backgroundColor: '#5CB574', color: 'white', padding: '5px 10px', marginLeft: '5px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+        onClick={handleEmailSubmission}
+      >
+        Submit
+      </button>
+    </div>
+  )}
+</div>
+
         <h6>
           Time: {currentTime.toLocaleTimeString()} -
           <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
