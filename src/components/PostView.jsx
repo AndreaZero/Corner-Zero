@@ -108,12 +108,13 @@ function PostView() {
         background: 'rgb(0,0,0)',
         background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 100%)',}}>
         <CardContent>
+        <img src={bannerzero} style={{width: isMobile ? "90%" : "auto", objectFit: "auto"}} alt='bannerzero'></img>
+
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <Typography variant="h5" style={{color: '#5CB574'}} component="div">
             {post.title}
           </Typography>
-          <img src={bannerzero} style={{height: '60px', objectFit: "auto"}} alt='bannerzero'></img>
-          {isAuthenticated && (
+                    {isAuthenticated && (
             <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
           <Button style={{color: 'red'}} onClick={deletePost}>Delete</Button>
           <FontAwesomeIcon style={{color: "red"}} icon={faTrashCan}></FontAwesomeIcon>
