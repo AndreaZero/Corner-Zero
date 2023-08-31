@@ -5,6 +5,8 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Button, Box, TextField, Container } from '@mui/material';
 import axios from 'axios';
 import '../../styles/components/EditorStyles.css';
+import { useAuth } from "../context/AuthContext";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,6 +14,8 @@ function CreatePost() {
     const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
     const [title, setTitle] = useState('');
     const [tags, setTags] = useState('');
+    const { isAuthenticated, logout } = useAuth();
+
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -48,9 +52,22 @@ function CreatePost() {
             fontSize: "20px",
             gap: "2rem",
             width: "auto",
-        }}><span style={{color: "white"}}>- Welcome Admin. Create a new Corner!
+        }}>
+            
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: "center"}}>  
+        <span style={{color: "white"}}>- Welcome Admin. Create a new Corner!
         <FontAwesomeIcon  style={{color: "white", marginLeft: "15px",}} icon={faPenToSquare} />
         </span>
+        <Button
+              style={{
+                fontSize: "14px"
+              }}
+                color="secondary"
+                onClick={logout}
+              >
+                Logout
+              </Button>
+              </div>  
         <Box style={{
             boxShadow: '0px 0px 4px 0px white',
             padding: "30px",

@@ -91,15 +91,6 @@ function Navbar() {
           {isAuthenticated && (
             <Box>
               <Link style={{ color: "#5CB574" }} to="/admin/dashboard">DASH</Link>
-              <Button
-              style={{
-                fontSize: "14px"
-              }}
-                color="secondary"
-                onClick={logout}
-              >
-                Logout
-              </Button>
             </Box>
           )}
 
