@@ -49,7 +49,7 @@ const SharePost = () => {
       }}>
 
         <button onClick={copyToClipboard} style={{ backgroundColor: 'transparent', border: 'none' }}>
-          <FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '24px' }} />
+          <FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '20px' }} />
         </button>
 
         {copied && <span>Copiato!</span>} {/* Mostra un messaggio se l'URL è stato copiato */}
