@@ -130,7 +130,7 @@ function Homepage() {
     <h6 style={{textDecoration: 'underline', cursor: 'pointer'}}
       onClick={() => setShowEmailInput(true)}
     >
-      Subscribe to Newsletter
+      Join the Corner!
     </h6>
   ) : (
     <div style={{ display: 'flex', alignItems: 'center' }}> 
