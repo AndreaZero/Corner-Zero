@@ -111,7 +111,7 @@ function Homepage() {
 }
 
         <div style={{display: "flex", justifyContent: 'space-between', alignItems: "center"}}>
-        <h5>Dive into the Corners 
+        <h5 style={{color: '#5cb574'}}>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
           Instant access.</h5>
           {!isMobile && ( 
