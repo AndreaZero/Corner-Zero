@@ -17,9 +17,9 @@ const Footer = () => {
       }}
     >
       <Container style={{display: 'flex', flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-        <h2>
-          © 2023 dev by AndreaZero.</h2>
-          <h4><a href='http://paypal.me/andreazero/' target='black' rel='noopener noreferrer'>Support me <FontAwesomeIcon icon={faPaypal}></FontAwesomeIcon> </a></h4>
+        <h4>
+          © 2023 dev by AndreaZero.</h4>
+          <h5><a href='http://paypal.me/andreazero/' target='black' rel='noopener noreferrer'>Support me <FontAwesomeIcon icon={faPaypal}></FontAwesomeIcon> </a></h5>
       </Container>
     </Box>
   );
