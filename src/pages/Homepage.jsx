@@ -4,10 +4,11 @@ import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
-import { useMediaQuery } from '@mui/material';
+import { TextField, useMediaQuery } from '@mui/material';
 import { motion, useAnimation } from "framer-motion";
 import bannerzero from "../styles/img/banner-zero.png";
 import Footer from '../components/fixed/Footer';
+import { Button } from '@mui/material';
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
@@ -125,27 +126,27 @@ function Homepage() {
         </h6>
         <div style={{ display: 'flex', alignItems: 'center' }}>
   {!showEmailInput ? (
-    <button 
-      style={{ backgroundColor: '#5CB574', color: 'white', padding: '5px 10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+    <h5 style={{textDecoration: 'underline', cursor: 'pointer'}}
       onClick={() => setShowEmailInput(true)}
     >
       Subscribe to Newsletter
-    </button>
+    </h5>
   ) : (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ display: 'flex', alignItems: 'center' }}> 
       <input 
         type="email" 
         value={userEmail} 
         onChange={e => setUserEmail(e.target.value)} 
-        placeholder="Insert your email..." 
-        style={{ padding: '5px', borderRadius: '5px' }}
+        placeholder="Your email..." 
+        style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono"}}
       />
-      <button 
-        style={{ backgroundColor: '#5CB574', color: 'white', padding: '5px 10px', marginLeft: '5px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+
+      <Button 
+        style={{ backgroundColor: '#183D3D', color: 'white', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
         onClick={handleEmailSubmission}
       >
-        Submit
-      </button>
+        JOIN
+      </Button>
     </div>
   )}
 </div>
