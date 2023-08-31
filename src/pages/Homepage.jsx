@@ -12,6 +12,7 @@ import { Button } from '@mui/material';
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+import { fontSize } from '@mui/system';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -129,9 +130,10 @@ function Homepage() {
   {!showEmailInput ? (
           <Button style={{
             backgroundColor: '#183D3D',
-            height: '30px',
-            marginTop: "8px"
-          }} size="small" color="primary"
+            height: '25px',
+            color: '#5cb574',
+            fontSize: "12px"
+          }} size="small"
       onClick={() => setShowEmailInput(true)}
     >
       Join the Corner!
