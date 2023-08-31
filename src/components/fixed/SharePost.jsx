@@ -1,4 +1,4 @@
-import { faShare, faCopy } from '@fortawesome/free-solid-svg-icons'; // Importa l'icona di copia
+import { faShare, faCopy, faLink } from '@fortawesome/free-solid-svg-icons'; // Importa l'icona di copia
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react'; // Importa useState
 import { useMediaQuery } from '@mui/material';
@@ -49,7 +49,7 @@ const SharePost = () => {
       }}>
 
         <button onClick={copyToClipboard} style={{ backgroundColor: 'transparent', border: 'none' }}>
-          <FontAwesomeIcon icon={faCopy} style={{ color: '#5CB574', fontSize: '24px' }} />
+          <FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '24px' }} />
         </button>
 
         {copied && <span>Copiato!</span>} {/* Mostra un messaggio se l'URL è stato copiato */}
