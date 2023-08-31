@@ -93,8 +93,6 @@ function PostView() {
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginBottom: "2rem",
-                marginTop: "1rem",
                 borderBottom: "1px solid #5cb574"
             }}>
                               <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
@@ -112,7 +110,7 @@ function PostView() {
 
       
       <CardContent>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: "1rem"}}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <Typography variant="h5" style={{color: '#5CB574'}} component="div">
             {post.title}
           </Typography>
