@@ -9,6 +9,7 @@ Welcome to the repository of **CornerZero**.  (Client Repo)
 *CornerZero* is a manifestation of my passions, thoughts, and creativity. It isn't merely a web space; it's a collection of the myriad facets of my journey, capturing ideas, inspirations, and more. Each 'corner' represents a unique piece of content, a fragment of what goes through my mind on a daily basis. As my first public project, *CornerZero* holds a special place in my heart, marking the beginning of a journey of public contributions and open expression.
 
 
+Visit the website: https://cornerzero.eu
 
 ## Technologies & Tools 🛠️
 
