@@ -88,7 +88,12 @@ function PostView() {
 
   return (
     <Container style={{width: "100%", alignItems: "center", justifyContent: "center"}}>
-                        <Typography style={{
+      <div style={{
+        display: 'flex',
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+                <Typography style={{
                 fontSize: '20px',
                 color: "white",
                 fontWeight: 'bolder',
@@ -100,6 +105,10 @@ function PostView() {
                  <img style={{width: isMobile ? "22px" : "40px", 
                  objectFit: 'contain' }} src={cornerright} alt='icon'></img>
             </Typography>
+            <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "120px",}} alt='bannerzero'></img>
+
+      </div>
+
 
           <div style={{borderBottom: "1px solid #5cb574", marginTop: "2rem"}}></div>
 
@@ -108,9 +117,6 @@ function PostView() {
         background: 'rgb(0,0,0)',
         background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 100%)',}}>
         <CardContent>
-          <center>
-        <img src={bannerzero} style={{width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "120px",}} alt='bannerzero'></img>
-        </center>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <Typography variant="h5" style={{color: '#5CB574'}} component="div">
             {post.title}
