@@ -33,7 +33,7 @@ const SharePost = () => {
     <div style={{display:'flex', color: "#5CB574", lineHeight: "0", alignItems: "center", justifyContent: 'center', gap: '1rem'}}>
       {!isMobile && (
         <h6>Share Corner
-          <FontAwesomeIcon style={{color: '#5CB574', marginLeft: "10px"}} icon={faShare}></FontAwesomeIcon>
+          <FontAwesomeIcon style={{color: '#5CB574', marginLeft: "8px"}} icon={faShare}></FontAwesomeIcon>
         </h6>
       )}
       
@@ -43,12 +43,6 @@ const SharePost = () => {
         alignItems: "center",
         justifyContent: "center"
       }}>
-
-        <button onClick={copyToClipboard} style={{ backgroundColor: 'transparent', border: 'none' }}>
-          <FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '20px' }} />
-        </button>
-
-        {copied && <span>Copied!</span>}
 
         <TwitterShareButton url={url} title="CornerZero.eu - Read this corner!">
           <TwitterIcon style={{ borderRadius: "0.3rem" }}  size={24} round={false} />
@@ -65,7 +59,12 @@ const SharePost = () => {
         <WhatsappShareButton url={url} title="CornerZero.eu - Read this corner!">
           <WhatsappIcon style={{ borderRadius: "0.3rem" }}  size={24} round={false} />
         </WhatsappShareButton>
+        
+        <button onClick={copyToClipboard} style={{ backgroundColor: 'transparent', border: 'none' }}>
+          <FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '20px' }} />
+        </button>
 
+        {copied && <span>Copied!</span>}
       </div>
     </div>
   );
