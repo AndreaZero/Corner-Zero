@@ -23,10 +23,8 @@ function Homepage() {
   const controls = useAnimation();
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [userEmail, setUserEmail] = useState('');
-
-
+  const [showNewsletterPopup, setShowNewsletterPopup] = useState(false); // State for the popup
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
-
   const [currentText, setCurrentText] = useState('');
   const fullText = "Explore, learn, dream, live!";
 
@@ -92,6 +90,20 @@ function Homepage() {
       toast.warn('Please enter a valid email.');
     }
   };
+
+  useEffect(() => {
+    // Check local storage to see if the user has already been prompted to subscribe
+    const hasSubscribed = localStorage.getItem('hasSubscribed');
+
+    if (!hasSubscribed) {
+      setShowNewsletterPopup(true); // Show the popup if the user hasn't been prompted before
+      localStorage.setItem('hasSubscribed', 'true'); // Set the value in local storage to prevent showing the popup again
+    }
+  }, []);
+
+  const closeNewsletterPopup = () => {
+    setShowNewsletterPopup(false);
+  };
   
   
 
@@ -102,6 +114,40 @@ function Homepage() {
       justifyContent: "space-between",
       width: isMobile ?  '350px' : undefined, 
     }}>
+       {showNewsletterPopup && (
+        <div style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          backgroundColor: '#1E1E1E',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 1000,
+          padding: '20px',
+          textAlign: "center",
+          borderRadius: '8px',
+          boxShadow: '0 0 15px rgba(0,0,0,0.1)'
+        }}>
+          <h3>Join the CornerLetter.</h3>
+          <p>Receive email that you actually want to receive.</p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent:" center" }}> 
+            <input 
+              type="email" 
+              value={userEmail} 
+              onChange={e => setUserEmail(e.target.value)} 
+              placeholder="Your email..." 
+              style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono" }}
+            />
+            <Button 
+              style={{ backgroundColor: '#5cb574', color: 'black', fontWeight: 'bold', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              onClick={handleEmailSubmission}
+            >
+              SUBSCRIBE
+            </Button>
+            <Button onClick={closeNewsletterPopup} style={{ backgroundColor: '#183D3D', color: '#5cb574', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>Close</Button>
+
+          </div>
+        </div>
+      )}
       <div style={{
         display: 'flex',
         flexDirection: "column",
@@ -164,15 +210,15 @@ function Homepage() {
       >
         JOIN
       </Button>
+        </div>
+      )}
+      <ToastContainer 
+    />
+
+      
     </div>
-  )}
-  <ToastContainer 
-/>
 
-  
-</div>
-
-      </div>
+          </div>
 
 
 <div style={{
