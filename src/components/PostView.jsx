@@ -10,7 +10,7 @@ import cornerright from "../styles/img/cornerright.png";
 import '../styles/components/EditorStyles.css';
 import moment from 'moment';
 import { useMediaQuery } from '@mui/material';
-
+import bannerzero from '../styles/img/banner-zero.png';
 import { useAuth } from '../context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
@@ -95,27 +95,24 @@ function PostView() {
                 textAlign: "center",
                 marginTop: "1rem",
             }}>
-                              <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
-
+          <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
                  - Inside the Corner - 
                  <img style={{width: isMobile ? "22px" : "40px", 
                  objectFit: 'contain' }} src={cornerright} alt='icon'></img>
-
-
             </Typography>
-<div style={{borderBottom: "1px solid #5cb574", marginTop: "2rem"}}></div>
 
-    <Card style={{      width: isMobile ? '100%' : isTablet ? '800px' : '100%',
-    borderBottom: '1px solid gray',              
-    background: 'rgb(0,0,0)',
-    background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 100%)',}}>
+          <div style={{borderBottom: "1px solid #5cb574", marginTop: "2rem"}}></div>
 
-      
-      <CardContent>
+        <Card style={{      width: isMobile ? '100%' : isTablet ? '800px' : '100%',
+        borderBottom: '1px solid gray',              
+        background: 'rgb(0,0,0)',
+        background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 100%)',}}>
+        <CardContent>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <Typography variant="h5" style={{color: '#5CB574'}} component="div">
             {post.title}
           </Typography>
+          <img src={bannerzero} style={{height: '20px', objectFit: "auto"}} alt='bannerzero'></img>
           {isAuthenticated && (
             <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
           <Button style={{color: 'red'}} onClick={deletePost}>Delete</Button>
@@ -123,11 +120,11 @@ function PostView() {
           </div>
           )}
         </div>
+
         <div style={{
           display: 'flex',
           color: "#279EFF",
         }}>
-          
           <h5>#{post.tags} - </h5>
           <h5 style={{marginLeft: "5px"}}>
              {moment(post.createdAt).format('D MMMM YYYY')}
@@ -141,25 +138,20 @@ function PostView() {
           justifyContent: "space-between"
         }}>
         <Button 
-    style={{backgroundColor: "#183D3D", fontSize: "12px", fontWeight: 'bolder', color: "#5CB574"}}
-    onClick={addLike}
-    className={liked === 'Liked!' ? 'liked' : ''}
-> 
-    <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}></FontAwesomeIcon>
-    ({post.likes})
-    <h6 style={{fontSize: '12px'}}>{liked === 'Liked!' && <span style={{ marginLeft: '10px', color: 'red' }}>{liked}</span>}</h6>
-    <h6 style={{fontSize: '12px'}}>{liked === 'Liked!' && <span style={{ marginLeft: '10px', color: 'green' }}>{liked}</span>}</h6>
-</Button>
-
-
-              <SharePost />
-              </div>
-          <div style={{color: '#1976D2',display: 'flex', alignItems: "center", borderBottom: "1px solid grey", padding: "5px"}}/>
-          
-        <Typography style={{marginTop: '2rem',}} component="div" dangerouslySetInnerHTML={{ __html: contentHTML }} />
-
+        style={{backgroundColor: "#183D3D", fontSize: "12px", fontWeight: 'bolder', color: "#5CB574"}}
+        onClick={addLike}
+        className={liked === 'Liked!' ? 'liked' : ''}
+        > 
+          <FontAwesomeIcon style={{marginRight: "5px"}} icon={faHeart}></FontAwesomeIcon>
+          ({post.likes})
+          <h6 style={{fontSize: '12px'}}>{liked === 'Liked!' && <span style={{ marginLeft: '10px', color: 'red' }}>{liked}</span>}</h6>
+          <h6 style={{fontSize: '12px'}}>{liked === 'Liked!' && <span style={{ marginLeft: '10px', color: 'green' }}>{liked}</span>}</h6>
+        </Button>
+          <SharePost />
+      </div>
+     <div style={{color: '#1976D2',display: 'flex', alignItems: "center", borderBottom: "1px solid grey", padding: "5px"}}/>
+      <Typography style={{marginTop: '2rem',}} component="div" dangerouslySetInnerHTML={{ __html: contentHTML }} />
       </CardContent>
-
     </Card>
           <Footer />
           </Container>
