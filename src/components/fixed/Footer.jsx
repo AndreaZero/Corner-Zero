@@ -7,7 +7,7 @@ const Footer = () => {
   return (
       <Container style={{display: 'flex', gap: '1rem', alignItems: "center", justifyContent: "center"}}>
         <h5>© 2023 dev by AndreaZero.</h5> - 
-          <h5><a style={{textDecoration: "none"}} href='http://paypal.me/andreazero/' target='black' rel='noopener noreferrer'>Support me <FontAwesomeIcon icon={faPaypal}></FontAwesomeIcon> </a></h5>
+          <h5><a style={{textDecoration: "none"}} href='http://paypal.me/andreazero/' target='black' rel='noopener noreferrer'>Tips <FontAwesomeIcon icon={faPaypal}></FontAwesomeIcon> </a></h5>
       </Container>
   );
 };
