@@ -65,7 +65,7 @@ Ensure you have the following installed on your system:
    ```bash
    npm install
    or
-   cd yarn install
+   yarn install
    
 
 3. **Run the app**:
