@@ -41,8 +41,7 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
             style={{
               position: 'relative',
               overflow: 'hidden',
-              maxHeight: isMobile ? '70px' : '100px',  // Adatta la larghezza su dispositivi mobili
-              // Imposta l'altezza massima per l'anteprima del contenuto
+              maxHeight: isMobile ? '70px' : '100px',
             }}>
           {truncatedText}
           <div style={{

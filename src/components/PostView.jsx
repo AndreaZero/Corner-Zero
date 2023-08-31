@@ -27,8 +27,7 @@ function PostView() {
   const navigate = useNavigate();
   const [liked, setLiked] = useState(null);
 
-  const { isAuthenticated } = useAuth(); // Usiamo 'useAuth' per ottenere 'isAuthenticated'
-  // Usato per reindirizzare l'utente dopo l'eliminazione
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     async function fetchPost() {
@@ -46,7 +45,7 @@ function PostView() {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
         await axios.delete(`/api/posts/${id}`);
-        navigate('/corners'); // Reindirizza l'utente alla lista dei post dopo l'eliminazione
+        navigate('/corners');
       } catch (error) {
         console.error('Error deleting post:', error);
       }
@@ -90,7 +89,7 @@ function PostView() {
   return (
     <Container style={{width: "100%", alignItems: "center", justifyContent: "center"}}>
                         <Typography style={{
-                fontSize: isMobile ? '15px' : '30px',  // Adatta la larghezza su dispositivi mobili
+                fontSize: isMobile ? '15px' : '30px',
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",

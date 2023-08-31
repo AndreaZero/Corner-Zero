@@ -8,7 +8,7 @@ function RegisterPage() {
   React.useEffect(() => {
     document.title = "CornerZero - Admin Register";
     return () => {
-      // Reimposta il titolo quando il componente viene smontato
+
       document.title = "CornerZero - Homepage";
     };
   }, []);

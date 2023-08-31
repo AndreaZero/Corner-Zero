@@ -48,7 +48,7 @@ function Repos() {
     React.useEffect(() => {
         document.title = "CornerZero - Repos";
         return () => {
-          // Reimposta il titolo quando il componente viene smontato
+
           document.title = "CornerZero - Homepage";
         };
       }, []);

@@ -25,7 +25,7 @@ function LastFivePosts() {
 
     const handleClick = (postId) => {
         console.log("Clicked on post:", postId);
-        // Qui potresti navigare al post o eseguire altre azioni quando un post viene cliccato.
+
     };
 
     const truncateTitle = (title, maxLength) => {

@@ -31,11 +31,11 @@ function Homepage() {
       index++;
 
       if (index > fullText.length - 1) {
-        clearInterval(typingInterval);  // ferma l'intervallo una volta che tutto il testo è stato "digitato"
+        clearInterval(typingInterval);
       }
-    }, 100);  // velocità di digitazione: 100ms per lettera
+    }, 100);
 
-    return () => clearInterval(typingInterval);  // pulisci l'intervallo se il componente viene smontato
+    return () => clearInterval(typingInterval);
   }, []);
 
 
@@ -59,7 +59,7 @@ function Homepage() {
     }, 1000);
 
     return () => {
-      clearInterval(interval); // Pulisci l'intervallo quando il componente viene smontato
+      clearInterval(interval); 
     };
   }, []);
 
@@ -68,12 +68,12 @@ function Homepage() {
       display: 'flex',
       flexDirection: "column",
       justifyContent: "space-between",
-      width: isMobile ?  '350px' : undefined,  // Adatta la larghezza su dispositivi mobili
+      width: isMobile ?  '350px' : undefined, 
     }}>
       <div style={{
         display: 'flex',
         flexDirection: "column",
-        fontSize: isMobile ? '14px' : undefined // Adatta la larghezza su dispositivi mobili
+        fontSize: isMobile ? '14px' : undefined
       }}>
 {
   isMobile ? (

@@ -14,9 +14,9 @@ function PostHome() {
       try {
         const response = await axios.get('/api/posts');
 
-        // Controllo se ci sono post prima di prenderne uno
+
         if (response.data && response.data.length > 0) {
-          setPosts(response.data.slice(0, 3)); // Prende i primi 3 post
+          setPosts(response.data.slice(0, 3));
         } else {
           setPosts([]);
         }

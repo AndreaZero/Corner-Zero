@@ -14,7 +14,7 @@ function LoginPage() {
   React.useEffect(() => {
     document.title = "CornerZero - Admin Login";
     return () => {
-      // Reimposta il titolo quando il componente viene smontato
+
       document.title = "CornerZero - Homepage";
     };
   }, []);

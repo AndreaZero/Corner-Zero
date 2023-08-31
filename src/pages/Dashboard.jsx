@@ -11,7 +11,6 @@ function Dashboard() {
     React.useEffect(() => {
         document.title = "CornerZero - Admin DASH";
         return () => {
-          // Reimposta il titolo quando il componente viene smontato
           document.title = "CornerZero - Homepage";
         };
       }, []);

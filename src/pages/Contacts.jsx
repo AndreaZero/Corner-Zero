@@ -15,7 +15,6 @@ function Contacts() {
     React.useEffect(() => {
         document.title = "CornerZero - Contact";
         return () => {
-          // Reimposta il titolo quando il componente viene smontato
           document.title = "CornerZero - Homepage";
         };
       }, []);

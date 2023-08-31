@@ -18,7 +18,6 @@ function Corner() {
     React.useEffect(() => {
         document.title = "CornerZero - Corners";
         return () => {
-          // Reimposta il titolo quando il componente viene smontato
           document.title = "CornerZero - Homepage";
         };
       }, []);
