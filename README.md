@@ -110,17 +110,20 @@ The primary goal of *CornerZero* is to provide a platform for expressing and sho
    ```bash
    git clone https://github.com/your_username/CornerZero.git
    cd CornerZero
-Install Dependencies:
 
-bash
-Copy code
-npm install
-Run the App:
 
-bash
-Copy code
-npm start
-This will launch the app on localhost:3000 or an available default port.
+2. **Installing Dependencies**:
+   ```bash
+   npm install
+   or
+   cd yarn install
+   
+
+3. **Run the app**:
+   ```bash
+   npm start
+   or
+   yarn start
 
 
 ________________________________________
