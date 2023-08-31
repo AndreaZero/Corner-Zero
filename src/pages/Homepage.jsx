@@ -121,16 +121,17 @@ function Homepage() {
       </div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
+
         <h6>
-          <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
+        Time: {currentTime.toLocaleTimeString()}
         </h6>
         <div style={{ display: 'flex', alignItems: 'center' }}>
   {!showEmailInput ? (
-    <h5 style={{textDecoration: 'underline', cursor: 'pointer'}}
+    <h6 style={{textDecoration: 'underline', cursor: 'pointer'}}
       onClick={() => setShowEmailInput(true)}
     >
       Subscribe to Newsletter
-    </h5>
+    </h6>
   ) : (
     <div style={{ display: 'flex', alignItems: 'center' }}> 
       <input 
@@ -149,13 +150,26 @@ function Homepage() {
       </Button>
     </div>
   )}
+
+  
 </div>
 
-        <h6>
-          Time: {currentTime.toLocaleTimeString()} -
-          <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
-        </h6>
       </div>
+
+
+<div style={{
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center"
+}}>
+      <h6>
+          <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
+        </h6>
+        <h6>
+        People: {postCount} - 
+        <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
+        </h6>
+        </div>
 
       <div style={{ flex: 1 }}>
         <div style={{
@@ -181,6 +195,8 @@ function Homepage() {
             </div>
           )}
         </div>
+
+        
       </div>
       <Footer />
     </div>
