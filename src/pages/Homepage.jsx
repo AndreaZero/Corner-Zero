@@ -167,11 +167,14 @@ function Homepage() {
     </div>
   )}
   <ToastContainer  
-  style={{
-    backgroundColor: '#343541',
-    color: "#5cb574",
-    fontWeight: "bold"
-  }}/>
+   toastOptions={{
+    style: {
+      backgroundColor: '#343541',
+      color: "#5cb574",
+      fontWeight: "bold"
+    }
+  }}
+/>
 
   
 </div>
