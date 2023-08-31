@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Container, Typography, Grid, Card, CardContent} from '@mui/material';
 import repos from '../data/repos';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLink, faImage, faLaptopCode, faTools} from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +16,12 @@ import MongoDB from "../styles/img/mongodb.png";
 import Footer from '../components/fixed/Footer';
 
 const getToolIcon = (tool) => {
+
+
+    const mobileWidth = 600;
+    const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
+
+    
     switch (tool) {
         case 'React':
             return <FaReact />;
@@ -32,9 +39,9 @@ const getToolIcon = (tool) => {
                     return <FaNpm />;
         
         case 'Vite':
-            return <img style={{width: '25px', objectFit: 'contain'}} src={Vite} alt='vite'></img>;
+            return <img style={{width: '22px', objectFit: 'contain'}} src={Vite} alt='vite'></img>;
         case 'MongoDB':
-                return <img style={{width: '25px', objectFit: 'contain'}} src={MongoDB} alt='vite'></img>
+                return <img style={{width: '22px', objectFit: 'contain'}} src={MongoDB} alt='vite'></img>
         default:
             return null;
     }
@@ -146,7 +153,7 @@ function Repos() {
                                 }} icon={faGithub}></FontAwesomeIcon>
                                     </a>
                                     <a style={{textDecoration:"none", color: '#279EFF', fontWeight: "bold", marginTop: "0.6rem"}} href={repo.link}>
-                                    Visit
+                                    DEMO
                                     <FontAwesomeIcon style={{
                                     marginLeft: "10px", color: 'white'
                                 }} icon={faExternalLink}></FontAwesomeIcon>
