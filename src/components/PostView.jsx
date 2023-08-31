@@ -89,16 +89,16 @@ function PostView() {
   return (
     <Container style={{width: "100%", alignItems: "center", justifyContent: "center"}}>
                         <Typography style={{
-                fontSize: isMobile ? '20px' : '30px',
+                fontSize: isMobile ? '15px' : '30px',
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
                 marginTop: "1rem",
             }}>
-                              <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
+                              <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
 
                  - Inside the Corner - 
-                 <img style={{ width: "40px", 
+                 <img style={{width: isMobile ? "25px" : "40px", 
                  objectFit: 'contain' }} src={cornerright} alt='icon'></img>
 
 
