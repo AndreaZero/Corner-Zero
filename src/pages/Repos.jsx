@@ -3,7 +3,6 @@ import { Container, Typography, Grid, Card, CardContent} from '@mui/material';
 import repos from '../data/repos';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLink, faImage, faLaptopCode, faTools} from "@fortawesome/free-solid-svg-icons";
 import corner from "../styles/img/corner.png";
@@ -16,12 +15,6 @@ import MongoDB from "../styles/img/mongodb.png";
 import Footer from '../components/fixed/Footer';
 
 const getToolIcon = (tool) => {
-
-
-    const mobileWidth = 600;
-    const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
-
-    
     switch (tool) {
         case 'React':
             return <FaReact />;
@@ -51,6 +44,9 @@ const getToolIcon = (tool) => {
 function Repos() {
     const [open, setOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
+    
+    const mobileWidth = 600;
+    const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
     React.useEffect(() => {
         document.title = "CornerZero - Repos";
