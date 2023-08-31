@@ -166,14 +166,7 @@ function Homepage() {
       </Button>
     </div>
   )}
-  <ToastContainer  
-   toastOptions={{
-    style: {
-      backgroundColor: '#343541',
-      color: "#5cb574",
-      fontWeight: "bold"
-    }
-  }}
+  <ToastContainer 
 />
 
   
