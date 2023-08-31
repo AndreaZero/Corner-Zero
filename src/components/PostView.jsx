@@ -90,7 +90,7 @@ function PostView() {
     <Container style={{width: "100%", alignItems: "center", justifyContent: "center"}}>
       <div style={{
         display: 'flex',
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center"
       }}>
                 <Typography style={{
@@ -102,14 +102,14 @@ function PostView() {
             }}>
           <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
                  - Inside the Corner - 
-                 <img style={{width: isMobile ? "22px" : "40px", 
-                 objectFit: 'contain' }} src={cornerright} alt='icon'></img>
             </Typography>
-            <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "120px",}} alt='bannerzero'></img>
-
+            <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
       </div>
-
-
+          {isMobile && (
+          <center>
+          <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
+          </center>
+          )}
           <div style={{borderBottom: "1px solid #5cb574", marginTop: "2rem"}}></div>
 
         <Card style={{      width: isMobile ? '100%' : isTablet ? '800px' : '100%',
