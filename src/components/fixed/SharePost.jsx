@@ -48,7 +48,7 @@ const SharePost = () => {
           <FontAwesomeIcon icon={faLink} style={{ color: 'white', fontSize: '20px' }} />
         </button>
 
-        {copied && <span>Got it!</span>}
+        {copied && <span>Copied!</span>}
 
         <TwitterShareButton url={url} title="CornerZero.eu - Read this corner!">
           <TwitterIcon style={{ borderRadius: "0.3rem" }}  size={24} round={false} />
