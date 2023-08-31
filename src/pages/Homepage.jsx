@@ -165,10 +165,6 @@ function Homepage() {
       <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
         </h6>
-        <h6>
-        People: {postCount} - 
-        <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
-        </h6>
         </div>
 
       <div style={{ flex: 1 }}>
