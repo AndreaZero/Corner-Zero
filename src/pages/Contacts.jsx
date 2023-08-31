@@ -5,7 +5,6 @@ import { useMediaQuery } from '@mui/material';
 import cornerright from "../styles/img/cornerright.png";
 import corner from "../styles/img/corner.png";
 import Footer from '../components/fixed/Footer';
-import bannerzero from "../styles/img/banner-zero.png";
 
 
 function Contacts() {
@@ -54,28 +53,19 @@ function Contacts() {
             gap: "1rem",
             width: isMobile ?  'auto' : undefined
         }}>
-               <div style={{
-        display: 'flex',
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}>
                 <Typography style={{
-                fontSize: '20px',
+                fontSize: "20px",
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginTop: "1rem",
+                marginTop: "1rem"
             }}>
-          <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
-                 - Contact Corner
+                              <img style={{ width: isMobile ? "25px" : "40px",  
+                 objectFit: 'contain' }} src={corner} alt='icon'></img>
+                - Contact Corner - 
+              <img style={{ width: isMobile ? "25px" : "40px",  
+                 objectFit: 'contain' }} src={cornerright} alt='icon'></img>
             </Typography>
-            <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
-      </div>
-          {isMobile && (
-          <center>
-          <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
-          </center>
-          )}
 
             <div style={{ border: '1px solid #5CB574', marginTop: "1rem" }}></div>
 

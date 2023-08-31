@@ -12,8 +12,6 @@ import "../styles/components/Repos.scss";
 import { FaReact, FaNode, FaCss3, FaHtml5, FaNpm, FaJs, FaGoogle,} from 'react-icons/fa';
 import Vite from "../styles/img/vite.png";
 import MongoDB from "../styles/img/mongodb.png";
-import bannerzero from "../styles/img/banner-zero.png";
-
 import Footer from '../components/fixed/Footer';
 
 const getToolIcon = (tool) => {
@@ -74,28 +72,16 @@ function Repos() {
             gap: "2rem",
             marginTop: "1rem"
         }}>
-                <div style={{
-        display: 'flex',
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}>
                 <Typography style={{
-                fontSize: '20px',
+                fontSize: "20px",
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginTop: "1rem",
             }}>
-          <img style={{ width: isMobile ? "22px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
-                 - Repos Corner 
+              <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
+                 - Repos Corner - 
+                 <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
             </Typography>
-            <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
-      </div>
-          {isMobile && (
-          <center>
-          <img src={bannerzero} style={{display: isMobile ? "none" : undefined, width: isMobile ? "90%" : "auto", objectFit: "auto", height: isMobile ? "auto" : "80px",}} alt='bannerzero'></img>
-          </center>
-          )}
             <Typography style={{ textAlign: 'center', color: 'white', fontSize: "14px" }}>Repos and projects built or worked on.  
             <FontAwesomeIcon style={{marginLeft: "15px"}} icon={faLaptopCode}></FontAwesomeIcon>
             </Typography>
