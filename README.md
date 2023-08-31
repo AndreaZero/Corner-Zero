@@ -79,8 +79,6 @@ ________________________________________
 Contribute 🤝
 Feedback, bug reports, and pull requests are welcome. Feel free to dive into the code and make your own versions!
 
-License 📜
-Licensed under the MIT License. Check out the LICENSE file for more information.
 
 Acknowledgments 🎉
 A special shoutout to everyone who has been a part of this journey. Your feedback, contributions, or even a simple visit to the site, mean the world to me.
