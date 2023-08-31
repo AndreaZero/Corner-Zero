@@ -77,9 +77,9 @@ function Repos() {
                 textAlign: "center",
 
             }}>
-              <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
+              <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
                  - Repos Corner - 
-                 <img style={{ width: "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
+                 <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
             </Typography>
             <Typography style={{ textAlign: 'center', color: 'white', fontSize: "14px" }}>Repos and projects built or worked on.  
             <FontAwesomeIcon style={{marginLeft: "15px"}} icon={faLaptopCode}></FontAwesomeIcon>
