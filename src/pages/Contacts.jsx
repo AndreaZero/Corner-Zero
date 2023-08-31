@@ -5,7 +5,7 @@ import { useMediaQuery } from '@mui/material';
 import cornerright from "../styles/img/cornerright.png";
 import corner from "../styles/img/corner.png";
 import Footer from '../components/fixed/Footer';
-import bannerzero from "../styles/img/banner-zero";
+import bannerzero from "../styles/img/banner-zero.png";
 
 
 function Contacts() {
