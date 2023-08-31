@@ -13,6 +13,8 @@ import {
   TelegramIcon
 } from 'react-share';
 
+import { Avatar} from '@mui/material';
+
 const SharePost = () => {
   const url = window.location.href; 
   const mobileWidth = 600;
@@ -45,7 +47,10 @@ const SharePost = () => {
       }}>
 
         <TwitterShareButton url={url} title="CornerZero.eu - Read this corner!">
-          <TwitterIcon style={{ borderRadius: "0.3rem" }}  size={24} round={false} />
+          <Avatar style={{ borderRadius: "0.3rem" }}  size={24} round={false}>
+            <i
+            className='fab fa-x-twitter'/>
+          </Avatar>
         </TwitterShareButton>
 
         <RedditShareButton url={url} title="CornerZero.eu - Read this corner!">
