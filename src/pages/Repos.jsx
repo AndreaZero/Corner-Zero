@@ -44,7 +44,6 @@ const getToolIcon = (tool) => {
 function Repos() {
     const [open, setOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
-    
     const mobileWidth = 600;
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 

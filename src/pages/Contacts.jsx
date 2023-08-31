@@ -3,6 +3,7 @@ import { Box, Container, Typography, TextField, Button } from '@mui/material';
 import emailjs from 'emailjs-com';
 import { useMediaQuery } from '@mui/material';
 import cornerright from "../styles/img/cornerright.png";
+import corner from "../styles/img/corner.png";
 import Footer from '../components/fixed/Footer';
 
 
@@ -57,9 +58,10 @@ function Contacts() {
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
+                marginTop: "1rem"
             }}>
                               <img style={{ width: isMobile ? "25px" : "40px",  
-                 objectFit: 'contain' }} src={cornerright} alt='icon'></img>
+                 objectFit: 'contain' }} src={corner} alt='icon'></img>
                 - Contact Corner - 
               <img style={{ width: isMobile ? "25px" : "40px",  
                  objectFit: 'contain' }} src={cornerright} alt='icon'></img>
