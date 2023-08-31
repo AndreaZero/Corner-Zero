@@ -94,8 +94,8 @@ function PostView() {
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginBottom: "1rem",
-                marginTop: "2rem",
+                marginBottom: "2rem",
+                marginTop: "1rem",
                 borderBottom: "1px solid #5cb574"
             }}>
                               <img style={{ width: "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
@@ -109,7 +109,7 @@ function PostView() {
     <Card style={{      width: isMobile ? '100%' : isTablet ? '800px' : '100%',
     borderBottom: '1px solid gray',              
     background: 'rgb(0,0,0)',
-    background: 'linear-gradient(180deg, rgba(0,0,0,1) 32%, rgba(56,56,56,0.8820320364473915) 100%)',}}>
+    background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 100%)',}}>
 
       
       <CardContent>
