@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Box } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaypal } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -14,10 +16,10 @@ const Footer = () => {
         marginTop: "1.5rem"
       }}
     >
-      <Container>
-        <Typography align="center" variant="body2">
-          © 2023 dev by AndreaZero. <a href='http://paypal.me/andreazero/' target='black' rel='noopener noreferrer'>Support me</a>
-        </Typography>
+      <Container style={{display: 'flex', flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <h2>
+          © 2023 dev by AndreaZero.</h2>
+          <h4><a href='http://paypal.me/andreazero/' target='black' rel='noopener noreferrer'>Support me <FontAwesomeIcon icon={faPaypal}></FontAwesomeIcon> </a></h4>
       </Container>
     </Box>
   );

@@ -65,9 +65,10 @@ function Contacts() {
                 - Contact Corner - 
               <img style={{ width: isMobile ? "25px" : "40px",  
                  objectFit: 'contain' }} src={cornerright} alt='icon'></img>
-
-
             </Typography>
+
+            <div style={{ border: '1px solid #5CB574', marginTop: "1rem" }}></div>
+
             
             <Box style={{
                 padding: "30px",
