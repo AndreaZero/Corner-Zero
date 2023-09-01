@@ -150,7 +150,6 @@ function PostView() {
       <Typography style={{marginTop: '2rem',}} component="div" dangerouslySetInnerHTML={{ __html: contentHTML }} />
       </CardContent>
     </Card>
-          <Footer />
           </Container>
   );
 }

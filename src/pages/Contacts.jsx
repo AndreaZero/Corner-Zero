@@ -107,7 +107,6 @@ function Contacts() {
                     Send message
                 </Button>
             </Box>
-            <Footer />
         </Container>
     );
 }

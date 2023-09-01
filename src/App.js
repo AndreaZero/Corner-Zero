@@ -5,6 +5,7 @@ import Navbar from "./components/fixed/Navbar";
 import theme from "./theme";
 import axios from "axios";
 import Homepage from "./pages/Homepage";
+import Footer from "./components/fixed/Footer";
 import LoginPage from "./pages/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
 import Dashboard from "./pages/Dashboard";
@@ -12,6 +13,8 @@ import PostView from "./components/PostView";
 import Corners from "./pages/Corners";
 import Repos from "./pages/Repos";
 import Contacts from "./pages/Contacts";
+import Learn from "./pages/Learn";
+import LearnDetail from "./components/LearnDetail";
 
 axios.defaults.baseURL = "https://cornerzeroserver-4b9300c63b20.herokuapp.com";
 axios.defaults.withCredentials = true;
@@ -29,10 +32,13 @@ function App () {
         <Route exact path='/admin/login' element={<LoginPage />} />
         <Route exact path='/corners' element={<Corners />} />
         <Route exact path='/repos' element={<Repos/>} />
+        <Route exact path='/learn' element={<Learn/>} />
+        <Route exact path='/learn/:id' element={<LearnDetail/>} />
         <Route exact path='/contacts' element={<Contacts/>} />
         <Route exact path="/posts/:id" element={<PostView/>} />
         {/* <Route exact path='/admin/register' element={<RegisterPage />} /> */}
       </Routes>
+      <Footer />
     </BrowserRouter>
     </AuthProvider>
     </ThemeProvider>

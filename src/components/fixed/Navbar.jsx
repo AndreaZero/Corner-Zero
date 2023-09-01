@@ -8,7 +8,7 @@ import logo from "../../styles/img/logo.png";
 import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
@@ -69,6 +69,7 @@ function Navbar() {
           <Hidden smDown> 
             | <Link style={{ color: '#5CB574' }} to='/'>Home</Link> - 
             <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link> - 
+            {/* <Link style={{ color: '#5CB574' }} to='/learn'>Learn</Link> -  */}
             <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> - 
             <Link style={{ color: '#5CB574' }} to='/contacts'>Contact Me</Link> |
           </Hidden>
@@ -133,6 +134,11 @@ function Navbar() {
   <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
   <ListItemText primary="Corners" />
 </ListItem>
+
+{/* <ListItem button key="Learn" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
+  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGraduationCap}></FontAwesomeIcon>
+  <ListItemText primary="Learn" />
+</ListItem> */}
 
 <ListItem button key="Repos" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/repos" onClick={handleDrawerToggle}>
   <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faLaptopCode}></FontAwesomeIcon>

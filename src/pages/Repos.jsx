@@ -175,7 +175,7 @@ function Repos() {
                     
                 ))}
             </Grid>
-            <Footer />
+
 
         </Container>
     );

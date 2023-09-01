@@ -86,8 +86,6 @@ function Corner() {
                     <PostPreview key={post._id} post={post} />
                 ))}
             </Box>
-
-            <Footer />
         </div>
     );
 }

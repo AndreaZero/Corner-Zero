@@ -254,11 +254,8 @@ function Homepage() {
               <LastFiveLikedPosts />
             </div>
           )}
-        </div>
-
-        
+        </div>  
       </div>
-      <Footer />
     </div>
   );
 }
