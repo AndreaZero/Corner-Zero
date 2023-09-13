@@ -7,8 +7,8 @@ import axios from 'axios';
 import logo from "../../styles/img/logo.png";
 import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope, faGraduationCap, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope, faGraduationCap, faAddressCard, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
@@ -86,7 +86,7 @@ function Navbar() {
           }}>
             <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
             <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
-            <a href="https://instagram.com/cornerzero.eu" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
+            <a href="https://ko-fi.com/andreazero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faCoffee}></FontAwesomeIcon></a>
           </Box>
 
           {isAuthenticated && (
@@ -123,7 +123,7 @@ function Navbar() {
           }}>
             <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
             <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
-            <a href="https://instagram.com/cornerzero.eu" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faInstagram}></FontAwesomeIcon></a>
+            <a href="https://ko-fi.com/andreazero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faCoffee}></FontAwesomeIcon></a>
           </Box>
           <ListItem button key="Home" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/" onClick={handleDrawerToggle}>
   <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faHome}></FontAwesomeIcon>

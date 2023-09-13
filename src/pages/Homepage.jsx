@@ -198,7 +198,7 @@ function Homepage() {
               Please let me <a href='/about'>introduce myself</a>
             <br />
             Here I write <span style={{fontStyle: 'italic'}}>Corners</span>, 
-            publish my projects, and also help people understand web tecnologies.
+            publish my projects, <br /> also help people understand web tecnologies.
             <h4>Subscribe to my newsletter to updated.</h4></h5>
 
             <ToastContainer />
@@ -214,7 +214,9 @@ function Homepage() {
       Join the Corner!
     </Button>
   ) : (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center" }}> 
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center",  flexDirection: 'column'}}> 
+        <h6 style={{color: '#5CB574'}}>By joining the Cornerlist, <br />you accept to receive email from info@cornerzero.eu</h6>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center"}}> 
       <input 
         type="email" 
         value={userEmail} 
@@ -222,28 +224,23 @@ function Homepage() {
         placeholder="Your email..." 
         style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono"}}
       />
-
-      <Button 
+        <Button 
         style={{ backgroundColor: '#183D3D', color: 'white', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
         onClick={handleEmailSubmission}
       >
         JOIN
       </Button>
-        </div>
+</div>
+      </div>
       )}
+</Card>  
 
-                                </Card>
-                                
-
-    
         <div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
-        <h5 style={{color: '#5cb574'}}>Dive into the Corners 
-          <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
-          </h5>
-          <h5>Instant access.</h5>
-
-          </div>
-
+           <h5 style={{color: '#5cb574'}}>Dive into the Corners 
+              <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
+           </h5>
+            <h5>Instant access.</h5>
+        </div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
 
