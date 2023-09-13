@@ -236,8 +236,8 @@ function Homepage() {
 </Card>  
 
         <div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
-           <h5 style={{color: '#5cb574'}}>Dive into the Corners 
-              <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
+           <h5 style={{color: '#5cb574'}}> <a style={{color: "#5cb574"}} href='/corners'>Dive into the Corners 
+              <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon></a>!
            </h5>
             <h5>Instant access.</h5>
         </div>

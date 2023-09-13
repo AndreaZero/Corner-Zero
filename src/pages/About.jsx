@@ -3,18 +3,19 @@ import { useMediaQuery } from '@mui/material';
 import mehi from "../styles/img/mehi.png";
 import it from "../styles/img/it.png";
 import corner from "../styles/img/corner.png";
+import Flipcard from '../components/FlipCard';
 import cornerright from "../styles/img/cornerright.png";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { 
     faCss3, faDiscord, faEthereum, faFigma, faGit, 
-    faHtml5, faJs, faNodeJs, faNpm, faReact, faSass 
+    faHtml5, faJs, faNodeJs, faNpm, faRProject, faReact, faSass 
 } from "@fortawesome/free-brands-svg-icons";
 import {
     faBrain, faTerminal
 } from '@fortawesome/free-solid-svg-icons';
-import { borderBottom } from '@mui/system';
+
 
 
 
@@ -112,11 +113,11 @@ function About() {
 
             </h4>
             <motion.div initial="hidden" animate="visible" variants={fadeImg} whileHover={{ scale: 1.1 }}>
-                            <img src={mehi} alt='mehi' style={{
-                                width: "200px",
-                                borderBottom: "1px solid grey",
-                                objectFit: 'contain',
-                                boxShadow: "0px 0px 3px 0px black"
+                  <img src={mehi} alt='mehi' style={{
+                      width: "200px",
+                      borderBottom: "1px solid grey",
+                      objectFit: 'contain',
+                      boxShadow: "0px 0px 3px 0px black"
                                 }}></img>
                                 </motion.div>
                                     <h4 style={reflectionStyle}>I'm a 30-year-old dude from Rome <img src={it} alt='it'></img> </h4>
@@ -175,9 +176,14 @@ function About() {
                                           ))
                                     }
                                 </Container>
-
-                        </Card>
-    </Container>
+                         </Card>
+                      <div style={{ border: '1px solid grey'}}></div>
+                      <Typography style={{ textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
+                                Projects
+                                <FontAwesomeIcon icon={faBriefcase} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
+                            </Typography>
+               <Flipcard />                   
+          </Container>
   )
 }
 
