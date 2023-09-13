@@ -172,8 +172,40 @@ function Homepage() {
             publish my projects, <br /> and also help people understand web tecnologies.
             <br/>
             <h4>Join my newsletter and stay updated.</h4>
-            </h5>
+
+            <ToastContainer />
+            {!showEmailInput ? (
+          <Button style={{
+            backgroundColor: '#183D3D',
+            height: '25px',
+            color: '#5cb574',
+            fontSize: "12px"
+          }} size="small"
+      onClick={() => setShowEmailInput(true)}
+    >
+      Join the Corner!
+    </Button>
+  ) : (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center" }}> 
+      <input 
+        type="email" 
+        value={userEmail} 
+        onChange={e => setUserEmail(e.target.value)} 
+        placeholder="Your email..." 
+        style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono"}}
+      />
+
+      <Button 
+        style={{ backgroundColor: '#183D3D', color: 'white', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+        onClick={handleEmailSubmission}
+      >
+        JOIN
+      </Button>
+        </div>
+      )}
+            </h5>   
                                 </Card>
+                                
 
       <div style={{
         display: 'flex',
@@ -201,42 +233,9 @@ function Homepage() {
         <div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
         <h5 style={{color: '#5cb574'}}>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
-          Instant access.</h5>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-  {!showEmailInput ? (
-          <Button style={{
-            backgroundColor: '#183D3D',
-            height: '25px',
-            color: '#5cb574',
-            fontSize: "12px"
-          }} size="small"
-      onClick={() => setShowEmailInput(true)}
-    >
-      Join the Corner!
-    </Button>
-  ) : (
-    <div style={{ display: 'flex', alignItems: 'center' }}> 
-      <input 
-        type="email" 
-        value={userEmail} 
-        onChange={e => setUserEmail(e.target.value)} 
-        placeholder="Your email..." 
-        style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono"}}
-      />
+          </h5>
+          <h5>Instant access.</h5>
 
-      <Button 
-        style={{ backgroundColor: '#183D3D', color: 'white', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-        onClick={handleEmailSubmission}
-      >
-        JOIN
-      </Button>
-        </div>
-      )}
-      <ToastContainer 
-    />
-
-      
-    </div>
           </div>
 
 
@@ -251,15 +250,7 @@ function Homepage() {
         <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
 
         </h6>
-
-
-       
-
           </div>
-
-         
-
-
       <div style={{ flex: 1 }}>
         <div style={{
           display: 'flex',

@@ -122,7 +122,7 @@ function Learn() {
                             </Grid>
                         ))}
                     </Grid>
-                    <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", alignItem: 'center' }}>
+                    <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", gap: "0.4rem",alignItem: 'center' }}>
     <Button 
      style={{
         backgroundColor: '#161b22',
@@ -133,7 +133,7 @@ function Learn() {
         onClick={() => setCurrentPage(currentPage - 1)}>
         Previous
     </Button >
-    <span style={{ margin: "0 10px" }}>{currentPage}</span>
+    <span style={{ margin: "5px" }}> &gt; {currentPage} &lt; </span>
     <Button  style={{
                 backgroundColor: '#161b22',
                 color: '#5cb574',

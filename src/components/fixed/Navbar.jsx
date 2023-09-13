@@ -68,7 +68,7 @@ function Navbar() {
 
           <Hidden smDown> 
             <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link> - 
-            {/* <Link style={{ color: '#5CB574' }} to='/learn'>Learn</Link> -  */}
+            <Link style={{ color: '#5CB574' }} to='/learn'>Learn</Link> - 
             <Link style={{ color: '#5CB574' }} to='/about'>About</Link> - 
             <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> - 
             <Link style={{ color: '#5CB574' }} to='/contacts'>Contact</Link> |
@@ -135,10 +135,10 @@ function Navbar() {
   <ListItemText primary="Corners" />
 </ListItem>
 
-{/* <ListItem button key="Learn" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
+<ListItem button key="Learn" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
   <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGraduationCap}></FontAwesomeIcon>
   <ListItemText primary="Learn" />
-</ListItem> */}
+</ListItem>
 
 
 <ListItem button key="About" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/about" onClick={handleDrawerToggle}>
