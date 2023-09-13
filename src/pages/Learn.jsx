@@ -13,7 +13,6 @@ import "../styles/components/Repos.scss";
 function Learn() {
     const [open, setOpen] = useState(false);
     const [selectedLearn, setSelectedLearn] = useState(null);
-    const [selectedImage, setSelectedImage] = useState('');
     const mobileWidth = 600;
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
     const [currentPage, setCurrentPage] = useState(1);

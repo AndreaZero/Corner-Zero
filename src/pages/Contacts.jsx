@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com';
 import { useMediaQuery } from '@mui/material';
 import cornerright from "../styles/img/cornerright.png";
 import corner from "../styles/img/corner.png";
-import Footer from '../components/fixed/Footer';
+
 
 
 function Contacts() {
@@ -72,7 +72,6 @@ function Contacts() {
             
             <Box style={{
                 padding: "30px",
-                background: 'rgb(0,0,0)',
                 background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)',
                 borderRadius: "1rem",
                 display: "flex",

@@ -12,7 +12,6 @@ import "../styles/components/Repos.scss";
 import { FaReact, FaNode, FaCss3, FaHtml5, FaNpm, FaJs, FaGoogle,} from 'react-icons/fa';
 import Vite from "../styles/img/vite.png";
 import MongoDB from "../styles/img/mongodb.png";
-import Footer from '../components/fixed/Footer';
 
 const getToolIcon = (tool) => {
     switch (tool) {

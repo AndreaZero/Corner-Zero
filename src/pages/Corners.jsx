@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useMediaQuery } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import PostPreview from '../components/PostPreview';
-import Footer from "../components/fixed/Footer";
 import { Typography, Input, Box } from '@mui/material';
 import cornerright from "../styles/img/cornerright.png";
 

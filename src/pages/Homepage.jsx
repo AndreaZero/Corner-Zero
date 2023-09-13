@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import PostHome from '../components/PostHome';
+import { Card, Button, Container } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
+import it from "../styles/img/it.png";
 import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { TextField, useMediaQuery } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import { motion, useAnimation } from "framer-motion";
 import bannerzero from "../styles/img/banner-zero.png";
-import Footer from '../components/fixed/Footer';
-import { Button } from '@mui/material';
+import mehi from "../styles/img/mehi.png";
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
-import { fontSize } from '@mui/system';
+import { faGreaterThan, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -27,6 +27,10 @@ function Homepage() {
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   const [currentText, setCurrentText] = useState('');
   const fullText = "Explore, learn, dream, live!";
+
+  const reflectionStyle = {
+    textShadow: '8px 18px 7px rgba(255, 255, 255, 0.15)'
+};
 
   useEffect(() => {
     let index = 0;
@@ -91,6 +95,7 @@ function Homepage() {
     }
   };
 
+
   useEffect(() => {
     // Check local storage to see if the user has already been prompted to subscribe
     const hasSubscribed = localStorage.getItem('hasSubscribed');
@@ -114,6 +119,9 @@ function Homepage() {
       justifyContent: "space-between",
       width: isMobile ?  '350px' : undefined, 
     }}>
+    
+                      
+
        {showNewsletterPopup && (
         <div style={{
           position: 'fixed',
@@ -148,41 +156,53 @@ function Homepage() {
           </div>
         </div>
       )}
+
+<Card
+                        style={{
+                            backgroundColor: "transparent",
+                            color:"white",
+                            width: "auto",
+                            textAlign: 'center',
+                        }}>
+                            <h2>Welcome!</h2>
+                            <h6 style={reflectionStyle}>CornerZero is my personal space.</h6>
+            <h5>Please give me a minute to <a href='/about'>introduce myself!</a>
+            <br />
+            Here I write <span style={{fontStyle: 'italic'}}>Corners</span>, 
+            publish my projects, <br /> and also help people understand web tecnologies.
+            <br/>
+            <h4>Join my newsletter and stay updated.</h4>
+            </h5>
+                                </Card>
+
       <div style={{
         display: 'flex',
-        flexDirection: "column",
-        fontSize: isMobile ? '14px' : undefined
+        alignItems: "center",
+        padding: "10px",
+        justifyContent: "space-between",
+        fontSize: isMobile ? '12px' : undefined
       }}>
 {
   isMobile ? (
     <>
           <h1>{currentText}</h1>
-
     </>
   ) : (
     <>
-          <h1>{currentText}</h1>
+          <h2>{currentText}</h2>
+          {!isMobile && ( 
+          <img src={bannerzero} alt='bannerzero' style={{height: "70px", objectFit: "contain"}}></img>
+          )}
 
     </>
   )
 }
-
-        <div style={{display: "flex", justifyContent: 'space-between', alignItems: "center"}}>
+</div>
+        <div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
         <h5 style={{color: '#5cb574'}}>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
           Instant access.</h5>
-          {!isMobile && ( 
-          <img src={bannerzero} alt='bannerzero' style={{height: "80px", objectFit: "contain"}}></img>
-          )}
-          </div>
-      </div>
-
-      <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
-
-        <h6>
-        Time: {currentTime.toLocaleTimeString()}
-        </h6>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
   {!showEmailInput ? (
           <Button style={{
             backgroundColor: '#183D3D',
@@ -217,19 +237,28 @@ function Homepage() {
 
       
     </div>
-
           </div>
 
 
-<div style={{
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center"
-}}>
+      <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
+
+
       <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
         </h6>
-        </div>
+        <h6>
+        Time: {currentTime.toLocaleTimeString()} - 
+        <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
+
+        </h6>
+
+
+       
+
+          </div>
+
+         
+
 
       <div style={{ flex: 1 }}>
         <div style={{

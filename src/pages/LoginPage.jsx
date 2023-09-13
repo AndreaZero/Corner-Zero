@@ -9,7 +9,7 @@ import { useAuth } from '../context/AuthContext';
 function LoginPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState(''); 
-  const { isAuthenticated, setIsAuthenticated } = useAuth(); 
+  const {setIsAuthenticated } = useAuth(); 
 
   React.useEffect(() => {
     document.title = "CornerZero - Admin Login";
