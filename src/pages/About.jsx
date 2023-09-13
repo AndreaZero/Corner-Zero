@@ -2,6 +2,8 @@ import { Container, Card, Typography } from '@mui/material'
 import { useMediaQuery } from '@mui/material';
 import mehi from "../styles/img/mehi.png";
 import it from "../styles/img/it.png";
+import corner from "../styles/img/corner.png";
+import cornerright from "../styles/img/cornerright.png";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
@@ -95,7 +97,16 @@ function About() {
                             width: "auto",
                             textAlign: 'center',
                         }}>
-                            <h2>About me!</h2>
+  <Typography style={{
+                fontSize: "20px",
+                color: "white",
+                fontWeight: 'bolder',
+                textAlign: "center",
+            }}>
+              <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={corner} alt='icon'></img>
+                 - Who is Zero? - 
+                 <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
+            </Typography>
                 <h4>I'm Andrea. <br />Junior web developer
             <FontAwesomeIcon icon={faLaptopCode} style={{ marginLeft: "5px" }}></FontAwesomeIcon>
 
@@ -108,7 +119,7 @@ function About() {
                                 boxShadow: "0px 0px 3px 0px black"
                                 }}></img>
                                 </motion.div>
-                                    <h4 style={reflectionStyle}>I'm a 30-year-old from Rome <img src={it} alt='it'></img> </h4>
+                                    <h4 style={reflectionStyle}>I'm a 30-year-old dude from Rome <img src={it} alt='it'></img> </h4>
                                     <h5 style={reflectionStyle}>One of my biggest passion is coding. I whipped up my first website at 11..<br />
                                     Wasn't much into textbooks. Instead, I juggled studying code and web dev while working on the side.<br/>
                                     I've been riding the web development wave hard for the last 12 months.<br/>
@@ -116,7 +127,7 @@ function About() {
                                     </h5>
                                 </Card>
 
-                                <div style={{ border: '1px solid #5CB574'}}></div>
+                                <div style={{ border: '1px solid grey'}}></div>
 
 
                                 <Typography style={{ textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>

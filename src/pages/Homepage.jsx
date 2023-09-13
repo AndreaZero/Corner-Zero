@@ -157,6 +157,31 @@ function Homepage() {
         </div>
       )}
 
+<div style={{
+        display: 'flex',
+        alignItems: "center",
+        padding: "10px",
+        textAlign: 'center',
+        justifyContent: isMobile? 'center' : "space-between",
+        fontSize: isMobile ? '12px' : undefined
+      }}>
+{
+  isMobile ? (
+    <>
+          <h1>{currentText}</h1>
+    </>
+  ) : (
+    <>
+          <h2>{currentText}</h2>
+          {!isMobile && ( 
+          <img src={bannerzero} alt='bannerzero' style={{height: "70px", objectFit: "contain"}}></img>
+          )}
+
+    </>
+  )
+}
+</div>
+
 <Card
                         style={{
                             backgroundColor: "transparent",
@@ -170,11 +195,10 @@ function Homepage() {
                           <span style={{fontSize: "12px", fontWeight: "bold"}}>CornerZero is my personal space</span>
                         <br />
                         <h5>
-              Please give me a minute to <a href='/about'>introduce myself!</a>
+              Please let me <a href='/about'>introduce myself</a>
             <br />
             Here I write <span style={{fontStyle: 'italic'}}>Corners</span>, 
-            publish my projects, <br /> and also help people understand web tecnologies.
-            <br/>
+            publish my projects, and also help people understand web tecnologies.
             <h4>Subscribe to my newsletter to updated.</h4></h5>
 
             <ToastContainer />
@@ -211,29 +235,7 @@ function Homepage() {
                                 </Card>
                                 
 
-      <div style={{
-        display: 'flex',
-        alignItems: "center",
-        padding: "10px",
-        justifyContent: "space-between",
-        fontSize: isMobile ? '12px' : undefined
-      }}>
-{
-  isMobile ? (
-    <>
-          <h1>{currentText}</h1>
-    </>
-  ) : (
-    <>
-          <h2>{currentText}</h2>
-          {!isMobile && ( 
-          <img src={bannerzero} alt='bannerzero' style={{height: "70px", objectFit: "contain"}}></img>
-          )}
-
-    </>
-  )
-}
-</div>
+    
         <div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
         <h5 style={{color: '#5cb574'}}>Dive into the Corners 
           <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon>!
