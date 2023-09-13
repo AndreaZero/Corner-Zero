@@ -68,9 +68,9 @@ function Navbar() {
 
           <Hidden smDown> 
             <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link> - 
+            <Link style={{ color: '#5CB574' }} to='/about'>WhoIam</Link> -
+            <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> -  
             <Link style={{ color: '#5CB574' }} to='/learn'>Learn</Link> - 
-            <Link style={{ color: '#5CB574' }} to='/about'>About</Link> - 
-            <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> - 
             <Link style={{ color: '#5CB574' }} to='/contacts'>Contact</Link> |
           </Hidden>
 

@@ -162,16 +162,20 @@ function Homepage() {
                             backgroundColor: "transparent",
                             color:"white",
                             width: "auto",
+                            padding: '10px',
                             textAlign: 'center',
                         }}>
-                            <h2>Welcome!</h2>
-                            <h6 style={reflectionStyle}>CornerZero is my personal space.</h6>
-            <h5>Please give me a minute to <a href='/about'>introduce myself!</a>
+                        Welcome Human!
+                          <br />
+                          <span style={{fontSize: "12px", fontWeight: "bold"}}>CornerZero is my personal space</span>
+                        <br />
+                        <h5>
+              Please give me a minute to <a href='/about'>introduce myself!</a>
             <br />
             Here I write <span style={{fontStyle: 'italic'}}>Corners</span>, 
             publish my projects, <br /> and also help people understand web tecnologies.
             <br/>
-            <h4>Join my newsletter and stay updated.</h4>
+            <h4>Subscribe to my newsletter to updated.</h4></h5>
 
             <ToastContainer />
             {!showEmailInput ? (
@@ -203,7 +207,7 @@ function Homepage() {
       </Button>
         </div>
       )}
-            </h5>   
+
                                 </Card>
                                 
 
