@@ -3,6 +3,7 @@ import {
   Container,
   Typography,
   Grid,
+  Tooltip,
   Card,
   CardContent,
   Button,
@@ -105,6 +106,7 @@ function Learn() {
       ></div>
       <div style={{display: 'flex', justifyContent: "space-between", alignItems: "center"}}>
       <h6>
+
       <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>
 
         - Arguments: {totalCards}
@@ -117,23 +119,25 @@ function Learn() {
         style={{
           backgroundColor: '#161b22',
           color: '#5cb574',
+          boxShadow: '0px 0px 4px 0px #183d3d'
         }}
         disabled={currentPage === 1}
         onClick={() => setCurrentPage(currentPage - 1)}
       >
         <FontAwesomeIcon style={{fontSize: "10px"}}  icon={faLessThan}></FontAwesomeIcon>
       </Button>
-      <span style={{ margin: '5px' }}> {currentPage} </span>
+      <span style={{ boxShadow: '0px 0px 4px 0px #183d3d', fontWeight: 'bolder', fontSize: '18px',  backgroundColor: '#183d3d', padding: '5px', borderRadius: '0.3rem', margin: '5px' }}> {currentPage} </span>
       <Button
         style={{
           backgroundColor: '#161b22',
           color: '#5cb574',
+          boxShadow: '0px 0px 4px 0px #183d3d'
         }}
         disabled={currentPage === Math.ceil(learn.length / ITEMS_PER_PAGE)}
         onClick={() => setCurrentPage(currentPage + 1)}
       >
         
-        <FontAwesomeIcon style={{fontSize: "10px"}} icon={faGreaterThan}></FontAwesomeIcon>
+        <FontAwesomeIcon style={{fontSize: "10px", }} icon={faGreaterThan}></FontAwesomeIcon>
       </Button>
     </div>
     <Button
@@ -141,6 +145,7 @@ function Learn() {
             backgroundColor: '#161b22',
             color: '#5cb574',
             fontSize: '12px',
+            boxShadow: '0px 0px 4px 0px #183d3d'
           }}
           onClick={randomizeData}
         >
@@ -158,6 +163,7 @@ function Learn() {
                 height: 'auto',
                 overflow: 'hidden',
                 padding: '10px',
+                boxShadow: '0px 0px 5px 0px #183d3d',
               }}
             >
               <CardContent
@@ -172,12 +178,15 @@ function Learn() {
                     <img style={{ width: '30px', objectFit: 'contain' }} alt="corner" src={corner}></img>
                     - {learn.title}
                   </div>
-                  <span style={{ color: '#1976d2' }}>{learn.category}</span>
+                  <Tooltip title='Category'>
+                  <span style={{ color: '#1976d2', cursor: 'pointer' }}>{learn.category}</span>
+                  </Tooltip>
                 </Typography>
                 <Card
                   style={{
                     backgroundColor: '#0E0E0E',
                     padding: '8px',
+
                     marginTop: '0.5rem',
                   }}
                 >
@@ -191,6 +200,7 @@ function Learn() {
                     to={`/learn/${learn.id}`}
                     style={{
                       backgroundColor: '#161b22',
+                      boxShadow: '0px 0px 4px 0px #183d3d',
                       color: '#5cb574',
                       fontSize: '12px',
                     }}

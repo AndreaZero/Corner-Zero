@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CardMedia, CardContent, Box, Typography, Button, Container } from '@mui/material';
+import { CardMedia, Tooltip, CardContent, Box, Typography, Button, Container } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGit, faGithub, faGofore, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faEye, faGlasses, faLink, faLinkSlash } from '@fortawesome/free-solid-svg-icons';
@@ -60,40 +60,49 @@ function Flipcard() {
                                 <Typography style={{fontSize: '12px', color: "white"}}>
                                     <span style={{ color: '#5cb574',fontWeight: 'bolder'}}>Desc:</span>  
                                     {projects[currentProject].back}
-                                    <Typography style={{fontSize: '12px', color: "white"}}>
-                                    <span style={{ color: '#5cb574',fontWeight: 'bolder'}}>Tools:</span>  
-
-                                     {projects[currentProject].tools}
-                                </Typography> 
                                 </Typography> 
                                   
                             )}
                             <Container style={{
-                                display: "flex", justifyContent: 'space-between', padding: '20px',
-                                 alignItems: "center", borderTop: '1px solid white',  
+                                display: "flex", justifyContent: 'space-between', padding: '10px',
+                                 alignItems: "center" ,borderBottom: '1px solid white',
+                                  borderTop: '1px solid white',  
                             }}>
-                                <Button 
-                                    onClick={toggleDesc}
-                                    style={{width: "auto",boxShadow: "0px 0px 1px 0px #5CB574",  backgroundColor: 'black', fontSize: '9px', color: "#5cb574", fontWeight: "bolder"}}
-                                >
-                                    Read 
-                                    <FontAwesomeIcon icon={faGlasses} style={{marginLeft: '5px'}}></FontAwesomeIcon>
-                                </Button>
+                               <Tooltip title="Open description">
+                                    <Button 
+                                        onClick={toggleDesc}
+                                        style={{width: "auto", boxShadow: "0px 0px 1px 0px #5CB574", backgroundColor: 'black', fontSize: '9px', color: "#5cb574", fontWeight: "bolder"}}
+                                    >
+                                        Read 
+                                        <FontAwesomeIcon icon={faGlasses} style={{marginLeft: '5px'}}></FontAwesomeIcon>
+                                    </Button>
+                                </Tooltip>
                                         <Box style={{
                                             width: "auto",
                                             display: 'flex',
                                             alignItems: "center",
                                             justifyContent: 'center',
-                                            gap: "0.4rem",
+                                            gap: "0.5rem",
                                             color: "#5cb574",
                                             borderRadius: "0.3rem",
                                             fontSize: '12px'
                                         }}>
+                                                                           <Tooltip title="Visit GitHub Repo">
                                             <a href={projects[currentProject].link} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon  style={{color: "#5cb574", boxShadow: "0px 0px 1px 0px #5CB574", backgroundColor: "#183d3d", padding: '5px', borderRadius: "100%"}} icon={faGithub}></FontAwesomeIcon></a>
+                                            </Tooltip>
+                                            <Tooltip title="Live preview">
                                             <a href={projects[currentProject].link} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon style={{color: "#5cb574", boxShadow: "0px 0px 1px 0px #5CB574",  backgroundColor: "#183d3d", padding: '5px', borderRadius: "100%"}} icon={faEye}></FontAwesomeIcon></a>
+                                            </Tooltip>
                                         </Box>
+                                        
                             </Container>
-                     </Container>
+                                        <Typography style={{fontSize: '12px', color: "white", backgroundColor: 'black', padding: "10px", borderRadius: "0.4rem", boxShadow: '0px 0px 3px 0px #5cb574', marginTop: "0.4rem" }}>
+                                            <span style={{ color: '#357deb',fontWeight: 'bolder'}}>Tools:</span>
+                                            {projects[currentProject].tools.map((tool, index) => (
+                                                <span key={index} style={{ color: '#5cb574', marginRight: '5px' }}>{tool},</span>
+                                            ))}
+                                        </Typography>
+                     </Container>   
                      </CardContent>
                     <div 
                         style={{ position: 'relative' }} 

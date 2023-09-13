@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Container, Typography, Grid, Card, CardContent} from '@mui/material';
+import { Container, Typography, Grid, Tooltip, Card, CardContent} from '@mui/material';
 import repos from '../data/repos';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
@@ -100,11 +100,13 @@ function Repos() {
                                     <img style={{ width: "30px", objectFit: 'contain' }} alt='corner' src={corner}></img>
                                     - {repo.title}
                                         </div>
+                                        <Tooltip title='Open screenshot'>
                                 <FontAwesomeIcon
                                 icon={faImage}
                                 onClick={() => handleOpen(repo.screen[0])}
                             >
                             </FontAwesomeIcon>
+                            </Tooltip>
                                 </Typography>
                                 
                                 <Card style={{
@@ -140,18 +142,22 @@ function Repos() {
                                     justifyContent: 'space-between',
                                     borderTop: "1px solid grey",
                                 }}>
+                                    <Tooltip title='Repository'>
                                     <a style={{textDecoration:"none", color: '#5CB574', fontWeight: "bold", marginTop: "0.6rem"}} href={repo.github}>
                                     Github
                                     <FontAwesomeIcon style={{
                                     marginLeft: "10px", color: 'white'
                                 }} icon={faGithub}></FontAwesomeIcon>
                                     </a>
+                                    </Tooltip>
+                                    <Tooltip title='Live'>
                                     <a style={{textDecoration:"none", color: '#279EFF', fontWeight: "bold", marginTop: "0.6rem"}} href={repo.link}>
                                     DEMO
                                     <FontAwesomeIcon style={{
                                     marginLeft: "10px", color: 'white'
                                 }} icon={faExternalLink}></FontAwesomeIcon>
                                     </a>
+                                    </Tooltip>
                                     </div>
                                 </Typography>
                             </CardContent>

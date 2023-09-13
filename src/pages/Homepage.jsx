@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostHome from '../components/PostHome';
-import { Card, Button, Container } from '@mui/material';
+import { Card, Button, Tooltip } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import it from "../styles/img/it.png";
@@ -203,17 +203,20 @@ function Homepage() {
 
             <ToastContainer />
             {!showEmailInput ? (
+                                                                                         <Tooltip title="Open form">
+
           <Button style={{
             backgroundColor: '#183D3D',
             height: '25px',
             color: '#5cb574',
-            boxShadow: "0px 0px 1px 0px #5CB574", 
+            boxShadow: "0px 0px 3px 0px #5CB574", 
             fontSize: "12px"
           }} size="small"
       onClick={() => setShowEmailInput(true)}
     >
       Join the Corner!
     </Button>
+    </Tooltip>
   ) : (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center",  flexDirection: 'column'}}> 
         <h6 style={{color: '#5CB574'}}>By joining the Cornerlist, <br />you accept to receive email from info@cornerzero.eu</h6>
@@ -226,7 +229,7 @@ function Homepage() {
         style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono"}}
       />
         <Button 
-        style={{ backgroundColor: '#183D3D', color: 'white', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+        style={{boxShadow: "0px 0px 3px 0px #5CB574", backgroundColor: '#183D3D', color: 'white', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
         onClick={handleEmailSubmission}
       >
         JOIN
