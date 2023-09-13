@@ -207,6 +207,7 @@ function Homepage() {
             backgroundColor: '#183D3D',
             height: '25px',
             color: '#5cb574',
+            boxShadow: "0px 0px 1px 0px #5CB574", 
             fontSize: "12px"
           }} size="small"
       onClick={() => setShowEmailInput(true)}
