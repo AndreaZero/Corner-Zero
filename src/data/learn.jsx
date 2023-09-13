@@ -1,4 +1,3 @@
-
 const learn = [
     {
         id: 1,

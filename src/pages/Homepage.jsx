@@ -203,8 +203,7 @@ function Homepage() {
 
             <ToastContainer />
             {!showEmailInput ? (
-                                                                                         <Tooltip title="Open form">
-
+           <Tooltip title="Open form">
           <Button style={{
             backgroundColor: '#183D3D',
             height: '25px',
@@ -228,12 +227,14 @@ function Homepage() {
         placeholder="Your email..." 
         style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono"}}
       />
+      <Tooltip title='Enter the Corner'>
         <Button 
         style={{boxShadow: "0px 0px 3px 0px #5CB574", backgroundColor: '#183D3D', color: 'white', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
         onClick={handleEmailSubmission}
       >
         JOIN
       </Button>
+      </Tooltip>
 </div>
       </div>
       )}

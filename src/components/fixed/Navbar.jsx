@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {projects} from "../../data/projects";
 import logo from "../../styles/img/logo.png";
 import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope, faGraduationCap, faAddressCard, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import learn from '../../data/learn';
 
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
@@ -16,6 +18,8 @@ function Navbar() {
   const [posts, setPosts] = useState([]);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = React.useState(false); 
+  const randomIndex = Math.floor(Math.random() * learn.length);
+  const randomLearnItem = learn[randomIndex];
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -27,7 +31,7 @@ function Navbar() {
       try {
         const response = await axios.get('/api/posts');
         if (response.data && response.data.length > 0) {
-          setPosts(response.data.slice(0, 3));
+          setPosts(response.data.slice(0, 1));
         } else {
           setPosts([]);
         }
@@ -175,6 +179,21 @@ function Navbar() {
 
           ))}
           </Box>
+
+          <h3 style={{color: '#5CB574', textAlign: "center"}}>Random lesson:</h3>
+         
+          <Box style={{
+  background: 'rgb(0,0,0)',
+  marginTop: "1rem",
+  padding: "5px",
+  color: "#5CB574",
+  background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
+}}>
+  <ListItem key={randomLearnItem.id} style={{ borderBottom: '1px solid #183D3D' }} component={Link} to={`/learn/${learn.id}`} onClick={handleDrawerToggle}>
+    <ListItemText primary={randomLearnItem.title} />
+  </ListItem>
+</Box>
+
 
           </List>
           
