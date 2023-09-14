@@ -96,14 +96,14 @@ function Flipcard() {
                                         </Box>
                                         
                             </Container>
-                                        <Typography style={{fontSize: '12px', color: "white", backgroundColor: 'black', padding: "10px", borderRadius: "0.4rem", boxShadow: '0px 0px 3px 0px #5cb574', marginTop: "0.4rem" }}>
-                                            <span style={{ color: '#357deb',fontWeight: 'bolder'}}>Tools:</span>
-                                            {projects[currentProject].tools.map((tool, index) => (
-                                                <span key={index} style={{ color: '#5cb574', marginRight: '5px' }}>{tool},</span>
-                                            ))}
-                                        </Typography>
+                            <Typography style={{fontSize: '12px', color: "white", backgroundColor: 'black', padding: "10px", borderRadius: "0.4rem", boxShadow: '0px 0px 3px 0px #5cb574', marginTop: "0.4rem" }}>
+                                <span style={{ color: '#357deb',fontWeight: 'bolder'}}>Tools:</span>
+                                {projects[currentProject].tools.map((tool, index) => (
+                                    <span key={index} style={{ color: '#5cb574', marginRight: '5px' }}>{tool},</span>
+                                ))}
+                            </Typography>
                      </Container>   
-                     </CardContent>
+                </CardContent>
                     <div 
                         style={{ position: 'relative' }} 
                         onClick={toggleOpenImage}
@@ -133,7 +133,7 @@ function Flipcard() {
                             borderRadius: '5px',
                             fontWeight: 'bolder',
                             cursor: 'pointer',
-                            fontSize: '8px'  // Riduzione del font
+                            fontSize: '8px'
                         }}>
                             Click to enlarge
                         </div>

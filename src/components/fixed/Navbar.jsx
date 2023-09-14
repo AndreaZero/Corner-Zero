@@ -130,38 +130,34 @@ function Navbar() {
             <a href="https://ko-fi.com/andreazero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faCoffee}></FontAwesomeIcon></a>
           </Box>
           <ListItem button key="Home" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/" onClick={handleDrawerToggle}>
-  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faHome}></FontAwesomeIcon>
-  <ListItemText primary="Home" />
-</ListItem>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faHome}></FontAwesomeIcon>
+            <ListItemText primary="Home" />
+        </ListItem>
 
-<ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners" onClick={handleDrawerToggle}>
-  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
-  <ListItemText primary="Corners" />
-</ListItem>
+        <ListItem button key="About" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/about" onClick={handleDrawerToggle}>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faAddressCard}></FontAwesomeIcon>
+            <ListItemText primary="About" />
+          </ListItem>
 
-<ListItem button key="Learn" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
-  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGraduationCap}></FontAwesomeIcon>
-  <ListItemText primary="Learn" />
-</ListItem>
+          <ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners" onClick={handleDrawerToggle}>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
+            <ListItemText primary="Corners" />
+          </ListItem>
 
+          <ListItem button key="Repos" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/repos" onClick={handleDrawerToggle}>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faLaptopCode}></FontAwesomeIcon>
+            <ListItemText primary="Repos" />
+          </ListItem>
 
-<ListItem button key="About" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/about" onClick={handleDrawerToggle}>
-  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faAddressCard}></FontAwesomeIcon>
-  <ListItemText primary="About" />
-</ListItem>
+          <ListItem button key="Learn" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGraduationCap}></FontAwesomeIcon>
+            <ListItemText primary="Learn" />
+          </ListItem>
 
-<ListItem button key="Repos" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/repos" onClick={handleDrawerToggle}>
-  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faLaptopCode}></FontAwesomeIcon>
-  <ListItemText primary="Repos" />
-</ListItem>
-
-
-<ListItem button key="Contact Me" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/contacts" onClick={handleDrawerToggle}>
-  <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>
-  <ListItemText primary="Contact Me" />
-</ListItem>
-
-
+          <ListItem button key="Contact Me" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/contacts" onClick={handleDrawerToggle}>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>
+            <ListItemText primary="Contact Me" />
+          </ListItem>
 
             <h3 style={{color: '#5CB574', textAlign: "center"}}>What's New?</h3>
 
@@ -182,17 +178,17 @@ function Navbar() {
 
           <h3 style={{color: '#5CB574', textAlign: "center"}}>Random lesson:</h3>
          
-          <Box style={{
-  background: 'rgb(0,0,0)',
-  marginTop: "1rem",
-  padding: "5px",
-  color: "#5CB574",
-  background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
-}}>
-  <ListItem key={randomLearnItem.id} style={{ borderBottom: '1px solid #183D3D' }} component={Link} to={`/learn/${learn.id}`} onClick={handleDrawerToggle}>
-    <ListItemText primary={randomLearnItem.title} />
-  </ListItem>
-</Box>
+              <Box style={{
+        background: 'rgb(0,0,0)',
+        marginTop: "1rem",
+        padding: "5px",
+        color: "#5CB574",
+        background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
+      }}>
+        <ListItem key={randomLearnItem.id} style={{ borderBottom: '1px solid #183D3D' }} component={Link} to={`/learn/${randomLearnItem.id}`}  onClick={handleDrawerToggle}>
+          <ListItemText primary={randomLearnItem.title} />
+         </ListItem>
+    </Box>
 
 
           </List>

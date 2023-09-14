@@ -30,16 +30,15 @@ function Learn() {
   const ITEMS_PER_PAGE = 8;
 
   useEffect(() => {
-    // Calcola il conteggio totale delle carte quando il componente monta o quando i dati sono randomizzati
+
     setTotalCards(randomizedLearnData.length);
   }, [randomizedLearnData]);
 
   React.useEffect(() => {
-    // Randomize the data when the component mounts
+
     randomizeData();
   }, []);
 
-  // Function to randomize the data
   const randomizeData = () => {
     const randomizedData = [...learn].sort(() => Math.random() - 0.5);
     setRandomizedLearnData(randomizedData);
@@ -193,7 +192,7 @@ function Learn() {
                   <Typography
                     style={{ color: 'white', marginBottom: '1rem', fontSize: '12px', padding: '5px' }}
                   >
-                    {learn.description}
+                    {learn.preview}
                   </Typography>
                   <Button
                     component={Link}

@@ -1,5 +1,3 @@
-// SliderModal.js
-
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
 

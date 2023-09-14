@@ -1,13 +1,14 @@
-import { Container, Card, Typography } from '@mui/material'
+import { Container, Card, Typography, Button } from '@mui/material'
 import { useMediaQuery } from '@mui/material';
 import mehi from "../styles/img/mehi.png";
 import it from "../styles/img/it.png";
 import corner from "../styles/img/corner.png";
 import Flipcard from '../components/FlipCard';
+import cv from "../data/cv.pdf";
 import cornerright from "../styles/img/cornerright.png";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faBriefcase, faDownload, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { 
     faCss3, faDiscord, faEthereum, faFigma, faGit, 
     faHtml5, faJs, faNodeJs, faNpm, faRProject, faReact, faSass 
@@ -15,6 +16,8 @@ import {
 import {
     faBrain, faTerminal
 } from '@fortawesome/free-solid-svg-icons';
+import TimelineCard from '../components/fixed/Timeline';
+import Timeline from '../components/fixed/Timeline';
 
 
 
@@ -126,11 +129,21 @@ function About() {
                                     I've been riding the web development wave hard for the last 12 months.<br/>
                                     On top of that, I've rolled out several personal projects for both learning and work.<br/> Oh, and I'm no stranger to Web3 too!
                                     </h5>
+                             <Button  style={{   backgroundColor: '#183D3D',
+                                height: '25px',
+                                color: '#5cb574',
+                                boxShadow: "0px 0px 3px 0px #5CB574", 
+                                fontSize: "12px"}}
+                                >
+                                <a href={cv} rel='noreferrer noopener' target='blank'>resume
+                                <FontAwesomeIcon style={{marginLeft: '5px'}} icon={faDownload}></FontAwesomeIcon>
+                                </a> 
+                            </Button>
                                 </Card>
 
+                                <Timeline/>
+
                                 <div style={{ border: '1px solid grey'}}></div>
-
-
                                 <Typography style={{ textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
                                 Knowledge
                                 <FontAwesomeIcon icon={faBrain} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
@@ -145,9 +158,6 @@ function About() {
                                 borderRadius: '1rem',
                                 backgroundColor: 'transparent',
                             }}>
-
-                                
-
                                 <Container
                                     style={{
                                         gap: isMobile ? "0.5rem" : "1rem",
@@ -179,7 +189,7 @@ function About() {
                          </Card>
                       <div style={{ border: '1px solid grey'}}></div>
                       <Typography style={{ textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
-                                Projects
+                                Experiences
                                 <FontAwesomeIcon icon={faBriefcase} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
                             </Typography>
                <Flipcard />                   

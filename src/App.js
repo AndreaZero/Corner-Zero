@@ -35,7 +35,6 @@ function App () {
         <Route exact path='/repos' element={<Repos/>} />
         <Route exact path='/learn' element={<Learn/>} />
         <Route exact path='/about' element={<About/>} />
-
         <Route exact path='/learn/:id' element={<LearnDetail/>} />
         <Route exact path='/contacts' element={<Contacts/>} />
         <Route exact path="/posts/:id" element={<PostView/>} />

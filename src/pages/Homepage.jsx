@@ -3,6 +3,8 @@ import PostHome from '../components/PostHome';
 import { Card, Button, Tooltip } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
+import learnData from '../data/learn';
+
 import it from "../styles/img/it.png";
 import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
@@ -14,7 +16,7 @@ import bannerzero from "../styles/img/banner-zero.png";
 import mehi from "../styles/img/mehi.png";
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGreaterThan, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faGreaterThan, faLaptopCode, faSchool } from '@fortawesome/free-solid-svg-icons';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -23,10 +25,19 @@ function Homepage() {
   const controls = useAnimation();
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [userEmail, setUserEmail] = useState('');
-  const [showNewsletterPopup, setShowNewsletterPopup] = useState(false); // State for the popup
+  const [showNewsletterPopup, setShowNewsletterPopup] = useState(false);
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   const [currentText, setCurrentText] = useState('');
   const fullText = "Explore, learn, dream, live!";
+  
+
+  function getRandomLearnId() {
+    const randomItem = learnData[Math.floor(Math.random() * learnData.length)];
+    return randomItem.id;
+}
+const randomId = getRandomLearnId();
+
+
 
   const reflectionStyle = {
     textShadow: '8px 18px 7px rgba(255, 255, 255, 0.15)'
@@ -77,7 +88,6 @@ function Homepage() {
       try {
         const response = await axios.post('/api/newsletter/subscribe', { email: userEmail });
         
-        // Controllo se l'utente è già iscritto
         if (response.data === 'Already subscribed') {
           toast.error('You are already subscribed!');
         } else {
@@ -97,12 +107,11 @@ function Homepage() {
 
 
   useEffect(() => {
-    // Check local storage to see if the user has already been prompted to subscribe
     const hasSubscribed = localStorage.getItem('hasSubscribed');
 
     if (!hasSubscribed) {
-      setShowNewsletterPopup(true); // Show the popup if the user hasn't been prompted before
-      localStorage.setItem('hasSubscribed', 'true'); // Set the value in local storage to prevent showing the popup again
+      setShowNewsletterPopup(true);
+      localStorage.setItem('hasSubscribed', 'true');
     }
   }, []);
 
@@ -239,13 +248,17 @@ function Homepage() {
       </div>
       )}
 </Card>  
-
-        <div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
-           <h5 style={{color: '#5cb574'}}> <a style={{color: "#5cb574"}} href='/corners'>Dive into the Corners 
+<div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
+           <h5 style={{color: '#5cb574'}}> 
+              <a style={{color: "#5cb574"}} href='/corners'>Dive into the Corners 
               <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon></a>!
            </h5>
-            <h5>Instant access.</h5>
-        </div>
+           <h5 style={{color: '#5cb574'}}> 
+   <a style={{color: "#5cb574"}} href={`/learn/${randomId}`}>Random Lesson
+      <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGraduationCap}></FontAwesomeIcon>
+   </a>
+</h5>
+</div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
 
