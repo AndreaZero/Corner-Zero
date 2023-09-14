@@ -77,7 +77,7 @@ function Flipcard() {
                                             borderRadius: "0.3rem",
                                             fontSize: '12px'
                                         }}>
-                                                                           <Tooltip title="Visit GitHub Repo">
+                                         <Tooltip title="Visit GitHub Repo">
                                             <a href={projects[currentProject].link} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon  style={{color: "#5cb574", boxShadow: "0px 0px 1px 0px #5CB574", backgroundColor: "#183d3d", padding: '5px', borderRadius: "100%"}} icon={faGithub}></FontAwesomeIcon></a>
                                             </Tooltip>
                                             <Tooltip title="Live preview">

@@ -1,4 +1,4 @@
-import { Container, Card, Typography, Button } from '@mui/material'
+import { Container, Card, Typography, Button, Tooltip } from '@mui/material'
 import { useMediaQuery } from '@mui/material';
 import mehi from "../styles/img/mehi.png";
 import it from "../styles/img/it.png";
@@ -8,7 +8,7 @@ import cv from "../data/cv.pdf";
 import cornerright from "../styles/img/cornerright.png";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook, faBriefcase, faDownload, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faBriefcase, faDownload, faLaptopCode, faTimeline } from '@fortawesome/free-solid-svg-icons';
 import { 
     faCss3, faDiscord, faEthereum, faFigma, faGit, 
     faHtml5, faJs, faNodeJs, faNpm, faRProject, faReact, faSass 
@@ -91,14 +91,15 @@ function About() {
             flexDirection: "column",
             justifyContent: "center",
             gap: "1rem",
-            width: isMobile ?  'auto' : undefined
+            width: isMobile ? "100%" : 'auto',
         }}>
             <motion.div initial="hidden" animate="visible" variants={fade}></motion.div>
                 <Card
                         style={{
                             backgroundColor: "transparent",
                             color:"white",
-                            width: "auto",
+                            borderRadius: "0px",
+                            padding: "20px",
                             textAlign: 'center',
                         }}>
   <Typography style={{
@@ -129,6 +130,7 @@ function About() {
                                     I've been riding the web development wave hard for the last 12 months.<br/>
                                     On top of that, I've rolled out several personal projects for both learning and work.<br/> Oh, and I'm no stranger to Web3 too!
                                     </h5>
+                                    <Tooltip title='Download CV'>
                              <Button  style={{   backgroundColor: '#183D3D',
                                 height: '25px',
                                 color: '#5cb574',
@@ -139,10 +141,13 @@ function About() {
                                 <FontAwesomeIcon style={{marginLeft: '5px'}} icon={faDownload}></FontAwesomeIcon>
                                 </a> 
                             </Button>
+                            </Tooltip>
                                 </Card>
-
+                                <Typography style={{ textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
+                                Timeline
+                                <FontAwesomeIcon icon={faTimeline} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
+                            </Typography>
                                 <Timeline/>
-
                                 <div style={{ border: '1px solid grey'}}></div>
                                 <Typography style={{ textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
                                 Knowledge
@@ -192,6 +197,7 @@ function About() {
                                 Experiences
                                 <FontAwesomeIcon icon={faBriefcase} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
                             </Typography>
+
                <Flipcard />                   
           </Container>
   )

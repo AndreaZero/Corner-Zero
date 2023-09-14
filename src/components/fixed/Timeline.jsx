@@ -8,7 +8,13 @@ import banner from  "../../styles/img/banner-zero.png";
 
 const Timeline = () => {
   const mobileWidth = 600;
-  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
+  function isMobile() {
+    return window.innerWidth <= 768; // You can adjust this value based on your requirements
+  }
+
+  const cardWidthValue = isMobile() ? '100%' : '500'; // Adjust these values as needed
+
+  
 
   const fade = {
     hidden: { opacity: 0 },
@@ -20,71 +26,41 @@ const Timeline = () => {
       title: "Dec 2021",
       cardTitle: "Starting the journey!",
       cardDetailedText: "Back in 2017, I started my crypto journey but due my premature age, I quit too early. Then i joined NFTs and suddenly I started to studying Dapps and Web3 tools, cause I loved the tecnologies behind and the main goal of decentralization. So my trip start here!",
-      media: {
-        name: "dunkirk beach",
-        source: {
-          url:
-            `${banner}`
-        },
-        type: "IMAGE"
-      },
     },
     {
       title: "Feb. 2022",
       cardTitle: "My first job as developer in web3 space.",
       cardDetailedText: "I co-founded the first italia rap NFT project with DJ Gengis Khan & Noyz Narcos.",
-      media: {
-        name: "dunkirk beach",
-        source: {
-          url:
-            `${banner}`
-        },
-        type: "IMAGE"
-      },
+     
     },
     {
       title: "Summer 2022",
       cardTitle: "Degen time & testing",
       cardDetailedText: "In this timeframe I spent the days searching for infos about web development and potential apps to build. Every day I started to learn more and more and the results got me incredbly inspired to move on!",
-      media: {
-        name: "dunkirk beach",
-        source: {
-          url:
-            `${banner}`
-        },
-        type: "IMAGE"
-      },
+     
     },
     {
       title: "Today",
-      cardTitle: "Took some serious decision. I want to make this passions my main job. I'm deeply focusued day by day on studing programming languages and frameworks, libreries, and more. I decided to build CornerZero to share my thoughts about all the things of life, not only code. See you in the Corner.",
-      cardDetailedText: "Dettaglio del testo 1",
-      media: {
-        name: "dunkirk beach",
-        source: {
-          url:
-            `${banner}`
-        },
-        type: "IMAGE"
-      },
+      cardTitle: "Took some serious decision.",
+      cardDetailedText: "I want to make this passions my main job. I'm deeply focusued day by day on studing programming languages and frameworks, libreries, and more. I decided to build CornerZero to share my thoughts about all the things of life, not only code. See you in the Corner.",
+     
     },
   ];
 
   return (
     <motion.div initial="hidden" animate="visible" variants={fade}>
       <center>
-    <Container style={{ width: isMobile ? 'auto': 'auto', justifyContent: "center", alignItems: "center"}}>
+    <Container style={{padding: "20px", justifyContent: "center", borderRadius: "1rem", alignItems: "center", marginTop: "1rem", backgroundColor: '#183d3d'}}>
       <Chrono
-        mediaSettings={{ align: 'center', fit: 'contain' }}
+        mediaSettings={{ align: 'center', fit: 'contain',}}
         items={items}
-        lineWidth={2}
-        cardWidth={700}
+        cardWidth={cardWidthValue}
         timelinePointShape='diamond'
         useReadMore
         theme={{
           primary: '#5cb574',
           secondary: '#183d3d',
-          cardBgColor: '#183d3d',
+          cardBgColor: '#0E0E0E',
           cardTitleColor: '#5cb574',
           cardDetailsColor: 'white',
           cardSubtitleColor: 'white',
@@ -93,10 +69,7 @@ const Timeline = () => {
         }}
         slideShow
         mode="HORIZONTAL">
-         
         </Chrono>
-      
-
     </Container>
     </center>
     </motion.div>
