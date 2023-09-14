@@ -70,7 +70,7 @@ function Learn() {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '2rem',
+        gap: '1rem',
         marginTop: '1rem',
       }}
     >
@@ -103,16 +103,18 @@ function Learn() {
           border: '1px solid #5CB574',
         }}
       ></div>
-      <div style={{display: 'flex', justifyContent: "space-between", alignItems: "center"}}>
+      <div style={{display: 'flex', flexDirection: isMobile ? 'column' : undefined,  justifyContent: isMobile ? undefined : "space-between", alignItems: "center"}}>
       <h6>
 
       <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>
 
-        - Arguments: {totalCards}
+        - Arguments:  {totalCards}
+        <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={cornerright}></img>
+
         </h6>
 
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.1rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
       
       <Button
         style={{
@@ -245,6 +247,33 @@ function Learn() {
           </Grid>
         ))}
       </Grid>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
+      
+      <Button
+        style={{
+          backgroundColor: '#161b22',
+          color: '#5cb574',
+          boxShadow: '0px 0px 4px 0px #183d3d'
+        }}
+        disabled={currentPage === 1}
+        onClick={() => setCurrentPage(currentPage - 1)}
+      >
+        <FontAwesomeIcon style={{fontSize: "10px"}}  icon={faLessThan}></FontAwesomeIcon>
+      </Button>
+      <span style={{ boxShadow: '0px 0px 4px 0px #183d3d', fontWeight: 'bolder', fontSize: '18px',  backgroundColor: '#183d3d', padding: '5px', borderRadius: '0.3rem', margin: '5px' }}> {currentPage} </span>
+      <Button
+        style={{
+          backgroundColor: '#161b22',
+          color: '#5cb574',
+          boxShadow: '0px 0px 4px 0px #183d3d'
+        }}
+        disabled={currentPage === Math.ceil(learn.length / ITEMS_PER_PAGE)}
+        onClick={() => setCurrentPage(currentPage + 1)}
+      >
+        
+        <FontAwesomeIcon style={{fontSize: "10px", }} icon={faGreaterThan}></FontAwesomeIcon>
+      </Button>
+    </div>
     </Container>
   );
 }

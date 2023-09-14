@@ -1,18 +1,17 @@
 import React from 'react';
 import { Chrono } from 'react-chrono';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimeline } from '@fortawesome/free-solid-svg-icons';
 import { motion, useAnimation } from "framer-motion";
-import { Container } from '@mui/material';
-import { useMediaQuery } from '@mui/material';
-
-import banner from  "../../styles/img/banner-zero.png";
-
+import { Container, Typography } from '@mui/material';
+import banner from "../../styles/img/banner-zero.png";
 const Timeline = () => {
-  const mobileWidth = 600;
+
   function isMobile() {
     return window.innerWidth <= 768; // You can adjust this value based on your requirements
   }
 
-  const cardWidthValue = isMobile() ? '100%' : '500'; // Adjust these values as needed
+const cardWidthValue = isMobile() ? undefined : '500'; // Adjust these values as needed
 
   
 
@@ -49,29 +48,48 @@ const Timeline = () => {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={fade}>
-      <center>
-    <Container style={{padding: "20px", justifyContent: "center", borderRadius: "1rem", alignItems: "center", marginTop: "1rem", backgroundColor: '#183d3d'}}>
+      <Container style={{padding: "0px",
+        width: isMobile ? '100%' : undefined, justifyContent: 'center', alignItems: "center", flexDirection: 'column'
+      }}>
+                      <Typography style={{ marginBottom: "3rem",textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
+                  Timeline
+                  <FontAwesomeIcon icon={faTimeline} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
+              </Typography>
+        <style>
+          {`
+        .TimelineContentDetails-sc-d7qjm1-5.iSsTMA {
+          padding: 10px;
+          box-shadow: 0px 0px 13px 0px #5cb574;
+        }
+        .TimelineNavWrapper-sc-1apb8f9-0.jROSZr {
+          background-color: transparent;
+        }
+        .TimelineNavButton-sc-1apb8f9-2.ilFrD {
+          background-color: transparent;
+          color: #5cb574;
+        }
+        `}
+        </style>
       <Chrono
         mediaSettings={{ align: 'center', fit: 'contain',}}
         items={items}
-        cardWidth={cardWidthValue}
         timelinePointShape='diamond'
         useReadMore
+        cardWidth={cardWidthValue}
         theme={{
-          primary: '#5cb574',
+          primary: '#1869EB',
           secondary: '#183d3d',
-          cardBgColor: '#0E0E0E',
           cardTitleColor: '#5cb574',
+          cardBgColor: 'transparent',
           cardDetailsColor: 'white',
           cardSubtitleColor: 'white',
-          titleColor: 'black',
+          titleColor: '#0e0e0e',
           titleColorActive: 'white',
         }}
         slideShow
         mode="HORIZONTAL">
         </Chrono>
-    </Container>
-    </center>
+        </Container>
     </motion.div>
   );
 };

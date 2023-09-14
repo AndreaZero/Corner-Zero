@@ -261,8 +261,6 @@ const randomId = getRandomLearnId();
 </div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
-
-
       <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
         </h6>

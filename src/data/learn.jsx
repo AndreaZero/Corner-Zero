@@ -13,7 +13,7 @@ const learn = [
         id: 1,
         title: "NFTs",
         category: "Web3",
-        images: [`${nfts}`],
+        image: [`${nfts}`],
         link1: 'https://google.com',
         link2: 'https://google.com',
         preview: "NFTs are unique digital tokens verifying ownership of a digital item, like art. Think collectible cards, but online and one-of-a-kind.",
@@ -26,7 +26,7 @@ const learn = [
         id: 2,
         title: "Blockchain",
         category: "Web3",
-        images: [`${blockchain}`],
+        image: [`${blockchain}`],
         preview: "Basically a digital database, decentralized and secure. It's like a shared, unchangeable record book everyone can see, but nobody can alter.",
         content: `<p><strong>Blockchain</strong> is often visualized as a chain of blocks, but let's break it down in simpler terms. Think of it as a book - a ledger where you jot down all important notes or transactions. Now, imagine this book isn't in one place but is copied across a network of computers. Every time someone makes a new note, it gets recorded in everyone's book.</p>
         <p>But here's the catch: once a note (or transaction) is added, it cannot be changed or erased. It's permanent. And before a new note gets added, everyone in the network checks to ensure it's legitimate. This makes the whole system <strong>secure and transparent</strong>.</p>`,
@@ -46,7 +46,7 @@ const learn = [
         id: 4,
         title: "Wallet",
         category: "Web3",
-        images: [`${wallet}`],
+        image: [`${wallet}`],
         preview: "A wallet, in the digital realm, securely stores cryptocurrency keys. It's like a digital purse for your online currency.",
         content:  `
         <p>When we talk about money in our physical world, we often think about wallets to store our cash and cards. In the digital landscape of cryptocurrencies, we have the <strong>digital wallet</strong>.</p>
