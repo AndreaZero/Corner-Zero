@@ -17,17 +17,7 @@ function Flipcard() {
     const [openImage, setOpenImage] = useState(false);
     const [showTooltip, setShowTooltip] = useState(true);
 
-    const playSound = (sound) => {
-        const audio = new Audio(sound);
-        audio.play();
-    };
-
     const toggleDesc = () => {
-        if (showDesc) {
-            playSound(close); 
-        } else {
-            playSound(open);  
-        }
         setShowDesc(prev => !prev);
     };
 
