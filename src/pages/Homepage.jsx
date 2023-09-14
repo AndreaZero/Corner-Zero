@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PostHome from '../components/PostHome';
-import { Card, Button, Tooltip } from '@mui/material';
+import { Card, Button, Container, Tooltip } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import learnData from '../data/learn';
-
-import it from "../styles/img/it.png";
 import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,10 +11,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useMediaQuery } from '@mui/material';
 import { motion, useAnimation } from "framer-motion";
 import bannerzero from "../styles/img/banner-zero.png";
-import mehi from "../styles/img/mehi.png";
 import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faGreaterThan, faLaptopCode, faSchool } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -27,8 +24,6 @@ function Homepage() {
   const [userEmail, setUserEmail] = useState('');
   const [showNewsletterPopup, setShowNewsletterPopup] = useState(false);
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
-  const [currentText, setCurrentText] = useState('');
-  const fullText = "Explore, learn, dream, live!";
   
 
   function getRandomLearnId() {
@@ -37,30 +32,7 @@ function Homepage() {
 }
 const randomId = getRandomLearnId();
 
-
-
-  const reflectionStyle = {
-    textShadow: '8px 18px 7px rgba(255, 255, 255, 0.15)'
-};
-
-  useEffect(() => {
-    let index = 0;
-
-    const typingInterval = setInterval(() => {
-      setCurrentText(prevText => prevText + fullText[index]);
-      index++;
-
-      if (index > fullText.length - 1) {
-        clearInterval(typingInterval);
-      }
-    }, 100);
-
-    return () => clearInterval(typingInterval);
-  }, []);
-
-
-
-  useEffect(() => {
+useEffect(() => {
     async function fetchPostCount() {
       try {
         const response = await axios.get('/api/posts/count');
@@ -68,7 +40,7 @@ const randomId = getRandomLearnId();
       } catch (error) {
         console.error('Error fetching post count:', error);
       }
-    }
+}
 
     fetchPostCount();
   }, []);
@@ -130,7 +102,6 @@ const randomId = getRandomLearnId();
     }}>
     
                       
-
        {showNewsletterPopup && (
         <div style={{
           position: 'fixed',
@@ -166,30 +137,26 @@ const randomId = getRandomLearnId();
         </div>
       )}
 
-<div style={{
-        display: 'flex',
-        alignItems: "center",
-        padding: "10px",
-        textAlign: 'center',
-        justifyContent: isMobile? 'center' : "space-between",
-        fontSize: isMobile ? '12px' : undefined
-      }}>
-{
-  isMobile ? (
-    <>
-          <h1>{currentText}</h1>
-    </>
-  ) : (
-    <>
-          <h2>{currentText}</h2>
-          {!isMobile && ( 
-          <img src={bannerzero} alt='bannerzero' style={{height: "70px", objectFit: "contain"}}></img>
-          )}
+<Container style={{
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: isMobile ? 'column' : 'row'
+}}>
+    <h2 style={{ textAlign: 'center', margin: isMobile ? '10px 0' : '0 10px' }}>
+    Explore, learn, dream, live!
+  </h2>
+  <img 
+    src={bannerzero} 
+    alt='bannerzero' 
+    style={{
+      height: isMobile ? "70px" : "120px", 
+      objectFit: "contain", borderRadius: "10px"
+    }}
+  ></img>
 
-    </>
-  )
-}
-</div>
+</Container>
+
 
 <Card
                         style={{
@@ -261,6 +228,8 @@ const randomId = getRandomLearnId();
 </div>
 
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
+
+
       <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
         </h6>

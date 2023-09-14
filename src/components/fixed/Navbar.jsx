@@ -46,18 +46,19 @@ function Navbar() {
     <Box style={{
       display: 'flex',
       flexDirection: 'column',
-      gap: '0.4rem',
       alignItems: 'center',
-      borderBottom: '1px solid grey',
       justifyContent: 'center'
     }} top={0} left={0} right={0} zIndex={1200}>
       <AppBar style={{
         color: "white",
+        backgroundColor: 'black',
         fontWeight: 'bold',
-        padding: '10px',
-        height: isMobile ? '80px' : '100px',
+        justifyContent: 'center',
+        borderBottom: '1px solid white',
+        padding: '30px',
+        height: '50px',
         display: 'flex',
-      }} position="static">
+      }} position="fixed">
         <Toolbar style={{
           display: 'flex',
           gap: "1rem",

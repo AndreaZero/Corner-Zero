@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
-import { ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import Navbar from "./components/fixed/Navbar";
 import theme from "./theme";
 import axios from "axios";
@@ -27,6 +27,7 @@ function App () {
       <AuthProvider>
           <BrowserRouter>
       <Navbar/>
+      <Box paddingTop='50px'>
       <Routes>
         <Route exact path="/" element={<Homepage/>} />
         <Route exact path="/admin/dashboard" element={<Dashboard/>} />
@@ -40,6 +41,7 @@ function App () {
         <Route exact path="/posts/:id" element={<PostView/>} />
         {/* <Route exact path='/admin/register' element={<RegisterPage />} /> */}
       </Routes>
+      </Box>
       <Footer />
     </BrowserRouter>
     </AuthProvider>
