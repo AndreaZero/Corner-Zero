@@ -59,7 +59,7 @@ function LastFiveLikedPosts() {
                 boxShadow: "0px 0px 5px 0px black"
             }}>
                 {topLikedPosts.map((post) => (
-                    <Link style={{textDecoration: 'none', color: '#183D3D'}} to={`/posts/${post._id}`}>
+                    <Link style={{textDecoration: 'none', color: '#183D3D'}} to={`/posts/${post.title}`}>
                     <ListItem 
                         button 
                         style={{

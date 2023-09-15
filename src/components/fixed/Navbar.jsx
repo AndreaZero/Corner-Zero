@@ -169,7 +169,7 @@ function Navbar() {
                background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
             }}>
             {posts.map(post => (
-              <ListItem key={post.id} post={post} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post._id}`} onClick={handleDrawerToggle}>
+              <ListItem key={post.id} post={post} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post.title}`} onClick={handleDrawerToggle}>
   <ListItemText primary={post.title} />   
 </ListItem>
 

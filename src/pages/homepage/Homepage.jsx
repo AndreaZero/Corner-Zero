@@ -137,11 +137,13 @@ useEffect(() => {
         </div>
       )}
 
-<Container className='bg-home'>
-
-    <h2 style={{textAlign: 'center', fontSize: isMobile ? undefined : '40px'}}>
+      
+    <h2 style={{textAlign: 'center', fontSize: isMobile ? '18px' : '40px'}}>
     Explore, learn, dream, live!
   </h2>
+
+<Container className='bg-home'>
+
 
                         <Card
                         style={{
@@ -233,6 +235,7 @@ useEffect(() => {
         <div style={{
           display: 'flex',
           gap: isMobile ? '0' : '5rem',
+          
           flexDirection: isMobile ? 'column' : 'row'
         }}>
           <div style={{

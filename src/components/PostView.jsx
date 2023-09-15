@@ -24,6 +24,7 @@ function PostView() {
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   const isTablet = useMediaQuery(`(max-width: ${tabletWidth}px)`);           
   const { id } = useParams();
+  const { title } = useParams();
   const navigate = useNavigate();
   const [liked, setLiked] = useState(null);
 
@@ -32,14 +33,14 @@ function PostView() {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const response = await axios.get(`/api/posts/${id}`);
+        const response = await axios.get(`/api/posts/${title}`);
         setPost(response.data);
       } catch (error) {
         console.error('Error fetching post:', error);
       }
     }
     fetchPost();
-  }, [id]);
+}, [title]);
 
   const deletePost = async () => {
     if (window.confirm("Are you sure you want to delete this post?")) {

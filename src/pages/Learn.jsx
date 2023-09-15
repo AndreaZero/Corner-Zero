@@ -197,7 +197,7 @@ function Learn() {
                   </Typography>
                   <Button
                     component={Link}
-                    to={`/learn/${learn.id}`}
+                    to={`/learn/${encodeURIComponent(learn.title)}`}
                     style={{
                       backgroundColor: '#161b22',
                       boxShadow: '0px 0px 4px 0px #183d3d',

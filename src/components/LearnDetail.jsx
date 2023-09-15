@@ -11,8 +11,8 @@ import learn from '../data/learn';
 import { display } from '@mui/system';
 
 function LearnDetail() {
-    const { id } = useParams();
-    const learnItem = learnData.find(item => item.id === parseInt(id));
+  const { title } = useParams();
+  const learnItem = learnData.find(item => item.title === decodeURIComponent(title));
     const mobileWidth = 600;
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 

@@ -60,7 +60,7 @@ function LastFivePosts() {
                 background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)',
             }}>
                 {recentPosts.map((post) => (
-                    <Link style={{textDecoration: 'none', color: '#183D3D'}} to={`/posts/${post._id}`}>
+                    <Link style={{textDecoration: 'none', color: '#183D3D'}} to={`/posts/${post.title}`}>
                     <ListItem 
                         button 
                         style={{

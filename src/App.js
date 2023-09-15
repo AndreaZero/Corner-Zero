@@ -36,9 +36,9 @@ function App () {
         <Route exact path='/repos' element={<Repos/>} />
         <Route exact path='/learn' element={<Learn/>} />
         <Route exact path='/about' element={<About/>} />
-        <Route exact path='/learn/:id' element={<LearnDetail/>} />
+        <Route exact path='/learn/:title' element={<LearnDetail/>} />
         <Route exact path='/contacts' element={<Contacts/>} />
-        <Route exact path="/posts/:id" element={<PostView/>} />
+        <Route exact path="/posts/:title" element={<PostView />} />
         {/* <Route exact path='/admin/register' element={<RegisterPage />} /> */}
       </Routes>
       </Box>
