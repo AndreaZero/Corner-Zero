@@ -151,7 +151,6 @@ useEffect(() => {
     <h2 style={{textAlign: 'center', fontSize: isMobile ? '18px' : '40px'}}>
     Explore, learn, dream, live!
   </h2>
-
 <Container className='bg-home'>
 
 
