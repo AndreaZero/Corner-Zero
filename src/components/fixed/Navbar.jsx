@@ -49,7 +49,6 @@ function Navbar() {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: '#0e0e0e',
-        boxShadow: "0px 0px 3px 0px #5cb574",
         fontWeight: 'bold',
         height: '60px',
         display: 'flex',
@@ -60,17 +59,18 @@ function Navbar() {
           color: "white",
           fontWeight: 'bold',
           alignItems: "center",
-          justifyContent: "space-around"
+          gap: isMobile ? undefined : "2rem",
+          justifyContent: isMobile ? 'space-around' : "center"
         }}>
       
           <a href='/'>
             <img style={{
-              width: isMobile ? '40px' : '200px',
+              width: isMobile ? '40px' : '40px',
               objectFit: 'contain'
-            }} src={isMobile ? iconright : logo} alt='logo'></img> 
+            }} src={isMobile ? iconright : iconright} alt='logo'></img> 
           </a>
 
-          <Hidden smDown> 
+          <Hidden smDown> |
             <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link> - 
             <Link style={{ color: '#5CB574' }} to='/about'>WhoIam</Link> -
             <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> -  

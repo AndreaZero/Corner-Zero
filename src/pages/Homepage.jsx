@@ -6,6 +6,7 @@ import cornerright from "../styles/img/cornerright.png";
 import learnData from '../data/learn';
 import LastFivePosts from "../components/LastFivePosts";
 import axios from "axios";
+import "../styles/home.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useMediaQuery } from '@mui/material';
@@ -98,7 +99,6 @@ useEffect(() => {
       display: 'flex',
       flexDirection: "column",
       justifyContent: "space-between",
-      marginTop: "0.3rem",
       width: isMobile ?  '350px' : undefined, 
     }}>
     
@@ -138,26 +138,12 @@ useEffect(() => {
         </div>
       )}
 
-<Container style={{
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: isMobile ? 'column' : 'row'
-}}>
-    <h2 style={{textAlign: 'center'}}>
+<Container className='bg-home'>
+
+    <h2 style={{textAlign: 'center', fontSize: isMobile ? undefined : '40px'}}>
     Explore, learn, dream, live!
   </h2>
-  <img 
-    src={bannerzero} 
-    alt='bannerzero' 
-    style={{
-      display: isMobile ? 'none' : undefined,
-      height: isMobile ? "70px" : "120px", 
-      objectFit: "contain"
-    }}
-  ></img>
 
-</Container>
 
 
 <Card
@@ -241,6 +227,8 @@ useEffect(() => {
 
         </h6>
           </div>
+
+          </Container>
       <div style={{ flex: 1 }}>
         <div style={{
           display: 'flex',
