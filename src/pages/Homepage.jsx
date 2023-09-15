@@ -143,9 +143,6 @@ useEffect(() => {
     <h2 style={{textAlign: 'center', fontSize: isMobile ? undefined : '40px'}}>
     Explore, learn, dream, live!
   </h2>
-
-
-
 <Card
                         style={{
                             backgroundColor: "transparent",
@@ -215,7 +212,7 @@ useEffect(() => {
 </h5>
 </div>
 
-      <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between', borderBottom: "1px solid #5CB574 " }}>
+      <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between'}}>
 
 
       <h6>
