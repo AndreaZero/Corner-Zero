@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostHome from '../components/PostHome';
-import { Card, Button, Container, Tooltip } from '@mui/material';
+import { Card, Button, Container, Tooltip, Typography } from '@mui/material';
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import learnData from '../data/learn';
@@ -144,13 +144,14 @@ useEffect(() => {
   alignItems: 'center',
   flexDirection: isMobile ? 'column' : 'row'
 }}>
-    <h2 style={{ textAlign: 'center', margin: isMobile ? '10px 0' : '0 10px' }}>
+    <h2 style={{textAlign: 'center'}}>
     Explore, learn, dream, live!
   </h2>
   <img 
     src={bannerzero} 
     alt='bannerzero' 
     style={{
+      display: isMobile ? 'none' : undefined,
       height: isMobile ? "70px" : "120px", 
       objectFit: "contain"
     }}
