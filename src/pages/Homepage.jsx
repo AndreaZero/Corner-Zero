@@ -98,6 +98,7 @@ useEffect(() => {
       display: 'flex',
       flexDirection: "column",
       justifyContent: "space-between",
+      marginTop: "0.3rem",
       width: isMobile ?  '350px' : undefined, 
     }}>
     
@@ -151,7 +152,7 @@ useEffect(() => {
     alt='bannerzero' 
     style={{
       height: isMobile ? "70px" : "120px", 
-      objectFit: "contain", borderRadius: "10px"
+      objectFit: "contain"
     }}
   ></img>
 

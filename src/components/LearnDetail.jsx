@@ -87,6 +87,8 @@ function LearnDetail() {
                 dangerouslySetInnerHTML={{ __html: learnItem.content }}>
               </Typography>
 
+              <img style={{borderRadius: "1rem", boxShadow: "0px 0px 1px 0px white",   width: "300px", objectFit: 'contain', padding: '10px', backgroundColor: "#0e0e0e"}} alt='img' src={learnItem.image}></img>
+
               <Typography
                 dangerouslySetInnerHTML={{ __html: learnItem.content2 }}>
               </Typography>

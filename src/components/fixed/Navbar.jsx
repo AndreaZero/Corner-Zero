@@ -1,4 +1,4 @@
-import { AppBar, Hidden, Toolbar, Button, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText, IconButton } from '@mui/material';
+import { AppBar, Hidden, Toolbar, Button, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText, IconButton, Container } from '@mui/material';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -43,27 +43,26 @@ function Navbar() {
   }, []);
 
   return (
-    <Box style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }} top={0} left={0} right={0} zIndex={1200}>
-      <AppBar style={{
+    <>
+        <AppBar style={{
         color: "white",
-        backgroundColor: 'black',
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: '#0e0e0e',
+        boxShadow: "0px 0px 3px 0px #5cb574",
         fontWeight: 'bold',
-        justifyContent: 'center',
-        borderBottom: '1px solid white',
-        padding: '30px',
         height: '50px',
         display: 'flex',
       }} position="fixed">
-        <Toolbar style={{
+
+        <Container style={{
           display: 'flex',
-          gap: "1rem",
-          justifyContent: "space-between"
+          color: "white",
+          fontWeight: 'bold',
+          alignItems: "center",
+          justifyContent: "space-around"
         }}>
+      
           <a href='/'>
             <img style={{
               width: isMobile ? '40px' : '200px',
@@ -106,7 +105,7 @@ function Navbar() {
             </IconButton>
           )}
 
-        </Toolbar>
+        </Container>
         
         <Drawer
           anchor={"right"}
@@ -166,7 +165,6 @@ function Navbar() {
           <Box style={{
                background: 'rgb(0,0,0)',
                marginTop: "1rem",
-               padding: "5px",
                color: "#5CB574",
                background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
             }}>
@@ -183,7 +181,6 @@ function Navbar() {
               <Box style={{
         background: 'rgb(0,0,0)',
         marginTop: "1rem",
-        padding: "5px",
         color: "#5CB574",
         background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
       }}>
@@ -196,8 +193,8 @@ function Navbar() {
           </List>
           
         </Drawer>
-      </AppBar>
-    </Box>
+</AppBar>
+</>
   );
 }
 

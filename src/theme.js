@@ -12,13 +12,6 @@ const theme = createTheme({
 
   },
   components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          background: "transparent"
-        }
-      }      
-    },
     MuiInput: {
       styleOverrides: {
         root: {
