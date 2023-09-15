@@ -157,7 +157,7 @@ useEffect(() => {
                           <span style={{fontSize: "12px", fontWeight: "bold"}}>CornerZero is my personal space</span>
                         <br />
                         <h5>
-              Please let me <a href='/about'>introduce myself</a>
+              Please let me <a style={{color: '#5cb574'}} href='/about'>introduce myself</a>
             <br />
             Here I write <span style={{fontStyle: 'italic'}}>Corners</span>, 
             publish my projects, <br /> also help people understand web tecnologies.
