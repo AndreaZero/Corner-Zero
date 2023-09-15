@@ -21,30 +21,27 @@ function LearnDetail() {
     }
 
     return (
-        <Container style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: 'center',
-            width: isMobile ?  'auto' : undefined
-        }}>
+      <Container style={{
+        display: "flex",
+        padding: "10px",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
               <Card
                 style={{
                   backgroundColor: 'transparent',
-                  width: isMobile ? '100%' : '800px',
+                  width: isMobile ? 'auto' : '800px',
                   display: 'flex',
                   alignItems: "center",
+                  padding: "20px",
+                  marginTop: '0.5rem',
                   flexDirection: "column",
                   textAlign: 'center',
                   display: 'flex',
                   overflow: 'hidden',
-                  gap: "1rem",
-                  padding: '20px',
+                  gap: "2rem",
                 }}
               >
-              <Container style={{
-                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: "2rem"
-              }}>
                <Typography style={{
                           fontSize: "20px",
                           color: "white",
@@ -58,8 +55,6 @@ function LearnDetail() {
                       <Container style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: "center",
-                        justifyContent: 'center',
                       }}>
                       <Typography style={{
                           fontSize: "16px",
@@ -77,25 +72,22 @@ function LearnDetail() {
                       }}>
                         <a href={learnItem.link1}>{learnItem.link1}</a>
                         </Typography>
-                      </Container>
-                      </Container>
-
-                   
-
-        
-              <Typography
+                        </Container>
+                        <Typography
                 dangerouslySetInnerHTML={{ __html: learnItem.content }}>
               </Typography>
-
+              
+              {
+                learnItem.image &&
               <img style={{borderRadius: "1rem", boxShadow: "0px 0px 1px 0px white",   width: "300px", objectFit: 'contain', padding: '10px', backgroundColor: "#0e0e0e"}} alt='img' src={learnItem.image}></img>
+              }
 
+a
               <Typography
                 dangerouslySetInnerHTML={{ __html: learnItem.content2 }}>
               </Typography>
-
-
           </Card>
-        </Container>
+          </Container>
     );
 }
 

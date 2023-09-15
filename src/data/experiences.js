@@ -11,14 +11,14 @@ import lospollos2 from "../styles/img/projects/lospollos2.jpeg";
 import lospollos3 from "../styles/img/projects/lospollos3.png";
 import lospollos4 from "../styles/img/projects/lospollos4.png";
 
-export const projects = [
+export const experiences = [
     {
       title: "Los Pollos Social",
       description: "Social app + live chat build with MERN",
       back: "This project represents a state-of-the-art Social Media platform developed using the MERN stack. This fullstack combination ensures a robust, scalable, and high-performance application to engage users seamlessly.",
       tools: ['React', 'NPM', 'CSS3', 'Html5', 'Wallet Connect', 'Web3', 'Solidity', 'Remix ETH'],
       imageUrl: [`${lospollosbanner}`,`${lospollos}`, `${lospollos2}`, `${lospollos3}`, `${lospollos4}`],
-      link: "https://lospollossocial.eu",
+      link: "https://lospollosgvng.it/",
       github_link: "https://github.com/AndreaZero/LosPollos-Social"
     },
     {

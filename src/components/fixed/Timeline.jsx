@@ -8,7 +8,7 @@ import banner from "../../styles/img/banner-zero.png";
 const Timeline = () => {
 
   function isMobile() {
-    return window.innerWidth <= 768; // You can adjust this value based on your requirements
+    return window.innerWidth <= 600; // You can adjust this value based on your requirements
   }
 
 const cardWidthValue = isMobile() ? undefined : '500'; // Adjust these values as needed
@@ -48,7 +48,7 @@ const cardWidthValue = isMobile() ? undefined : '500'; // Adjust these values as
 
   return (
     <motion.div initial="hidden" animate="visible" variants={fade}>
-      <Container style={{padding: "0px",
+      <Container style={{padding: "20px", backgroundColor: '#0e0e0e', borderRadius: '1rem',
         width: isMobile ? '100%' : undefined, justifyContent: 'center', alignItems: "center", flexDirection: 'column'
       }}>
                       <Typography style={{ marginBottom: "3rem",textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
@@ -58,14 +58,25 @@ const cardWidthValue = isMobile() ? undefined : '500'; // Adjust these values as
         <style>
           {`
         .TimelineContentDetails-sc-d7qjm1-5.iSsTMA {
+          padding: 10px; 
+          border-top: 1px solid white;
+        }
+        .TimelineControlContainer-sc-cif21b-4.bMJdTO {
+          border-radius: 1rem;
+        }
+        .TimelineItemContentWrapper-sc-d7qjm1-0.gkXdO {
+          background-color: #183d3d;
           padding: 10px;
-          box-shadow: 0px 0px 13px 0px #5cb574;
+        }
+        .TimelineMainWrapper-sc-cif21b-1.bpnhik {
         }
         .TimelineNavWrapper-sc-1apb8f9-0.jROSZr {
-          background-color: transparent;
+          background-color: #0e0e0e;
+          gap: 0.6rem;
+          border-radius: 1rem;
         }
         .TimelineNavButton-sc-1apb8f9-2.ilFrD {
-          background-color: transparent;
+          background-color: #183d3d;
           color: #5cb574;
         }
         `}
@@ -77,10 +88,10 @@ const cardWidthValue = isMobile() ? undefined : '500'; // Adjust these values as
         useReadMore
         cardWidth={cardWidthValue}
         theme={{
-          primary: '#1869EB',
+          primary: '#5cb574',
           secondary: '#183d3d',
           cardTitleColor: '#5cb574',
-          cardBgColor: 'transparent',
+          cardBgColor: '#183d3d',
           cardDetailsColor: 'white',
           cardSubtitleColor: 'white',
           titleColor: '#0e0e0e',

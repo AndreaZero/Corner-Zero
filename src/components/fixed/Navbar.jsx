@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {projects} from "../../data/projects";
+import {experiences} from "../../data/experiences";
 import logo from "../../styles/img/logo.png";
 import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -51,7 +51,7 @@ function Navbar() {
         backgroundColor: '#0e0e0e',
         boxShadow: "0px 0px 3px 0px #5cb574",
         fontWeight: 'bold',
-        height: '50px',
+        height: '60px',
         display: 'flex',
       }} position="fixed">
 
@@ -83,8 +83,7 @@ function Navbar() {
             display: 'flex',
             alignItems: "center",
             justifyContent: 'center',
-            padding: '5px',
-            gap: "0.4rem",
+            gap: isMobile ? "0.7rem" : '0.3rem',
             color: "white",
             borderRadius: "0.3rem"
           }}>
@@ -100,9 +99,12 @@ function Navbar() {
           )}
 
           {isMobile && (
+
             <IconButton edge="end" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
+              
               <FontAwesomeIcon icon={faListUl}></FontAwesomeIcon>
             </IconButton>
+
           )}
 
         </Container>
@@ -122,9 +124,7 @@ function Navbar() {
             alignItems: "center",
             justifyContent: 'center',
             padding: '5px',
-            gap: "0.4rem",
             color: "white",
-            marginTop: "0.6rem",
             borderRadius: "0.3rem"
           }}>
             <h3 style={{color: 'white', textAlign: "center"}}>Menu</h3>

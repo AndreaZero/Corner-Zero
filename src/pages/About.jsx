@@ -85,7 +85,8 @@ function About() {
         return (
                 <Container style={{ /// CONTAINER MAIN ABOUT
                     display: "flex",
-                    flexDirection: "column",       
+                    flexDirection: "column",
+                    background: 'linear-gradient(90deg, rgba(14,14,14,1) 0%, rgba(0,0,0,1) 76%)',        
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "20px",
@@ -137,17 +138,15 @@ function About() {
                         </Button>
                       </Tooltip>
                   </Card>
-
-
                   <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
 
-                
-                  <Flipcard/>
-                  <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
-                    <Timeline/>
-                  <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
+                      <Flipcard/>
 
+                        <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
 
+                      <Timeline/>
+
+                  <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
 
                       <Container // KNOWLEDGE
                         style={{

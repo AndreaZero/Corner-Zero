@@ -3,7 +3,7 @@ import { CardMedia, Tooltip, CardContent, Box, Typography, Button, Container } f
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGit, faGithub, faGofore, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faEye, faGlasses, faBriefcase,faLink, faLinkSlash } from '@fortawesome/free-solid-svg-icons';
-import { projects } from '../data/projects';
+import { experiences } from '../data/experiences';
 import open from "../styles/fxs/open.mp3";
 import close from "../styles/fxs/close.mp3";
 import SliderModal from './fixed/SliderModal';
@@ -28,42 +28,42 @@ function Flipcard() {
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
     const handleNext = () => {
-        setCurrentProject(prev => (prev + 1) % projects.length);
+        setCurrentProject(prev => (prev + 1) % experiences.length);
     };
 
     const handlePrev = () => {
-        setCurrentProject(prev => (prev - 1 + projects.length) % projects.length);
+        setCurrentProject(prev => (prev - 1 + experiences.length) % experiences.length);
     };
 
     return (
-                        <CardContent style={{ borderRadius: "1rem", width: isMobile ? undefined : '500px',
+                        <CardContent style={{ backgroundColor: '#0e0e0e', borderRadius: "1rem", width: isMobile ? undefined : '500px',
                                      display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center"}}>
                                 <Typography style={{textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
-                                    Experiences <FontAwesomeIcon icon={faBriefcase} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
+                                Dev Experiences <FontAwesomeIcon icon={faBriefcase}></FontAwesomeIcon>
                                 </Typography>
                                     <Container style={{display: "flex", padding: "10px", flexDirection: "column", textAlign: 'left', gap: "0.4rem" }}>
                                      <Typography style={{fontSize: '12px', color: "white"}}>
                                         <span style={{ color: '#5cb574',fontWeight: 'bolder'}}>Name:</span> 
-                                            {projects[currentProject].title}</Typography>
+                                            {experiences[currentProject].title}</Typography>
                                                 <Typography style={{fontSize: '12px', color: "white"}}>
                                                     <span style={{ color: '#5cb574',fontWeight: 'bolder'}}>Info:</span>  
-                                                        {projects[currentProject].description}
+                                                        {experiences[currentProject].description}
                                                 </Typography> 
                                              {showDesc && (
                                             <Typography style={{fontSize: '12px', color: "white"}}>
                                                 <span style={{ color: '#5cb574',fontWeight: 'bolder'}}>Desc:</span>  
-                                                {projects[currentProject].back}
+                                                {experiences[currentProject].back}
                                             </Typography> 
                                             )}
                                             <Container style={{
-                                                display: "flex", justifyContent: 'space-between', padding: '10px',
+                                                display: "flex", justifyContent: 'space-between', padding: '20px',
                                                 alignItems: "center" ,borderBottom: '1px solid #5cb574',
                                                 borderTop: '1px solid #5cb574',  
                                             }}>
                                                 <Tooltip title="Open description">
                                                     <Button 
                                                         onClick={toggleDesc}
-                                                        style={{width: "auto", boxShadow: "0px 0px 1px 0px #5CB574", backgroundColor: 'black', fontSize: '9px', color: "#5cb574", fontWeight: "bolder"}}>
+                                                        style={{width: "auto", boxShadow: "0px 0px 3px 0px #5CB574", backgroundColor: '#183D3D', fontSize: '9px', color: "#5cb574", fontWeight: "bolder"}}>
                                                         Read <FontAwesomeIcon icon={faGlasses} style={{marginLeft: '5px'}}></FontAwesomeIcon>
                                                     </Button>
                                                 </Tooltip>
@@ -78,10 +78,10 @@ function Flipcard() {
                                                     fontSize: '12px'
                                                 }}>
                                                     <Tooltip title="Visit GitHub Repo">
-                                                        <a href={projects[currentProject].link} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon  style={{color: "#5cb574", boxShadow: "0px 0px 1px 0px #5CB574", backgroundColor: "#183d3d", padding: '5px', borderRadius: "100%"}} icon={faGithub}></FontAwesomeIcon></a>
+                                                        <a href={experiences[currentProject].link} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon  style={{color: "#5cb574", boxShadow: "0px 0px 5px 0px #5CB574", backgroundColor: "#183d3d", padding: '5px', borderRadius: "100%"}} icon={faGithub}></FontAwesomeIcon></a>
                                                     </Tooltip>
                                                     <Tooltip title="Live preview">
-                                                        <a href={projects[currentProject].link} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon style={{color: "#5cb574", boxShadow: "0px 0px 1px 0px #5CB574",  backgroundColor: "#183d3d", padding: '5px', borderRadius: "100%"}} icon={faEye}></FontAwesomeIcon></a>
+                                                        <a href={experiences[currentProject].link} target='_blank' rel='noopener noreferrer'><FontAwesomeIcon style={{color: "#5cb574", boxShadow: "0px 0px 5px 0px #5CB574",  backgroundColor: "#183d3d", padding: '5px', borderRadius: "100%"}} icon={faEye}></FontAwesomeIcon></a>
                                                     </Tooltip>
                                                 </Box>
                                             </Container>
@@ -90,7 +90,7 @@ function Flipcard() {
                                             <Container style={{fontSize: '12px', color: "white", backgroundColor: 'black', padding: "10px",
                                                 borderRadius: "0.4rem", boxShadow: '0px 0px 3px 0px #5cb574', marginTop: "0.7rem", marginBottom: "0.4rem" }}>
                                                 <span style={{ color: '#357deb',fontWeight: 'bolder'}}>Tools:</span>
-                                                    {projects[currentProject].tools.map((tool, index) => (
+                                                    {experiences[currentProject].tools.map((tool, index) => (
                                                 <span key={index} style={{ color: '#5cb574', marginRight: '5px' }}>{tool},</span>
                                                  ))}
                                                 </Container>
@@ -102,14 +102,14 @@ function Flipcard() {
                                 onMouseLeave={() => setShowTooltip(true)}
                             >
                                 <CardMedia
-                                    image={projects[currentProject].imageUrl[0]}
-                                    alt={projects[currentProject].title}
+                                    image={experiences[currentProject].imageUrl[0]}
+                                    alt={experiences[currentProject].title}
                                     component="img"
                                     style={{
                                         width: '300px',
                                         objectFit: "contain",
                                         borderRadius: "0.5rem",
-                                        boxShadow: '0px 0px 20px 0px #183d3d'
+                                        boxShadow: '0px 0px 10px 0px #5CB574'
                                     }}
                                 />
                                 {showTooltip && (
@@ -133,13 +133,13 @@ function Flipcard() {
                             </div>
 
                             {openImage && (
-                                    <SliderModal images={projects[currentProject].imageUrl} onClose={toggleOpenImage} />
+                                    <SliderModal images={experiences[currentProject].imageUrl} onClose={toggleOpenImage} />
                                             )}
                                     <div style={{display: "flex", flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                                         <h5>Swipe to see more</h5>
                                             <div style={{display: 'flex', justifyContent: "center", gap: "1rem", alignItems: "center"}}>
-                                                <Button   style={{boxShadow: "0px 0px 1px 0px #5CB574", backgroundColor: '#183D3D', color: '#5CB574', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={handlePrev}>prev.</Button>
-                                                <Button   style={{boxShadow: "0px 0px 1px 0px #5CB574",  backgroundColor: '#183D3D', color: '#5CB574', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={handleNext}>NEXT</Button>
+                                                <Button   style={{boxShadow: "0px 0px 5px 0px #5CB574", backgroundColor: '#183D3D', color: '#5CB574', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={handlePrev}>prev.</Button>
+                                                <Button   style={{boxShadow: "0px 0px 5px 0px #5CB574",  backgroundColor: '#183D3D', color: '#5CB574', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={handleNext}>NEXT</Button>
                                             </div>
                                     </div>
                 </CardContent>   
