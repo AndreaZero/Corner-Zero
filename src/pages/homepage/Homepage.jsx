@@ -6,7 +6,7 @@ import cornerright from "../../styles/img/cornerright.png";
 import learnData from '../../data/learn';
 import LastFivePosts from './components/LastFivePosts';
 import axios from "axios";
-import "../../styles/home.css";
+import "../../styles/home.scss";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useMediaQuery } from '@mui/material';
@@ -100,6 +100,16 @@ useEffect(() => {
       justifyContent: "space-between",
       width: isMobile ?  '350px' : undefined, 
     }}>
+
+<style>
+          {`
+            .Toastify__toast-theme--light {
+                background-color: #0E0E0E;
+                color: #5CB574;
+                box-shadow: 0px 0px 5px 0px #5cb574;
+            },
+        `}
+</style>
     
                       
        {showNewsletterPopup && (
@@ -164,7 +174,7 @@ useEffect(() => {
             publish my projects, <br /> also help people understand web tecnologies.
             <h4>Subscribe to my newsletter to updated.</h4></h5>
 
-            <ToastContainer />
+            <ToastContainer/>
             {!showEmailInput ? (
            <Tooltip title="Open form">
           <Button style={{
