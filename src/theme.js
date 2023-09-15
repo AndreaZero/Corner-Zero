@@ -19,7 +19,14 @@ const theme = createTheme({
         }
       }
     },
-    MuiTypography: {
+    MuiPaper : {
+      styleOverrides: {
+        root: {
+          backgroundColor: "transparent"
+        }
+      }
+    },
+      MuiTypography: {
       styleOverrides: {
         root: {
           color: "white",
