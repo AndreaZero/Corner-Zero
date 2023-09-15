@@ -4,7 +4,7 @@ import { Box, ThemeProvider } from "@mui/material";
 import Navbar from "./components/fixed/Navbar";
 import theme from "./theme";
 import axios from "axios";
-import Homepage from "./pages/Homepage";
+import Homepage from "./pages/homepage/Homepage";
 import Footer from "./components/fixed/Footer";
 import LoginPage from "./pages/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
@@ -15,7 +15,7 @@ import Repos from "./pages/Repos";
 import Contacts from "./pages/Contacts";
 import Learn from "./pages/Learn";
 import LearnDetail from "./components/LearnDetail";
-import About from "./pages/About";
+import About from "./pages/about/About";
 
 axios.defaults.baseURL = "https://cornerzeroserver-4b9300c63b20.herokuapp.com";
 axios.defaults.withCredentials = true;

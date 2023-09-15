@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { CardMedia, Tooltip, CardContent, Box, Typography, Button, Container } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGit, faGithub, faGofore, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faCoffee, faEye, faGlasses, faBriefcase,faLink, faLinkSlash } from '@fortawesome/free-solid-svg-icons';
-import { experiences } from '../data/experiences';
-import open from "../styles/fxs/open.mp3";
-import close from "../styles/fxs/close.mp3";
-import SliderModal from './fixed/SliderModal';
+import { faGithub }from '@fortawesome/free-brands-svg-icons';
+import { faEye, faGlasses, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { experiences } from '../../../data/experiences';
+
+import SliderModal from '../../../components/fixed/SliderModal';
 
 import { useMediaQuery } from '@mui/material';
 
-function Flipcard() {
+function ExperienceCard() {
     const [currentProject, setCurrentProject] = useState(0);
     const mobileWidth = 600;
     const [showDesc, setShowDesc] = useState(false);
@@ -146,4 +145,4 @@ function Flipcard() {
     );
 }
 
-export default Flipcard;
+export default ExperienceCard;

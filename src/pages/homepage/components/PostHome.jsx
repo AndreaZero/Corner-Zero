@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
 import axios from 'axios';
-import PostPreview from './PostPreview';
+import PostPreview from '../../../components/PostPreview';
 import { useMediaQuery } from '@mui/material';
 
 function PostHome() {

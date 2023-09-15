@@ -52,10 +52,15 @@ function LearnDetail() {
                         - {learnItem.title} - 
                        <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
                       </Typography>
+
                       <Container style={{
                         display: 'flex',
                         flexDirection: 'column',
                       }}>
+
+                        {
+                          learnItem.link1 && 
+                        
                       <Typography style={{
                           fontSize: "16px",
                           color: "white",
@@ -64,6 +69,7 @@ function LearnDetail() {
                       }}>
                         Links:
                         </Typography>
+}
                         <Typography style={{
                           fontSize: "14px",
                           color: "white",
@@ -72,6 +78,7 @@ function LearnDetail() {
                       }}>
                         <a href={learnItem.link1}>{learnItem.link1}</a>
                         </Typography>
+                        
                         </Container>
                         <Typography
                 dangerouslySetInnerHTML={{ __html: learnItem.content }}>

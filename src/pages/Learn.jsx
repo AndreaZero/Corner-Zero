@@ -16,7 +16,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarth, faGreaterThan, faImage, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import corner from '../styles/img/corner.png';
 import cornerright from '../styles/img/cornerright.png';
-import '../styles/components/Repos.scss';
 
 function Learn() {
   const [open, setOpen] = useState(false);

@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import PostHome from '../components/PostHome';
+import PostHome from './components/PostHome';
 import { Card, Button, Container, Tooltip, Typography } from '@mui/material';
-import corner from "../styles/img/corner.png";
-import cornerright from "../styles/img/cornerright.png";
-import learnData from '../data/learn';
-import LastFivePosts from "../components/LastFivePosts";
+import corner from "../../styles/img/corner.png";
+import cornerright from "../../styles/img/cornerright.png";
+import learnData from '../../data/learn';
+import LastFivePosts from './components/LastFivePosts';
 import axios from "axios";
-import "../styles/home.css";
+import "../../styles/home.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useMediaQuery } from '@mui/material';
 import { motion, useAnimation } from "framer-motion";
-import bannerzero from "../styles/img/banner-zero.png";
-import LastFiveLikedPosts from '../components/LastFiveLikedPosts';
+import LastFiveLikedPosts from './components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 

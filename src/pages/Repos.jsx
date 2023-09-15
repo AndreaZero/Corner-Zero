@@ -9,7 +9,6 @@ import corner from "../styles/img/corner.png";
 import logo from "../styles/img/logo.png";
 import cornerright from "../styles/img/cornerright.png";
 import { faGithub }  from '@fortawesome/free-brands-svg-icons';
-import "../styles/components/Repos.scss";
 import { FaReact, FaNode, FaCss3, FaHtml5, FaNpm, FaJs, FaGoogle,} from 'react-icons/fa';
 import Vite from "../styles/img/vite.png";
 import MongoDB from "../styles/img/mongodb.png";

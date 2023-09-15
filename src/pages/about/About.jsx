@@ -1,26 +1,21 @@
 import { Container, Card, Typography, Button, Tooltip } from '@mui/material'
 import { useMediaQuery } from '@mui/material';
-import mehi from "../styles/img/mehi.png";
-import it from "../styles/img/it.png";
-import corner from "../styles/img/corner.png";
-import Flipcard from '../components/FlipCard';
-import cv from "../data/cv.pdf";
-import banner from '../styles/img/banner-zero.png';
-import cornerright from "../styles/img/cornerright.png";
+import mehi from "../../styles/img/mehi.png";
+import it from "../../styles/img/it.png";
+import corner from "../../styles/img/corner.png";
+import ExperienceCard from './components/ExperienceCard';
+import cv from "../../data/cv.pdf";
+import cornerright from "../../styles/img/cornerright.png";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook, faBriefcase, faDownload, faLaptopCode, faTimeline } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { 
-    faCss3, faDiscord, faEthereum, faFigma, faGit, 
-    faHtml5, faJs, faNodeJs, faNpm, faRProject, faReact, faSass 
+    faDiscord, faEthereum, faFigma, faGit, faStackOverflow,
+    faCodepen, faNode, faChrome, 
+    faHtml5, faJs, faNpm, faReact, faSass, faCss3Alt 
 } from "@fortawesome/free-brands-svg-icons";
-import {
-    faBrain, faTerminal
-} from '@fortawesome/free-solid-svg-icons';
-import TimelineCard from '../components/fixed/Timeline';
-import Timeline from '../components/fixed/Timeline';
-
-
+import {faBrain} from '@fortawesome/free-solid-svg-icons';
+import Timeline from './components/Timeline';
 
 
 function About() {
@@ -65,18 +60,13 @@ function About() {
         visible: { opacity: 1, transition: { duration: 2 } }
     };
 
-    const fade = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { duration: 1 } }
-    };
-
     const iconStyle = isMobile ? {
-        fontSize: "50px",
+        fontSize: "40px",
 
         color: '#5CB574'
     } : {
         marginRight: "1rem",
-        fontSize: "50px",
+        fontSize: "40px",
         color: '#5CB574',
     };
 
@@ -90,7 +80,7 @@ function About() {
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "20px",
-                    gap: '2rem',
+                    gap: '1rem',
                 }}>
                   <Card  /// CARD BIO
                       style={{
@@ -98,6 +88,7 @@ function About() {
                           color:"white",
                           borderRadius: "0px",
                           padding: "20px",
+                          boxShadow: 'none',
                           textAlign: 'center',
                       }}>
                       <Typography style={{
@@ -118,7 +109,7 @@ function About() {
                             width: "200px",
                             borderBottom: "1px solid grey",
                             objectFit: 'contain',
-                            boxShadow: "0px 0px 3px 0px black"}}></img>
+                            }}></img>
                       </motion.div>
                       <h4 style={reflectionStyle}>I'm a 30-year-old dude from Rome <img src={it} alt='it'></img> </h4>
                         <h5 style={reflectionStyle}>One of my biggest passion is coding. I whipped up my first website at 11..<br />
@@ -140,7 +131,7 @@ function About() {
                   </Card>
                   <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
 
-                      <Flipcard/>
+                      <ExperienceCard/>
 
                         <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
 
@@ -155,7 +146,7 @@ function About() {
                             justifyContent: "center",
                             boxShadow: 'none',
                             gap: "1rem",
-                            padding: "20px",
+                            padding: "10px",
                             alignItems: "center",
                             borderRadius: '0.4rem',
                             backgroundColor: 'transparent',
@@ -166,7 +157,7 @@ function About() {
                       </Typography>
                       <Container
                           style={{
-                              gap: isMobile ? "0.5rem" : "1rem",
+                              gap: isMobile ? "1.2rem" : "1rem",
                               display: 'flex',
                               flexWrap: 'wrap',
                               alignItems: "center",
@@ -174,8 +165,10 @@ function About() {
                           }}>
                             {
                             [
-                                faReact, faJs, faNodeJs, faNpm, faHtml5, faCss3, faSass,
-                                faEthereum, faDiscord, faFigma, faGit, faTerminal
+                              faReact, faJs, faNpm, faNode, faHtml5, 
+                              faCss3Alt, faSass,  faDiscord, faEthereum, faFigma, faGit, faStackOverflow,
+                              faCodepen, faChrome, 
+                              
                               ].map((icon, index) => (
                                 <motion.div
                                   key={index}

@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimeline } from '@fortawesome/free-solid-svg-icons';
 import { motion, useAnimation } from "framer-motion";
 import { Container, Typography } from '@mui/material';
-import banner from "../../styles/img/banner-zero.png";
+
 const Timeline = () => {
 
   function isMobile() {
-    return window.innerWidth <= 600; // You can adjust this value based on your requirements
+    return window.innerWidth <= 600;
   }
 
-const cardWidthValue = isMobile() ? undefined : '500'; // Adjust these values as needed
+const cardWidthValue = isMobile() ? undefined : '500';
 
   
 
