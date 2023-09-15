@@ -84,8 +84,8 @@ background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367
             height: '30px',
             marginTop: "8px"
           }} size="small" color="primary">
-            <Link to={`/posts/${post._id}`} style={{boxShadow: '0px 0px 4px 0px #183d3d', textDecoration: 'none', color: "#5CB574"}}>Open</Link>
-          </Button>
+<Link to={`/corners/${post._id}`} style={{boxShadow: '0px 0px 4px 0px #183d3d', textDecoration: 'none', color: "#5CB574"}}>Open</Link>
+              </Button>
         </Card>
       </CardActions>
 

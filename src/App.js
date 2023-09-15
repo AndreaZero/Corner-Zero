@@ -38,7 +38,7 @@ function App () {
         <Route exact path='/about' element={<About/>} />
         <Route exact path='/learn/:title' element={<LearnDetail/>} />
         <Route exact path='/contacts' element={<Contacts/>} />
-        <Route exact path="/posts/:id" element={<PostView/>} />
+        <Route exact path="/corners/:id" element={<PostView />} />
         {/* <Route exact path='/admin/register' element={<RegisterPage />} /> */}
       </Routes>
       </Box>
