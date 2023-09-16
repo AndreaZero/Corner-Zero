@@ -1,8 +1,10 @@
 .bg-home {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../styles/img/me.png');
     background-position: center;
+    box-shadow: 0px 0px 3px 0px #5cb574;
     border-radius: 1rem;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 1rem;
+    
 }

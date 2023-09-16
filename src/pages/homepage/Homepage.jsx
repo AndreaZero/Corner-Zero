@@ -5,6 +5,7 @@ import corner from "../../styles/img/corner.png";
 import cornerright from "../../styles/img/cornerright.png";
 import learnData from '../../data/learn';
 import LastFivePosts from './components/LastFivePosts';
+import { Tilt } from 'react-tilt'
 import axios from "axios";
 import "../../styles/home.scss";
 import { ToastContainer, toast } from 'react-toastify';
@@ -164,21 +165,21 @@ useEffect(() => {
     <h1 style={{textAlign: 'center', fontSize: isMobile ? '18px' : undefined}}>
     Explore, learn, dream, live!
   </h1>
- 
-<Container className='bg-home' style={{boxShadow: "0px 0px 3px 0px #5cb574"}}>
-
-  
 
 
-                        <Card
-                        style={{
-                            backgroundColor: "transparent",
-                            color:"white",
-                            boxShadow: "none",
-                            width: "auto",
-                            padding: '30px',
-                            textAlign: 'center',
-                        }}>
+  <Tilt options={{ max: isMobile ? '0' : '35' }}>
+
+    <Container className='bg-home'>
+  <Card
+      style={{
+        backgroundColor: "transparent",
+        color:"white",
+        boxShadow: "none",
+        width: "auto",
+        padding: '30px',
+        textAlign: 'center',
+      }}
+    >
                         Welcome Human!
                           <br />
                           <span style={{fontSize: "12px", fontWeight: "bold"}}>CornerZero is my personal space</span>
@@ -228,12 +229,7 @@ useEffect(() => {
       </div>
       )}
 </Card>  
-
-
-
-
       <div style={{ display: 'flex', width: isMobile ? "100%" : undefined, justifyContent: 'space-between'}}>
-
 
       <h6>
           <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner}></img>- Corners: {postCount}
@@ -246,6 +242,8 @@ useEffect(() => {
           </div>
 
           </Container>
+          </Tilt>
+
           <div style={{marginTop: "1rem", border: '1px solid #5cb574'}}></div>
       <div style={{ flex: 1 }}>
         <div style={{
