@@ -45,8 +45,13 @@ function Contacts() {
             alert('There was an error. Please try again.');
         }
     };
+
+
+
     return (
         <Container style={{
+            marginTop: '1rem',
+            padding: '20px',
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -58,7 +63,6 @@ function Contacts() {
                 color: "white",
                 fontWeight: 'bolder',
                 textAlign: "center",
-                marginTop: "1rem"
             }}>
                               <img style={{ width: isMobile ? "25px" : "40px",  
                  objectFit: 'contain' }} src={corner} alt='icon'></img>
@@ -72,10 +76,11 @@ function Contacts() {
             
             <Box style={{
                 padding: "30px",
-                background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)',
+                backgroundColor: '#0e0e0e',
                 borderRadius: "1rem",
                 display: "flex",
                 flexDirection: "column",
+                boxShadow: '0px 0px 5px 0px #5cb574',
                 alignItems: "center",
                 justifyContent: "center"
             }}>
@@ -83,7 +88,7 @@ function Contacts() {
 
                 <TextField
                     fullWidth
-                    style={{ marginBottom: '1rem'}}
+                    style={{ marginBottom: '1rem', }}
                     type="email"
                     placeholder="Your email address"
                     value={email}
@@ -102,7 +107,7 @@ function Contacts() {
                     onChange={(e) => setMessage(e.target.value)}
                 />
 
-                <Button style={{ marginTop: '1rem', backgroundColor: '#183D3D', color: "#5cb574", fontWeight: "bolder"}} variant="contained" onClick={handleSubmit}>
+                <Button style={{boxShadow: '0px 0px 5px 0px #5cb574', marginTop: '1rem', backgroundColor: '#183D3D', color: "#5cb574", fontWeight: "bolder"}} variant="contained" onClick={handleSubmit}>
                     Send message
                 </Button>
             </Box>

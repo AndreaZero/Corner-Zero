@@ -1,14 +1,11 @@
-import { Container, Typography, Card, CardMedia } from '@mui/material';
+import { Container, Typography, Card } from '@mui/material';
 import learnData from '../data/learn';
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
-import ReactMarkdown from 'react-markdown';
 
 
 import { useParams } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
-import learn from '../data/learn';
-import { display } from '@mui/system';
 
 function LearnDetail() {
   const { title } = useParams();
@@ -31,7 +28,6 @@ function LearnDetail() {
                 style={{
                   backgroundColor: 'transparent',
                   width: isMobile ? 'auto' : '800px',
-                  display: 'flex',
                   alignItems: "center",
                   padding: "20px",
                   marginTop: '0.5rem',

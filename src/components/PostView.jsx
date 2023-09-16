@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Card, CardContent, Typography, Button, Box, Container} from '@mui/material';
+import { Card, CardContent, Typography, Button , Container} from '@mui/material';
 import { convertFromRaw, EditorState } from 'draft-js';
 import { stateToHTML } from 'draft-js-export-html';
-import Footer from "../components/fixed/Footer";
 import corner from "../styles/img/corner.png";
 import cornerright from "../styles/img/cornerright.png";
 import '../styles/components/EditorStyles.css';
 import moment from 'moment';
 import { useMediaQuery } from '@mui/material';
-import bannerzero from '../styles/img/banner-zero.png';
 import { useAuth } from '../context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import SharePost from './fixed/SharePost';
-import { borderBottom } from '@mui/system';
 
 function PostView() {
   const [post, setPost] = useState(null);
@@ -103,8 +100,7 @@ function PostView() {
           <div style={{borderBottom: "1px solid #5cb574", marginTop: "2rem"}}></div>
 
         <Card style={{      width: isMobile ? '100%' : isTablet ? '800px' : '100%',
-        borderBottom: '1px solid gray',              
-        background: 'rgb(0,0,0)',
+        borderBottom: '1px solid gray',
         background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 100%)',}}>
         <CardContent>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>

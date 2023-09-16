@@ -16,6 +16,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           width: "200px",
+
         }
       }
     },
@@ -37,8 +38,10 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontWeight: "bold",
-          backgroundColor: 'white',
-          borderRadius: '0.3rem'
+          color: "white",
+          boxShadow: "0px 0px 3px 0px #5CB574",
+          backgroundColor: 'black',
+          borderRadius: '1rem'
         },
       }
     },

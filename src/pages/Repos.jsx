@@ -6,7 +6,6 @@ import { useMediaQuery } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLink, faImage, faLaptopCode, faTools} from "@fortawesome/free-solid-svg-icons";
 import corner from "../styles/img/corner.png";
-import logo from "../styles/img/logo.png";
 import cornerright from "../styles/img/cornerright.png";
 import { faGithub }  from '@fortawesome/free-brands-svg-icons';
 import { FaReact, FaNode, FaCss3, FaHtml5, FaNpm, FaJs, FaGoogle,} from 'react-icons/fa';

@@ -1,10 +1,9 @@
-import { AppBar, Hidden, Toolbar, Button, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText, IconButton, Container } from '@mui/material';
+import { AppBar, Hidden, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText, IconButton, Container } from '@mui/material';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {experiences} from "../../data/experiences";
 import logo from "../../styles/img/logo.png";
 import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -71,10 +70,8 @@ function Navbar() {
           </a>
 
           <Hidden smDown> |
-            <Link style={{ color: '#5CB574' }} to='/corners'>Corners</Link> - 
             <Link style={{ color: '#5CB574' }} to='/about'>WhoIam</Link> -
             <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> -  
-            <Link style={{ color: '#5CB574' }} to='/learn'>Learn</Link> - 
             <Link style={{ color: '#5CB574' }} to='/contacts'>Contact</Link> |
           </Hidden>
 
@@ -163,13 +160,12 @@ function Navbar() {
             <h3 style={{color: '#5CB574', textAlign: "center"}}>What's New?</h3>
 
           <Box style={{
-               background: 'rgb(0,0,0)',
                marginTop: "1rem",
                color: "#5CB574",
                background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
             }}>
             {posts.map(post => (
-              <ListItem key={post.id} post={post} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/posts/${post._id}`} onClick={handleDrawerToggle}>
+              <ListItem key={post.id} post={post} style={{borderBottom: '1px solid #183D3D'}} component={Link} to={`/corners/${post._id}`} onClick={handleDrawerToggle}>
   <ListItemText primary={post.title} />   
 </ListItem>
 
@@ -184,7 +180,7 @@ function Navbar() {
         color: "#5CB574",
         background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(56,56,56,0.7587827367275035) 100%)'
       }}>
-        <ListItem key={randomLearnItem.id} style={{ borderBottom: '1px solid #183D3D' }} component={Link} to={`/learn/${randomLearnItem.id}`}  onClick={handleDrawerToggle}>
+        <ListItem key={randomLearnItem.id} style={{ borderBottom: '1px solid #183D3D' }} component={Link} to={`/learn/${randomLearnItem.title}`}  onClick={handleDrawerToggle}>
           <ListItemText primary={randomLearnItem.title} />
          </ListItem>
     </Box>

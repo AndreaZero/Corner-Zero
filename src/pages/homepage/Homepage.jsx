@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostHome from './components/PostHome';
-import { Card, Button, Container, Tooltip, Typography } from '@mui/material';
+import { Card, Button, Container, Tooltip, TextField, Input } from '@mui/material';
 import corner from "../../styles/img/corner.png";
 import cornerright from "../../styles/img/cornerright.png";
 import learnData from '../../data/learn';
@@ -26,11 +26,11 @@ function Homepage() {
   const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   
 
-  function getRandomLearnId() {
+  function getRandomLearnTitle() {
     const randomItem = learnData[Math.floor(Math.random() * learnData.length)];
-    return randomItem.id;
+    return randomItem.title;
 }
-const randomId = getRandomLearnId();
+const randomTitle = getRandomLearnTitle();
 
 useEffect(() => {
     async function fetchPostCount() {
@@ -128,12 +128,12 @@ useEffect(() => {
           <h3>Join the CornerLetter.</h3>
           <p>Receive email that you actually want to receive.</p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent:" center" }}> 
-            <input 
+            <TextField 
               type="email" 
               value={userEmail} 
               onChange={e => setUserEmail(e.target.value)} 
               placeholder="Your email..." 
-              style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono" }}
+              style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono", height: '40px' }}
             />
             <Button 
               style={{ backgroundColor: '#5cb574', color: 'black', fontWeight: 'bold', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
@@ -147,19 +147,36 @@ useEffect(() => {
         </div>
       )}
 
+<div style={{height: '50px', marginTop: '0.1rem', display: "flex",  borderBottom: '1px solid #5cb574', justifyContent: 'space-between', alignItems: "center"}}>
+           <h5 style={{color: '#5cb574'}}> 
+              <a style={{fontSize: isMobile ? '10px' : undefined, color: "#5cb574"}} href='/corners'>Dive into the Corners 
+              <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon></a>
+           </h5>
+           <h5 style={{color: '#5cb574'}}> 
+   <a style={{fontSize: isMobile ? '10px' : undefined, color: "#5cb574"}} href={`/learn/${randomTitle}`}>Random Lesson
+      <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGraduationCap}></FontAwesomeIcon>
+   </a>
+</h5>
+</div>
+
+
       
-    <h2 style={{textAlign: 'center', fontSize: isMobile ? '18px' : '40px'}}>
+    <h1 style={{textAlign: 'center', fontSize: isMobile ? '18px' : undefined}}>
     Explore, learn, dream, live!
-  </h2>
-<Container className='bg-home'>
+  </h1>
+ 
+<Container className='bg-home' style={{boxShadow: "0px 0px 3px 0px #5cb574"}}>
+
+  
 
 
                         <Card
                         style={{
                             backgroundColor: "transparent",
                             color:"white",
+                            boxShadow: "none",
                             width: "auto",
-                            padding: '10px',
+                            padding: '30px',
                             textAlign: 'center',
                         }}>
                         Welcome Human!
@@ -190,14 +207,14 @@ useEffect(() => {
     </Tooltip>
   ) : (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center",  flexDirection: 'column'}}> 
-        <h6 style={{color: '#5CB574'}}>By joining the Cornerlist, <br />you accept to receive email from info@cornerzero.eu</h6>
+        <h6 style={{color: '#5CB574'}}>By joining the Cornerlist, <br />you accept to receive email from newsletter@cornerzero.eu</h6>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center"}}> 
-      <input 
+      <Input 
         type="email" 
         value={userEmail} 
+        style={{height: '40px', borderRadius: "0.4rem", padding: '5px'}}
         onChange={e => setUserEmail(e.target.value)} 
         placeholder="Your email..." 
-        style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono"}}
       />
       <Tooltip title='Enter the Corner'>
         <Button 
@@ -211,17 +228,7 @@ useEffect(() => {
       </div>
       )}
 </Card>  
-<div style={{display: "flex", justifyContent: 'space-between', flexDirection: isMobile ? 'column' : undefined,  alignItems: "center"}}>
-           <h5 style={{color: '#5cb574'}}> 
-              <a style={{color: "#5cb574"}} href='/corners'>Dive into the Corners 
-              <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGreaterThan}></FontAwesomeIcon></a>!
-           </h5>
-           <h5 style={{color: '#5cb574'}}> 
-   <a style={{color: "#5cb574"}} href={`/learn/${randomId}`}>Random Lesson
-      <FontAwesomeIcon style={{ marginLeft: "8px", marginRight: "5px" }} icon={faGraduationCap}></FontAwesomeIcon>
-   </a>
-</h5>
-</div>
+
 
 
 
