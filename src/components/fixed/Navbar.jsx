@@ -62,12 +62,12 @@ function Navbar() {
           justifyContent: isMobile ? 'space-around' : "center"
         }}>
       
-          <a href='/'>
+          <Link to='/'>
             <img style={{
               width: isMobile ? '40px' : '40px',
               objectFit: 'contain'
             }} src={isMobile ? iconright : iconright} alt='logo'></img> 
-          </a>
+          </Link>
 
           <Hidden smDown> |
             <Link style={{ color: '#5CB574' }} to='/about'>WhoIam</Link> -
