@@ -80,7 +80,7 @@ function PostPreview({ post }) {
           </div>
           <Button href={`/corners/${post._id}`} style={{
             backgroundColor: '#183D3D',
-            boxShadow: '0px 0px 4px 0px #183d3d', 
+            boxShadow: '0px 0px 4px 0px #5cb574', 
             textDecoration: 'none', 
             color: '#5cb574',
             height: '30px',
