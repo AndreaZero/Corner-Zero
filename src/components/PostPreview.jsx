@@ -78,12 +78,12 @@ function PostPreview({ post }) {
             
           </Typography>
           </div>
-          <Button style={{
+          <Button href={`/corners/${post._id}`} style={{
             backgroundColor: '#183D3D',
             height: '30px',
             marginTop: "8px"
           }} size="small" color="primary">
-<Link to={`/corners/${post._id}`} style={{boxShadow: '0px 0px 4px 0px #183d3d', textDecoration: 'none', color: "#5CB574"}}>Open</Link>
+              Open
               </Button>
         </Card>
       </CardActions>
