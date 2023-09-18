@@ -80,10 +80,12 @@ function PostPreview({ post }) {
           </div>
           <Button href={`/corners/${post._id}`} style={{
             backgroundColor: '#183D3D',
+            boxShadow: '0px 0px 4px 0px #183d3d', 
+            textDecoration: 'none', 
+            color: "#5CB574",
             height: '30px',
             marginTop: "8px"
           }} size="small" color="primary">
-              Open
               </Button>
         </Card>
       </CardActions>
