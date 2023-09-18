@@ -47,10 +47,11 @@ const cardWidthValue = isMobile() ? undefined : '500';
   ];
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={fade}>
-      <Container style={{padding: "20px", backgroundColor: '#0e0e0e', borderRadius: '1rem',
-        width: isMobile ? '100%' : undefined, justifyContent: 'center', alignItems: "center", flexDirection: 'column'
+
+      <Container style={{padding: "20px", flexDirection: "column", backgroundColor: '#0e0e0e', borderRadius: '1rem',
+        justifyContent: 'center', alignItems: "center", display: 'flex'
       }}>
+            <motion.div initial="hidden" animate="visible" variants={fade}>
                       <Typography style={{ marginBottom: "3rem",textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
                   Timeline
                   <FontAwesomeIcon icon={faTimeline} style={{ marginLeft: "8px" }}></FontAwesomeIcon>
@@ -59,21 +60,27 @@ const cardWidthValue = isMobile() ? undefined : '500';
           {`
         .TimelineContentDetails-sc-d7qjm1-5.iSsTMA {
           padding: 10px; 
+          background-color: #0e0e0e;
           border-top: 1px solid white;
+          
         }
         .TimelineControlContainer-sc-cif21b-4.bMJdTO {
+          width: 300px;
+        }
+        .Wrapper-sc-cif21b-0.cKVAQn {
           border-radius: 1rem;
-        }
-        .TimelineItemContentWrapper-sc-d7qjm1-0.gkXdO {
-          background-color: #183d3d;
-          padding: 10px;
-        }
-        .TimelineMainWrapper-sc-cif21b-1.bpnhik {
+          height: auto;
+          width: auto;
+          align-items: center;
+          justify-content: center;
         }
         .TimelineNavWrapper-sc-1apb8f9-0.jROSZr {
-          background-color: #0e0e0e;
+          background-color: black;
           gap: 0.6rem;
+          padding: 10px;
           border-radius: 1rem;
+          box-shadow: 0px 0px 3px 0px #5cb574;
+
         }
         .TimelineNavButton-sc-1apb8f9-2.ilFrD {
           background-color: #183d3d;
@@ -100,8 +107,9 @@ const cardWidthValue = isMobile() ? undefined : '500';
         slideShow
         mode="HORIZONTAL">
         </Chrono>
+        </motion.div>
         </Container>
-    </motion.div>
+
   );
 };
 

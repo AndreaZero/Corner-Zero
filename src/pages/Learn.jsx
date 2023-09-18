@@ -9,6 +9,7 @@ import {
   Button,
 } from '@mui/material';
 import learn from '../data/learn';
+import { Tilt } from 'react-tilt'
 import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
@@ -157,6 +158,7 @@ function Learn() {
       <Grid container spacing={2}>
         {currentItems.map((learn) => (
           <Grid item xs={12} md={3} key={learn.id}>
+            <Tilt options={{ max: isMobile ? '0' : '35' }}>
             <Card
               style={{
                 backgroundColor: '#183D3D',
@@ -211,6 +213,7 @@ function Learn() {
                 </Card>
               </CardContent>
             </Card>
+            </Tilt>
 
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle

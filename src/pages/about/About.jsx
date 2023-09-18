@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {faBrain} from '@fortawesome/free-solid-svg-icons';
 import Timeline from './components/Timeline';
+import { Tilt } from 'react-tilt';
 
 
 function About() {
@@ -76,7 +77,6 @@ function About() {
                 <Container style={{ /// CONTAINER MAIN ABOUT
                     display: "flex",
                     flexDirection: "column",
-                    background: 'linear-gradient(90deg, rgba(14,14,14,1) 0%, rgba(0,0,0,1) 76%)',        
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "20px",
@@ -84,11 +84,8 @@ function About() {
                 }}>
                   <Card  /// CARD BIO
                       style={{
-                          backgroundColor: "transparent",
                           color:"white",
-                          borderRadius: "0px",
                           padding: "20px",
-                          boxShadow: 'none',
                           textAlign: 'center',
                       }}>
                       <Typography style={{
@@ -101,16 +98,19 @@ function About() {
                         - Who is Zero? - 
                        <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
                       </Typography>
+                      <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
+
                         <h4>I'm Andrea. <br />Junior web developer
                           <FontAwesomeIcon icon={faLaptopCode} style={{ marginLeft: "5px" }}></FontAwesomeIcon>
                         </h4>
-                      <motion.div initial="hidden" animate="visible" variants={fadeImg} whileHover={{ scale: 1.1 }}>
-                        <img src={mehi} alt='mehi' style={{
+                         <Tilt options={{ max: isMobile ? '0' : '35' }}>
+
+                          <img src={mehi} alt='mehi' style={{
                             width: "200px",
                             borderBottom: "1px solid grey",
                             objectFit: 'contain',
                             }}></img>
-                      </motion.div>
+                      </Tilt>
                       <h4 style={reflectionStyle}>I'm a 30-year-old dude from Rome <img src={it} alt='it'></img> </h4>
                         <h5 style={reflectionStyle}>One of my biggest passion is coding. I whipped up my first website at 11..<br />
                         Wasn't much into textbooks. Instead, I juggled studying code and web dev while working on the side.<br/>
@@ -130,15 +130,6 @@ function About() {
                       </Tooltip>
                   </Card>
                   <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
-
-                      <ExperienceCard/>
-
-                        <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
-
-                      <Timeline/>
-
-                  <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
-
                       <Container // KNOWLEDGE
                         style={{
                             display: 'flex',
@@ -185,7 +176,20 @@ function About() {
                               ))
                             }
                         </Container>
-                </Container>     
+                </Container>  
+                <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
+
+                <Container style={{
+                  display: "flex",
+                  gap: "1rem",
+                  padding: "20px",
+                  flexDirection: isMobile ? 'column' : undefined,
+                  justifyContent: isMobile ? 'center' : 'space-around',
+                }}>
+                      <Timeline/>
+                      <ExperienceCard/>
+                      </Container>
+   
                     
           </Container>
   )

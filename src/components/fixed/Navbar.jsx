@@ -71,6 +71,7 @@ function Navbar() {
 
           <Hidden smDown> |
             <Link style={{ color: '#5CB574' }} to='/about'>WhoIam</Link> -
+            <Link style={{ color: '#5CB574' }} to='/learn'>Learn</Link> -  
             <Link style={{ color: '#5CB574' }} to='/repos'>Repos</Link> -  
             <Link style={{ color: '#5CB574' }} to='/contacts'>Contact</Link> |
           </Hidden>
@@ -85,6 +86,7 @@ function Navbar() {
             borderRadius: "0.3rem"
           }}>
             <a href="https://x.com/Andrea__Zero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faXTwitter}></FontAwesomeIcon></a> •
+            
             <a href="https://github.com/AndreaZero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faGithub}></FontAwesomeIcon></a>•
             <a href="https://ko-fi.com/andreazero" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon color='white' icon={faCoffee}></FontAwesomeIcon></a>
           </Box>
@@ -135,6 +137,11 @@ function Navbar() {
         <ListItem button key="About" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/about" onClick={handleDrawerToggle}>
             <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faAddressCard}></FontAwesomeIcon>
             <ListItemText primary="About" />
+          </ListItem>
+
+          <ListItem button key="About" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faAddressCard}></FontAwesomeIcon>
+            <ListItemText primary="Learn" />
           </ListItem>
 
           <ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners" onClick={handleDrawerToggle}>
