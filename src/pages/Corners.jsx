@@ -67,7 +67,7 @@ function Corner() {
                     <img style={{ width: "15px", objectFit: 'contain' }} alt='corner' src={corner} />- Corners: {postCount}
                 </h6>
                 <div style={{ display: 'flex', alignItems: "center", justifyContent: 'center' }}>
-                    <Input style={{ padding: "8px", height: "40px", backgroundColor: "white", color: "black" }} placeholder="Type smth.." value={search} onChange={(e) => setSearch(e.target.value)} />
+                    <Input style={{ borderRadius: '0.4rem', padding: "8px", height: "40px", backgroundColor: "white", color: "black" }} placeholder="Type smth.." value={search} onChange={(e) => setSearch(e.target.value)} />
                 </div>
             </div>
 
