@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect }from "react";
 import { Box, ThemeProvider } from "@mui/material";
 import Navbar from "./components/fixed/Navbar";
 import theme from "./theme";
+import { useMediaQuery } from '@mui/material';
 import axios from "axios";
-import loadingImage from "./styles/img/logo.png"; // Sostituisci con il tuo GIF o immagine
-
 import Homepage from "./pages/homepage/Homepage";
 import Footer from "./components/fixed/Footer";
 import LoginPage from "./pages/LoginPage";
+import LoadingScreen from "./components/fixed/LoadingScreen";  // Importa il componente
 import { AuthProvider } from "./context/AuthContext";
 import Dashboard from "./pages/Dashboard";
 import PostView from "./components/PostView";
@@ -24,15 +24,17 @@ axios.defaults.baseURL = "https://cornerzeroserver-4b9300c63b20.herokuapp.com";
 axios.defaults.withCredentials = true;
 
 function App () {
-
+  const mobileWidth = 600;
+  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   const [isLoading, setLoading] = useState(true);
+  
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000); // Simula un caricamento di 3 secondi
+    setTimeout(() => setLoading(false), 2000);
   }, []);
 
   if (isLoading) {
-    return <img src={loadingImage} alt="Caricamento..." />;
+    return <LoadingScreen />;  // Usa il componente
   }
 
   return (

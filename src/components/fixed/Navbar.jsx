@@ -8,7 +8,7 @@ import logo from "../../styles/img/logo.png";
 import iconright from "../../styles/img/iconright.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope, faGraduationCap, faAddressCard, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faListUl, faHome, faGreaterThan, faLaptopCode, faEnvelope, faAddressCard, faCoffee, faBrain } from '@fortawesome/free-solid-svg-icons';
 import learn from '../../data/learn';
 
 function Navbar() {
@@ -134,19 +134,20 @@ function Navbar() {
             <ListItemText primary="Home" />
         </ListItem>
 
+        <ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners" onClick={handleDrawerToggle}>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
+            <ListItemText primary="Corners" />
+          </ListItem>
+
+
         <ListItem button key="About" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/about" onClick={handleDrawerToggle}>
             <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faAddressCard}></FontAwesomeIcon>
             <ListItemText primary="About" />
           </ListItem>
 
           <ListItem button key="About" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
-            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faAddressCard}></FontAwesomeIcon>
+            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faBrain}></FontAwesomeIcon>
             <ListItemText primary="Learn" />
-          </ListItem>
-
-          <ListItem button key="Corners" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/corners" onClick={handleDrawerToggle}>
-            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGreaterThan}></FontAwesomeIcon>
-            <ListItemText primary="Corners" />
           </ListItem>
 
           <ListItem button key="Repos" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/repos" onClick={handleDrawerToggle}>
@@ -154,10 +155,7 @@ function Navbar() {
             <ListItemText primary="Repos" />
           </ListItem>
 
-          <ListItem button key="Learn" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/learn" onClick={handleDrawerToggle}>
-            <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faGraduationCap}></FontAwesomeIcon>
-            <ListItemText primary="Learn" />
-          </ListItem>
+
 
           <ListItem button key="Contact Me" style={{borderBottom: '1px solid #183D3D'}} component={Link} to="/contacts" onClick={handleDrawerToggle}>
             <FontAwesomeIcon style={{marginRight: "10px", color: '#5CB574'}} icon={faEnvelope}></FontAwesomeIcon>

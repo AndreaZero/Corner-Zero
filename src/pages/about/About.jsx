@@ -79,18 +79,19 @@ function About() {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "20px",
+                    padding: "10px",
                     gap: '1rem',
                 }}>
                   <Card  /// CARD BIO
                       style={{
                           color:"white",
-                          padding: "20px",
+                          padding: "10px",
                           textAlign: 'center',
                       }}>
                       <Typography style={{
                           fontSize: "20px",
                           color: "white",
+                          marginBottom: '1rem',
                           fontWeight: 'bolder',
                           textAlign: "center",
                       }}>
@@ -103,8 +104,18 @@ function About() {
                         <h4>I'm Andrea. <br />Junior web developer
                           <FontAwesomeIcon icon={faLaptopCode} style={{ marginLeft: "5px" }}></FontAwesomeIcon>
                         </h4>
+                        <Tooltip title='Download CV'>
+                        <Button  style={{   backgroundColor: '#183D3D',
+                          height: '25px',
+                          color: '#5cb574',
+                          boxShadow: "0px 0px 3px 0px #5CB574", 
+                          fontSize: "12px"}}>
+                          <a href={cv} rel='noreferrer noopener' target='blank'>resume
+                            <FontAwesomeIcon style={{marginLeft: '5px'}} icon={faDownload}></FontAwesomeIcon>
+                          </a> 
+                        </Button>
+                      </Tooltip>
                          <Tilt options={{ max: isMobile ? '0' : '35' }}>
-
                           <img src={mehi} alt='mehi' style={{
                             width: "200px",
                             borderBottom: "1px solid grey",
@@ -117,17 +128,7 @@ function About() {
                         I've been riding the web development wave hard for the last 12 months.<br/>
                         On top of that, I've rolled out several personal projects for both learning and work.<br/>
                         Oh, and I'm no stranger to Web3 too!</h5>
-                      <Tooltip title='Download CV'>
-                        <Button  style={{   backgroundColor: '#183D3D',
-                          height: '25px',
-                          color: '#5cb574',
-                          boxShadow: "0px 0px 3px 0px #5CB574", 
-                          fontSize: "12px"}}>
-                          <a href={cv} rel='noreferrer noopener' target='blank'>resume
-                            <FontAwesomeIcon style={{marginLeft: '5px'}} icon={faDownload}></FontAwesomeIcon>
-                          </a> 
-                        </Button>
-                      </Tooltip>
+                    
                   </Card>
                   <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
                       <Container // KNOWLEDGE

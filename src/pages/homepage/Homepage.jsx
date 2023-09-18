@@ -20,11 +20,12 @@ function Homepage() {
   const [postCount, setPostCount] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const mobileWidth = 600;
+  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
   const controls = useAnimation();
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [showNewsletterPopup, setShowNewsletterPopup] = useState(false);
-  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
+
   
 
   function getRandomLearnTitle() {
@@ -113,40 +114,7 @@ useEffect(() => {
 </style>
     
                       
-       {showNewsletterPopup && (
-        <div style={{
-          position: 'fixed',
-          top: '50%',
-          left: '50%',
-          backgroundColor: '#1E1E1E',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 1000,
-          padding: '20px',
-          textAlign: "center",
-          borderRadius: '8px',
-          boxShadow: '0 0 15px rgba(0,0,0,0.1)'
-        }}>
-          <h3>Join the CornerLetter.</h3>
-          <p>Receive email that you actually want to receive.</p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent:" center" }}> 
-            <TextField 
-              type="email" 
-              value={userEmail} 
-              onChange={e => setUserEmail(e.target.value)} 
-              placeholder="Your email..." 
-              style={{ padding: '5px', borderRadius: '5px', fontFamily: "Roboto Mono", height: '40px' }}
-            />
-            <Button 
-              style={{ backgroundColor: '#5cb574', color: 'black', fontWeight: 'bold', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-              onClick={handleEmailSubmission}
-            >
-              SUBSCRIBE
-            </Button>
-            <Button onClick={closeNewsletterPopup} style={{ backgroundColor: '#183D3D', color: '#5cb574', marginLeft: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>Close</Button>
-
-          </div>
-        </div>
-      )}
+      
 
 <div style={{height: '50px', marginTop: '0.1rem', display: "flex",  borderBottom: '1px solid #5cb574', justifyContent: 'space-between', alignItems: "center"}}>
            <h5 style={{color: '#5cb574'}}> 
