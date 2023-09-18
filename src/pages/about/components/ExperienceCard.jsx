@@ -35,12 +35,12 @@ function ExperienceCard() {
     };
 
     return (
-                        <CardContent style={{ backgroundColor: '#0e0e0e', borderRadius: "1rem", width: isMobile ? undefined : '500px',
-                                     display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center"}}>
+                        <CardContent style={{backgroundColor: '#0e0e0e', borderRadius: "1rem", width: isMobile ? undefined : '500px',
+                                     display: 'flex', flexDirection: 'column',alignItems: "center"}}>
                                 <Typography style={{textAlign: 'center', color: 'white', fontSize: "25px", fontWeight: 'bold' }}>
-                                Dev Experiences <FontAwesomeIcon icon={faBriefcase}></FontAwesomeIcon>
+                                I'm building  <FontAwesomeIcon icon={faBriefcase}></FontAwesomeIcon>
                                 </Typography>
-                                    <Container style={{display: "flex", padding: "10px", flexDirection: "column", textAlign: 'left', gap: "0.4rem" }}>
+                                    <Container style={{display: "flex", marginTop: '0.4rem', padding: "20px", flexDirection: "column", textAlign: 'left', gap: "0.4rem" }}>
                                      <Typography style={{fontSize: '12px', color: "white"}}>
                                         <span style={{ color: '#5cb574',fontWeight: 'bolder'}}>Name:</span> 
                                             {experiences[currentProject].title}</Typography>
