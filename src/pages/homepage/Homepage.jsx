@@ -14,7 +14,7 @@ import { useMediaQuery } from '@mui/material';
 import { motion, useAnimation } from "framer-motion";
 import LastFiveLikedPosts from './components/LastFiveLikedPosts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faGreaterThan, faHandsWash, faHandshake } from '@fortawesome/free-solid-svg-icons';
 
 function Homepage() {
   const [postCount, setPostCount] = useState(0);
@@ -148,16 +148,15 @@ useEffect(() => {
         textAlign: 'center',
       }}
     >
-                        Welcome Human!
-                          <br />
-                          <span style={{fontSize: "12px", fontWeight: "bold"}}>CornerZero is my personal space</span>
-                        <br />
+                        <h4>Welcome Human!</h4>
                         <h5>
               Please let me <a style={{color: '#5cb574'}} href='/about'>introduce myself</a>
-            <br />
+              <FontAwesomeIcon style={{marginLeft: "10px"}} icon={faHandshake}></FontAwesomeIcon><br />
+              <br />
+            This is my portfolio/blog website.    <br />
             Here I write <span style={{fontStyle: 'italic'}}>Corners</span>, 
             publish my projects, <br /> also help people understand web tecnologies.
-            <h4>Subscribe to my newsletter to updated.</h4></h5>
+            <h4>Subscribe to the newsletter to stay updated.</h4></h5>
 
             <ToastContainer/>
             {!showEmailInput ? (
