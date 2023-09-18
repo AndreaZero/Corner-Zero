@@ -53,7 +53,6 @@ export default function GitRepos() {
                     <a rel='noreferrer noopener' target='blank' href='https://github.com/AndreaZero/Progetto92'><img src='https://github-readme-stats.vercel.app/api/pin/?username=andreazero&repo=progetto92&theme=dark&card_width=200' alt='c'></img></a>
                     <img style={{display: isMobile ? 'none' : undefined}} src="https://myreadme.vercel.app/api/embed/andreazero?panels=userstatistics,toprepositories,toplanguages,commitgraph" alt="reimaginedreadme" />
 
-
                    </Container>
                     </Container>
 
