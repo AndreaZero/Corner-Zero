@@ -2,10 +2,10 @@ import blockchain from "../styles/img/learn/blockchain.png";
 import nfts from "../styles/img/learn/nfts.png";
 import wallet from "../styles/img/learn/wallet.png";
 import smartcontract  from "../styles/img/learn/smartcontract.png";
-// import web3 from "../styles/img/learn/web3.png";
-// import defi from "../styles/img/learn/defi.png";
-// import dao from "../styles/img/learn/dao.png";
-// import smartcontract from "../styles/img/learn/smart-contract.png";
+import web3 from "../styles/img/learn/web3.webp";
+import defi from "../styles/img/learn/defi.jpg";
+import dao from "../styles/img/learn/dao.png";
+import exchange from "../styles/img/learn/exchange.jpg";
 
 
 const learn = [
@@ -14,8 +14,7 @@ const learn = [
         title: "NFTs",
         category: "Web3",
         image: [`${nfts}`],
-        link1: 'https://google.com',
-        link2: 'https://google.com',
+        link1: 'https://101blockchains.com/non-fungible-tokens-nft/',
         preview: "NFTs are unique digital tokens verifying ownership of a digital item, like art. Think collectible cards, but online and one-of-a-kind.",
         content: `<p><strong>Imagine</strong> you have a special, one-of-a-kind painting. Everyone can take a photo of that painting, right? They can even print out their photos, hang them on their walls, and show them to their friends. However, even if hundreds of people have pictures of your painting, there's still only one original, and it belongs to you.</p>
         <p>NFTs, or "<strong>Non-Fungible Tokens</strong>", are a bit like that, but in the digital world. They're unique digital certificates that prove someone owns a particular digital item, be it art, music, or even a tweet. When you hear "token", think of it as a "<em>digital sticker of authenticity</em>".</p>`,
@@ -27,6 +26,7 @@ const learn = [
         title: "Blockchain",
         category: "Web3",
         image: [`${blockchain}`],
+        link1: 'https://www.blockchain-council.org/blockchain/blockchain-guide-everything-you-need-to-know/',
         preview: "Basically a digital database, decentralized and secure. It's like a shared, unchangeable record book everyone can see, but nobody can alter.",
         content: `<p><strong>Blockchain</strong> is often visualized as a chain of blocks, but let's break it down in simpler terms. Think of it as a book - a ledger where you jot down all important notes or transactions. Now, imagine this book isn't in one place but is copied across a network of computers. Every time someone makes a new note, it gets recorded in everyone's book.</p>
         <p>But here's the catch: once a note (or transaction) is added, it cannot be changed or erased. It's permanent. And before a new note gets added, everyone in the network checks to ensure it's legitimate. This makes the whole system <strong>secure and transparent</strong>.</p>`,
@@ -36,6 +36,9 @@ const learn = [
         id: 3,
         title: "Web3",
         category: "Web3",
+        image: [`${web3}`],
+
+        link1: 'https://www.blockchain-council.org/web-3/the-ultimate-guide-to-web3/',
         preview: "Web3 is the new era of the internet mainly powered by blockchain, enabling peer-to-peer transactions and user-owned data.",
         content: `<p>Imagine the internet you know today, often referred to as <strong>Web2</strong>. It's controlled by big companies who store our data, decide what content we see, and even earn from our online activities. Now, envision a new version, called <strong>Web3</strong>.</p>
         <p><strong>Web3</strong> is the promise of a decentralized internet, where users have control over their data, identities, and transactions. Instead of logging into services with usernames and passwords, users of Web3 use their digital wallets, which are secured by blockchain. This ensures that users, not corporations, own and control their own information.</p>`,
@@ -47,6 +50,7 @@ const learn = [
         title: "Wallet",
         category: "Web3",
         image: [`${wallet}`],
+        link1: 'https://www.blockchain-council.org/blockchain/a-comprehensive-guide-on-blockchain-wallet/',
         preview: "A wallet, in the digital realm, securely stores cryptocurrency keys. It's like a digital purse for your online currency.",
         content:  `
         <p>When we talk about money in our physical world, we often think about wallets to store our cash and cards. In the digital landscape of cryptocurrencies, we have the <strong>digital wallet</strong>.</p>
@@ -57,6 +61,8 @@ const learn = [
         id: 5,
         title: "De-Fi",
         category: "Web3",
+        image: [`${defi}`],
+        link1: 'https://cointelegraph.com/learn/defi-a-comprehensive-guide-to-decentralized-finance',
         preview: "DeFi stands for 'Decentralized Finance', using blockchain to bypass traditional banks, offering financial services directly between participants.",
         content: `
         <p>The financial world as we know it has always been dominated by intermediaries like banks, brokers, and financial institutions. Enter <strong>DeFi</strong>, or "Decentralized Finance", which aims to overhaul this system.</p>
@@ -68,39 +74,7 @@ const learn = [
         id: 6,
         title: "Smart Contract",
         image: [`${smartcontract}`],
-        code: `
-        <pre><code>
-pragma solidity 0.8.7;
-contract VendingMachine {
-
-    // Declare state variables of the contract
-    address public owner;
-    mapping (address => uint) public cupcakeBalances;
-
-    // When 'VendingMachine' contract is deployed:
-    // 1. set the deploying address as the owner of the contract
-    // 2. set the deployed smart contract's cupcake balance to 100
-    constructor() {
-        owner = msg.sender;
-        cupcakeBalances[address(this)] = 100;
-    }
-
-    // Allow the owner to increase the smart contract's cupcake balance
-    function refill(uint amount) public {
-        require(msg.sender == owner, "Only the owner can refill.");
-        cupcakeBalances[address(this)] += amount;
-    }
-
-    // Allow anyone to purchase cupcakes
-    function purchase(uint amount) public payable {
-        require(msg.value >= amount * 1 ether, "You must pay at least 1 ETH per cupcake");
-        require(cupcakeBalances[address(this)] >= amount, "Not enough cupcakes in stock to complete this purchase");
-        cupcakeBalances[address(this)] -= amount;
-        cupcakeBalances[msg.sender] += amount;
-    }
-}
-        </code></pre>
-        `,
+        link1: 'https://101blockchains.com/smart-contracts-2-0/',
         category: "Web3",
         preview: "Smart contracts are deployed on the blockchain, where terms are written in code, ensuring transparency and automatic fulfillment.",
         content: `
@@ -115,7 +89,8 @@ contract VendingMachine {
         id: 7,
         title: "Exchange",
         category: "Web3",
-
+        image: [`${exchange}`],
+        link1: 'https://101blockchains.com/centralized-crypto-exchange/',
         preview: "An exchange is a platform where users can buy, sell, or trade cryptocurrencies. Think of it as a digital stock market.",
         content:`
         <p>When you hear "exchange" in the traditional sense, you might think of places where stocks or commodities are traded. In the world of cryptocurrencies, an <strong>exchange</strong> serves a similar purpose, but it's all about digital assets.</p>
@@ -131,7 +106,8 @@ contract VendingMachine {
         id: 8,
         title: "DAO",
         category: "Web3",
-
+        image: [`${dao}`],
+        link1: 'https://101blockchains.com/dao-governance-model/',
         preview: "DAO stands for 'Decentralized Autonomous Organization',  a group run by rules in code, without centralized control, powered by blockchain.",
         content: `
         <p>If you've ever been part of an organization, you know there's usually a hierarchy or a group making decisions. Now, imagine an organization where decisions aren't made by a few leaders, but by everyone involved, and it's all automated and transparent. Welcome to the world of <strong>DAOs</strong> or Decentralized Autonomous Organizations.</p>

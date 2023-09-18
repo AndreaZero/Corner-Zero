@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import PostView from "./components/PostView";
 import Corners from "./pages/Corners";
 import Repos from "./pages/Repos";
+import GitRepos from "./pages/GitRepos";
 import Contacts from "./pages/Contacts";
 import Learn from "./pages/Learn";
 import LearnDetail from "./components/LearnDetail";
@@ -33,7 +34,8 @@ function App () {
         <Route exact path="/admin/dashboard" element={<Dashboard/>} />
         <Route exact path='/admin/login' element={<LoginPage />} />
         <Route exact path='/corners' element={<Corners />} />
-        <Route exact path='/repos' element={<Repos/>} />
+        <Route exact path='/reposs' element={<Repos/>} />
+        <Route exact path='/repos' element={<GitRepos/>} />
         <Route exact path='/learn' element={<Learn/>} />
         <Route exact path='/about' element={<About/>} />
         <Route exact path='/learn/:title' element={<LearnDetail/>} />
