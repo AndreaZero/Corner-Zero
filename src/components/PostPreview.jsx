@@ -85,6 +85,7 @@ function PostPreview({ post }) {
             height: '30px',
             marginTop: "8px"
           }} size="small">
+            Open
               </Button>
         </Card>
       </CardActions>
