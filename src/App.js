@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Box, ThemeProvider } from "@mui/material";
 import Navbar from "./components/fixed/Navbar";
 import theme from "./theme";
 import axios from "axios";
+import loadingImage from "./styles/img/logo.png"; // Sostituisci con il tuo GIF o immagine
+
 import Homepage from "./pages/homepage/Homepage";
 import Footer from "./components/fixed/Footer";
 import LoginPage from "./pages/LoginPage";
@@ -22,6 +24,16 @@ axios.defaults.baseURL = "https://cornerzeroserver-4b9300c63b20.herokuapp.com";
 axios.defaults.withCredentials = true;
 
 function App () {
+
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3000); // Simula un caricamento di 3 secondi
+  }, []);
+
+  if (isLoading) {
+    return <img src={loadingImage} alt="Caricamento..." />;
+  }
 
   return (
     <ThemeProvider theme={theme}>
