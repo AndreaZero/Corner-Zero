@@ -4,7 +4,7 @@ import mehi from "../../styles/img/mehi.png";
 import it from "../../styles/img/it.png";
 import corner from "../../styles/img/corner.png";
 import ExperienceCard from './components/ExperienceCard';
-import cv from "../../data/cv.pdf";
+import resume from "../../data/resume.pdf";
 import cornerright from "../../styles/img/cornerright.png";
 import { motion, useAnimation } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -110,7 +110,7 @@ function About() {
                           color: '#5cb574',
                           boxShadow: "0px 0px 3px 0px #5CB574", 
                           fontSize: "12px"}}>
-                          <a href={cv} rel='noreferrer noopener' target='blank'>resume
+                          <a href={resume} rel='noreferrer noopener' target='blank'>resume
                             <FontAwesomeIcon style={{marginLeft: '5px'}} icon={faDownload}></FontAwesomeIcon>
                           </a> 
                         </Button>
