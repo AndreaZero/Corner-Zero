@@ -1,6 +1,8 @@
 import React from "react";
 import "../src/styles/main/index.css";
 import App from "./App";
+import './i18n'
+
 import { render } from "react-dom";
 
 // Registra il service worker

@@ -2,6 +2,7 @@ import { Container, Card, Typography, Button, Tooltip } from '@mui/material'
 import { useMediaQuery } from '@mui/material';
 import mehi from "../../styles/img/mehi.png";
 import it from "../../styles/img/it.png";
+import { useTranslation } from 'react-i18next';
 import corner from "../../styles/img/corner.png";
 import ExperienceCard from './components/ExperienceCard';
 import resume from "../../data/resume.pdf";
@@ -17,9 +18,19 @@ import {
 import {faBrain} from '@fortawesome/free-solid-svg-icons';
 import Timeline from './components/Timeline';
 import { Tilt } from 'react-tilt';
+import { LANGUAGES } from '../../constants/index';
 
 
 function About() {
+
+  const { i18n, t } = useTranslation()
+
+  const onChangeLang = (e) => {
+      const lang_code = e.target.value
+      i18n.changeLanguage(lang_code)
+
+  }
+
     const mobileWidth = 600;
     const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
     
@@ -86,8 +97,15 @@ function About() {
                       style={{
                           color:"white",
                           padding: "10px",
+                          width: isMobile ? undefined : '700px',
                           textAlign: 'center',
                       }}>
+                        <section style={{
+                          display: 'flex',
+                          justifyContent: isMobile ? 'center' : 'space-around',
+                          alignItems: 'center',
+                          flexDirection: isMobile ? 'column' : undefined
+                        }}>
                       <Typography style={{
                           fontSize: "20px",
                           color: "white",
@@ -99,6 +117,30 @@ function About() {
                         - Who is Zero? - 
                        <img style={{ width: isMobile ? "25px" : "40px", objectFit: 'contain' }} src={cornerright} alt='icon'></img>
                       </Typography>
+                      <section style={{
+                        display: 'flex',
+                        flexDirection: "column",
+                        fontSize: "12px"
+                      }}>
+                        Languages:
+                      <select style={{
+                          height: isMobile ? '35px' : undefined,
+                          backgroundColor: '#0e0e0e', color: 'white', borderRadius: '0.5rem', fontWeight: "bold",
+                          boxShadow: "0px 0px 3px 0px black", padding: "10px", width: "100px", marginBottom: "1rem"
+                      }} defaultValue={i18n.language} onChange={onChangeLang}  >
+                          {
+                    LANGUAGES.map(({ code, label }) => (
+                        <option
+                            key={code}
+                            value={code}
+                        >{label}
+
+                        </option>
+                    ))
+                }
+            </select>
+            </section>
+                      </section>
                       <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
 
                         <h4>I'm Andrea. <br />Junior web developer
@@ -122,12 +164,13 @@ function About() {
                             objectFit: 'contain',
                             }}></img>
                       </Tilt>
-                      <h4 style={reflectionStyle}>I'm a 30-year-old dude from Rome <img src={it} alt='it'></img> </h4>
-                        <h5 style={reflectionStyle}>One of my biggest passion is coding. I whipped up my first website at 11..<br />
-                        Wasn't much into textbooks. Instead, I juggled studying code and web dev while working on the side.<br/>
-                        I've been riding the web development wave hard for the last 12 months.<br/>
-                        On top of that, I've rolled out several personal projects for both learning and work.<br/>
-                        Oh, and I'm no stranger to Web3 too!</h5>
+                      <h4 style={reflectionStyle}>{t('about-subtitle')} <img src={it} alt='it'></img> </h4>
+                        <h5 style={reflectionStyle}>{t('about-text1')}</h5>
+                        <h5 style={reflectionStyle}>{t('about-text2')}</h5>
+                        <h5 style={reflectionStyle}>{t('about-text3')}</h5>
+                        <h5 style={reflectionStyle}>{t('about-text4')}</h5>
+                        <h5 style={reflectionStyle}>{t('about-text5')}</h5>
+                        <h5 style={reflectionStyle}>{t('about-text6')}</h5>
                     
                   </Card>
                   <div style={{border: '1px solid #5cb574', width: "100%"}}></div>
